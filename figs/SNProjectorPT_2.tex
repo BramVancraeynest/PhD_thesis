@@ -1,0 +1,14 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.4};
+	\def\r{.8};
+	
+	\draw[obj2, rounded corners=4pt] (0,1.2*\l) -- (0, .8*\l) arc (90:-90:.8*\l) -- (0,-1.2*\l);
+	
+	\draw[obj3, dashed] (0,0) circle (\r);
+	\draw[obj1, pattern=north west lines] (0,0) circle (.4*\r);
+	
+%	\node[draw, fill = white, circle, inner sep = 1pt] at (0, -1.2*\l) {};
+%	\node[draw, fill = white, circle, inner sep = 1pt] at (0, 1.2*\l) {};
+	
+	\node[anchor=west, xshift=-4pt] at (.9*\l,0) {$\sss X$};
+\end{tikzpicture}

@@ -1,0 +1,68 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.4};
+	\def\r{.9}
+	\def\c{cos(30)};
+	\def\s{sin(30)};
+	
+	\def\o{.35};
+	
+%	\draw[obj2, dotted] (0,0) -- (30:\l);
+%	\draw[obj2, dotted] (0,0) -- (150:.5*\l);
+%	\draw[obj2, dotted] (0,-\l) -- (0,0);
+%	\draw[obj2, dotted] ({\c*\l*2},-\l) -- ({\c*\l*2},0);	
+%	\draw[obj2, dotted] ({2*\l*\c},0) -- ++(30:.5*\l);
+%	\draw[obj2, dotted] ({2*\l*\c},0) -- ++(150:\l);
+%	\draw[obj2, dotted] ({\c*\l}, {-\l-\l*\s}) -- ++(150:\l);
+%	\draw[obj2, dotted] ({\c*\l}, {-\l-\l*\s}) -- ++(30:\l);
+%	\draw[obj2, dotted] ({2.5*\c*\l}, {-\l-.5*\l*\s}) -- ++(150:.5*\l);
+%	\draw[obj2, dotted] ({-\c*.5*\l}, {-\l-.5*\l*\s}) -- ++(30:.5*\l);
+%	\draw[obj2, dotted] ({\c*\l}, {\s*\l}) -- ++(0,.5*\l);
+%	\draw[obj2, dotted] ({\c*\l}, {-\l-2*\s*\l}) -- ++(0,.5*\l);
+	
+	\draw[obj3] ({\o*\c},{\o*\s}) -- ({\l*\c - \o*\c},{\l*\s - \o*\s});
+	\draw[obj3] ({2*\l*\c-\o*\c},{\s*\o}) -- ({\l*\c+\c*\o},{\l*\s-\s*\o});
+	\draw[obj3] ({2*\c*\l},-\o) -- ({2*\c*\l},{\o-2*\l*\s});
+	\draw[obj3] ({\l*\c + \o*\c},{-3*\l*\s + \o*\s}) -- ({2*\c*\l-\c*\o},{-\s*\o-2*\l*\s});
+	\draw[obj3] ({\l*\c - \o*\c},{-3*\l*\s + \o*\s}) -- ({\c*\o},{-\s*\o-2*\l*\s});
+	\draw[obj3] (0,-\o) -- (0,{-\l+\o});
+
+	\draw[obj3] (0,0) circle (\o);
+	\draw[obj3] ({\l*\c},{\l*\s}) circle (\o);
+	\draw[obj3] ({2*\l*\c},0) circle (\o);
+	\draw[obj3] ({2*\l*\c},{-\l}) circle (\o);
+	\draw[obj3] ({\l*\c},{-\l-\l*\s}) circle (\o);
+	\draw[obj3] (0,{-\l}) circle (\o);
+	
+	\draw[obj1] ({-\o*\c},{\o*\s}) --+ (150:{.5*\l-\o});
+	\draw[obj1] ({\l*\c},{\l*\s + \o}) --+ (90:{.5*\l-\o});
+	\draw[obj1] ({2*\l*\c+\c*\o},{\s*\o}) --+ (30:{.5*\l-\o});
+	\draw[obj1] ({2*\l*\c+\c*\o},{-\l-\s*\o}) --+ (-30:{.5*\l-\o});
+	\draw[obj1] ({\l*\c},{-\l - \l*\s - \o}) --+ (-90:{.5*\l-\o});
+	\draw[obj1] ({-\o*\c},{-\l-\o*\s}) --+ (210:{.5*\l-\o});
+
+	\node[mor, inner sep=2.8pt] at (0,-\o) {};
+	\node[mor, inner sep=2.8pt] at ({-\o*\c},{\o*\s}) {};
+	
+	\node[mor, inner sep=2.8pt] at ({\o*\c},{\o*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c - \o*\c},{\l*\s - \o*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c},{\l*\s + \o}) {};
+	
+	\node[mor, inner sep=2.8pt] at ({\l*\c+\c*\o},{\l*\s-\s*\o}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c-\o*\c},{\s*\o}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c+\o*\c},{\s*\o}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c},-\o) {};
+	
+	\node[mor, inner sep=2.8pt] at ({2*\c*\l},{\o-2*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\c*\l-\c*\o},{-\s*\o-2*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\c*\l+\c*\o},{-\s*\o-2*\l*\s}) {};
+	
+	\node[mor, inner sep=2.8pt] at ({\l*\c + \o*\c},{-3*\l*\s + \o*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c - \o*\c},{-3*\l*\s + \o*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c},{-3*\l*\s - \o}) {};
+	
+	\node[mor, inner sep=2.8pt] at (0,{-\l+\o}) {};
+	\node[mor, inner sep=2.8pt] at ({\o*\c},{-\l-\s*\o}) {};
+	\node[mor, inner sep=2.8pt] at ({-\o*\c},{-\l-\s*\o}) {};
+	
+	\draw[obj1, pattern=north west lines] ({\l*\c},{-\l*\s}) circle (.4*\r);
+\end{tikzpicture}

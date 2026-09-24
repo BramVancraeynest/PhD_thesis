@@ -1,0 +1,25 @@
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\def\l{1.4};
+	\def\h{.65};
+	
+	\draw[obj2, ->2-=.41, ->2-=.61, ->2-=.81] (-.5*\l,0) -- (4.5*\l,0);
+	
+	\draw[obj2, ->2-=.74] (3*\l,0) -- (3*\l,\h);	
+	\draw[obj2, ->2-=.52] (2*\l,-\h) -- (2*\l,0);
+	
+	\foreach \x in {0,1,4}{
+		\draw[obj1] (\x*\l,-\h) -- (\x*\l,\h);
+		\node[mpotensor] at (\x*\l,0) {};
+	}
+	\node[fusiontensor] at (2*\l,0) {};
+	\node[fusiontensor] at (3*\l,0) {};
+	
+	\node at (2*\l,0) {$\sss i$};
+	\node at (3*\l,0) {$\sss j$};
+	
+	\node[above] at (3*\l,\h) {$\sss A$};
+	\node[below] at (2*\l,-\h) {$\sss A'$};
+	\node[above] at (3.5*\l,0) {${\sss X}$};
+	\node[above] at (1.5*\l,0) {${\sss X}$};
+	\node[above] at (2.5*\l,0) {${\sss X'}$};
+\end{tikzpicture}

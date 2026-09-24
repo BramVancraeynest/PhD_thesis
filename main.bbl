@@ -1,0 +1,1340 @@
+\begin{thebibliography}{100}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{preprint doi:\href{#1}{#2}}
+
+\bibitem{Nielsen1999}
+M.~A. Nielsen,
+\newblock \emph{{Conditions for a Class of Entanglement Transformations}},
+\newblock Phys. Rev. Lett. \textbf{83}, 436 (1999),
+\newblock \doi{10.1103/PhysRevLett.83.436},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.quant-ph/9811053]{10.48550/arXiv.quant-ph/9811053}.
+
+\bibitem{Schrodinger2008}
+E.~Schr{\"o}dinger,
+\newblock \emph{{Discussion of Probability Relations between Separated
+  Systems}},
+\newblock Math. Proc. Cambridge Phil. Soc. \textbf{31}(4), 555 (2008),
+\newblock \doi{10.1017/S0305004100013554}.
+
+\bibitem{Poulin2011}
+D.~Poulin, A.~Qarry, R.~Somma and F.~Verstraete,
+\newblock \emph{{Quantum Simulation of Time-Dependent Hamiltonians and the
+  Convenient Illusion of Hilbert Space}},
+\newblock Phys. Rev. Lett. \textbf{106}, 170501 (2011),
+\newblock \doi{10.1103/PhysRevLett.106.170501},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1102.1360]{10.48550/arXiv.1102.1360}.
+
+\bibitem{Slater1929}
+J.~C. Slater,
+\newblock \emph{{The Theory of Complex Spectra}},
+\newblock Phys. Rev. \textbf{34}, 1293 (1929),
+\newblock \doi{10.1103/PhysRev.34.1293}.
+
+\bibitem{Slater1935}
+J.~C. Slater,
+\newblock \emph{The electronic structure of metals},
+\newblock Rev. Mod. Phys. \textbf{6}, 209 (1934),
+\newblock \doi{10.1103/RevModPhys.6.209}.
+
+\bibitem{Hartree1947}
+D.~R. Hartree,
+\newblock \emph{The calculation of atomic structures},
+\newblock Reports on Progress in Physics \textbf{11}(1), 113 (1947),
+\newblock \doi{10.1088/0034-4885/11/1/305}.
+
+\bibitem{Verstraete2006a}
+F.~Verstraete and J.~I. Cirac,
+\newblock \emph{{Matrix product states represent ground states faithfully}},
+\newblock Phys. Rev. B \textbf{73}(9), 094423 (2006),
+\newblock \doi{10.1103/PhysRevB.73.094423},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0505140]{10.48550/arXiv.cond-mat/0505140}.
+
+\bibitem{Coffman1999}
+V.~Coffman, J.~Kundu and W.~K. Wootters,
+\newblock \emph{{Distributed entanglement}},
+\newblock Phys. Rev. A \textbf{61}, 052306 (2000),
+\newblock \doi{10.1103/PhysRevA.61.052306},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.quant-ph/9907047]{10.48550/arXiv.quant-ph/9907047}.
+
+\bibitem{Osborne2006}
+T.~J. Osborne and F.~Verstraete,
+\newblock \emph{{General Monogamy Inequality for Bipartite Qubit
+  Entanglement}},
+\newblock Phys. Rev. Lett. \textbf{96}(22), 220503 (2006),
+\newblock \doi{10.1103/PhysRevLett.96.220503},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.quant-ph/0502176]{10.48550/arXiv.quant-ph/0502176}.
+
+\bibitem{Hastings2004}
+M.~B. Hastings,
+\newblock \emph{Locality in quantum and markov dynamics on lattices and
+  networks},
+\newblock Phys. Rev. Lett. \textbf{93}, 140402 (2004),
+\newblock \doi{10.1103/PhysRevLett.93.140402},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0405587]{10.48550/arXiv.cond-mat/0405587}.
+
+\bibitem{Hastings2005}
+M.~B. Hastings and T.~Koma,
+\newblock \emph{{Spectral gap and exponential decay of correlations}},
+\newblock Commun. Math. Phys. \textbf{265}, 781 (2006),
+\newblock \doi{10.1007/s00220-006-0030-4},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.math-ph/0507008]{10.48550/arXiv.math-ph/0507008}.
+
+\bibitem{Hastings2007}
+M.~B. Hastings,
+\newblock \emph{{An area law for one-dimensional quantum systems}},
+\newblock J. Stat. Mech. \textbf{0708}, P08024 (2007),
+\newblock \doi{10.1088/1742-5468/2007/08/P08024},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0705.2024]{10.48550/arXiv.0705.2024}.
+
+\bibitem{Lieb1972}
+E.~H. Lieb and D.~W. Robinson,
+\newblock \emph{{The finite group velocity of quantum spin systems}},
+\newblock Commun. Math. Phys. \textbf{28}, 251 (1972),
+\newblock \doi{10.1007/BF01645779}.
+
+\bibitem{Calabrese2004}
+P.~Calabrese and J.~L. Cardy,
+\newblock \emph{{Entanglement entropy and quantum field theory}},
+\newblock J. Stat. Mech. \textbf{0406}, P06002 (2004),
+\newblock \doi{10.1088/1742-5468/2004/06/P06002},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.hep-th/0405152]{10.48550/arXiv.hep-th/0405152}.
+
+\bibitem{Bijl1941}
+A.~Bijl, J.~{de Boer} and A.~Michels,
+\newblock \emph{{Properties of liquid helium II}},
+\newblock Physica \textbf{8}(7), 655 (1941),
+\newblock \doi{10.1016/S0031-8914(41)90422-6}.
+
+\bibitem{Feynman1953}
+R.~P. Feynman,
+\newblock \emph{{Atomic Theory of Liquid Helium Near Absolute Zero}},
+\newblock Phys. Rev. \textbf{91}, 1301 (1953),
+\newblock \doi{10.1103/PhysRev.91.1301}.
+
+\bibitem{Feynman1954}
+R.~P. Feynman,
+\newblock \emph{{Atomic Theory of the Two-Fluid Model of Liquid Helium}},
+\newblock Phys. Rev. \textbf{94}, 262 (1954),
+\newblock \doi{10.1103/PhysRev.94.262}.
+
+\bibitem{Haegeman2011b}
+J.~Haegeman, B.~Pirvu, D.~J. Weir, J.~I. Cirac, T.~J. Osborne, H.~Verschelde
+  and F.~Verstraete,
+\newblock \emph{{Variational matrix product ansatz for dispersion relations}},
+\newblock Phys. Rev. B \textbf{85}(10), 100408 (2012),
+\newblock \doi{10.1103/PhysRevB.85.100408},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1103.2286]{10.48550/arXiv.1103.2286}.
+
+\bibitem{Vanderstraeten2013}
+L.~Vanderstraeten, J.~Haegeman, T.~J. Osborne and F.~Verstraete,
+\newblock \emph{{S-matrix from matrix product states}},
+\newblock Phys. Rev. Lett. \textbf{112}(25), 257202 (2014),
+\newblock \doi{10.1103/PhysRevLett.112.257202},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1312.6793]{10.48550/arXiv.1312.6793}.
+
+\bibitem{Hastings2005b}
+M.~B. Hastings and X.-G. Wen,
+\newblock \emph{Quasiadiabatic continuation of quantum states: The stability of
+  topological ground-state degeneracy and emergent gauge invariance},
+\newblock Phys. Rev. B \textbf{72}, 045141 (2005),
+\newblock \doi{10.1103/PhysRevB.72.045141},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.math-ph/0503554]{10.48550/arXiv.math-ph/0503554}.
+
+\bibitem{Bravyi2006}
+S.~Bravyi, M.~B. Hastings and F.~Verstraete,
+\newblock \emph{{Lieb-Robinson Bounds and the Generation of Correlations and
+  Topological Quantum Order}},
+\newblock Phys. Rev. Lett. \textbf{97}, 050401 (2006),
+\newblock \doi{10.1103/PhysRevLett.97.050401},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.quant-ph/0603121]{10.48550/arXiv.quant-ph/0603121}.
+
+\bibitem{Hastings2010}
+M.~B. Hastings,
+\newblock \emph{{Locality in Quantum Systems}} (2010),
+  \eprint[https://doi.org/10.48550/arXiv.1008.5137]{10.48550/arXiv.1008.5137}.
+
+\bibitem{DiFrancesco1997}
+P.~Di~Francesco, P.~Mathieu and D.~Senechal,
+\newblock \emph{{Conformal Field Theory}},
+\newblock Graduate Texts in Contemporary Physics. Springer-Verlag, New York,
+\newblock ISBN 978-0-387-94785-3, 978-1-4612-7475-9,
+\newblock \doi{10.1007/978-1-4612-2256-9} (1997).
+
+\bibitem{Landau1937}
+L.~D. Landau,
+\newblock \emph{{On the theory of phase transitions}},
+\newblock Zh. Eksp. Teor. Fiz. \textbf{7}, 19 (1937),
+\newblock \doi{10.1016/B978-0-08-010586-4.50034-1}.
+
+\bibitem{Kadanoff1970}
+L.~P. Kadanoff and H.~Ceva,
+\newblock \emph{{Determination of an operator algebra for the two-dimensional
+  Ising model}},
+\newblock Phys. Rev. B \textbf{3}, 3918 (1971),
+\newblock \doi{10.1103/PhysRevB.3.3918}.
+
+\bibitem{Degennes1963}
+P.-G. de~Gennes,
+\newblock \emph{{Collective motions of hydrogen bonds}},
+\newblock Solid State Communications \textbf{1}(6), 132 (1963),
+\newblock \doi{https://doi.org/10.1016/0038-1098(63)90212-6}.
+
+\bibitem{Schuch2011}
+N.~Schuch, D.~P{\'e}rez-Garc{\'\i}a and I.~Cirac,
+\newblock \emph{{Classifying quantum phases using matrix product states and
+  projected entangled pair states}},
+\newblock Phys. Rev. B \textbf{84}(16), 165139 (2011),
+\newblock \doi{10.1103/PhysRevB.84.165139},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1010.3732]{10.48550/arXiv.1010.3732}.
+
+\bibitem{Chen2010}
+X.~Chen, Z.~C. Gu and X.~G. Wen,
+\newblock \emph{{Local unitary transformation, long-range quantum entanglement,
+  wave function renormalization, and topological order}},
+\newblock Phys. Rev. B \textbf{82}, 155138 (2010),
+\newblock \doi{10.1103/PhysRevB.82.155138},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1004.3835]{10.48550/arXiv.1004.3835}.
+
+\bibitem{Zeng2015}
+B.~Zeng, X.~Chen, D.-L. Zhou and X.-G. Wen,
+\newblock \emph{{Quantum Information Meets Quantum Matter: From Quantum
+  Entanglement to Topological Phases of Many-Body Systems}},
+\newblock Quantum Science and Technology. Springer,
+\newblock ISBN 978-1-4939-9082-5, 978-1-4939-9084-9,
+\newblock \doi{10.1007/978-1-4939-9084-9} (2019),
+  \eprint[https://doi.org/10.48550/arXiv.1508.02595]{10.48550/arXiv.1508.02595}.
+
+\bibitem{Wen2016}
+X.-G. Wen,
+\newblock \emph{{Zoo of quantum-topological phases of matter}},
+\newblock Rev. Mod. Phys. \textbf{89}(4), 041004 (2017),
+\newblock \doi{10.1103/RevModPhys.89.041004},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1610.03911]{10.48550/arXiv.1610.03911}.
+
+\bibitem{McGreevy2022}
+J.~McGreevy,
+\newblock \emph{{Generalized Symmetries in Condensed Matter}},
+\newblock Ann. Rev. Condensed Matter Phys. \textbf{14}, 57 (2023),
+\newblock \doi{10.1146/annurev-conmatphys-040721-021029},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2204.03045]{10.48550/arXiv.2204.03045}.
+
+\bibitem{Chen2025}
+X.~Chen,
+\newblock \emph{{Essay: Generalized Landau Paradigm for Quantum Phases and
+  Phase Transitions}},
+\newblock Phys. Rev. Lett. \textbf{135}(25), 250001 (2025),
+\newblock \doi{10.1103/tmvy-vsqd},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2511.19793]{10.48550/arXiv.2511.19793}.
+
+\bibitem{Chen2011}
+X.~Chen, Z.-X. Liu and X.-G. Wen,
+\newblock \emph{{Two-dimensional symmetry-protected topological orders and
+  their protected gapless edge excitations}},
+\newblock Phys. Rev. B \textbf{84}(23), 235141 (2011),
+\newblock \doi{10.1103/PhysRevB.84.235141},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1106.4752]{10.48550/arXiv.1106.4752}.
+
+\bibitem{Delgado2004}
+F.~Verstraete, M.~A. Mart\'{\i}n-Delgado and J.~I. Cirac,
+\newblock \emph{Diverging entanglement length in gapped quantum spin systems},
+\newblock Phys. Rev. Lett. \textbf{92}, 087201 (2004),
+\newblock \doi{10.1103/PhysRevLett.92.087201}.
+
+\bibitem{PerezGarcia2006}
+D.~Perez-Garcia, F.~Verstraete, M.~M. Wolf and J.~I. Cirac,
+\newblock \emph{{Matrix product state representations}},
+\newblock Quant. Inf. Comput. \textbf{7}(5-6), 401 (2007),
+\newblock \doi{10.26421/QIC7.5-6-1},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.quant-ph/0608197]{10.48550/arXiv.quant-ph/0608197}.
+
+\bibitem{Vanderstraeten2019}
+L.~Vanderstraeten, J.~Haegeman and F.~Verstraete,
+\newblock \emph{{Tangent-space methods for uniform matrix product states}},
+\newblock SciPost Phys. Lect. Notes \textbf{7}, 1 (2019),
+\newblock \doi{10.21468/SciPostPhysLectNotes.7},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1810.07006]{10.48550/arXiv.1810.07006}.
+
+\bibitem{Albeverio1978}
+S.~Albeverio and R.~Hoegh-Krohn,
+\newblock \emph{{Frobenius Theory for Positive Maps of Von Neumann Algebras}},
+\newblock Commun. Math. Phys. \textbf{64}, 83 (1978),
+\newblock \doi{10.1007/BF01940763}.
+
+\bibitem{Verstraete2004a}
+F.~Verstraete, D.~Porras and J.~I. Cirac,
+\newblock \emph{{Density Matrix Renormalization Group and Periodic Boundary
+  Conditions: A Quantum Information Perspective}},
+\newblock Phys. Rev. Lett. \textbf{93}, 227205 (2004),
+\newblock \doi{10.1103/PhysRevLett.93.227205},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0404706]{10.48550/arXiv.cond-mat/0404706}.
+
+\bibitem{Vancraeynest2025c}
+B.~Vancraeynest-De~Cuiper, W.~Wiesiolek and F.~Verstraete,
+\newblock \emph{{Les Houches Lecture Notes on Tensor Networks}}  (2025),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2512.24390]{10.48550/arXiv.2512.24390}.
+
+\bibitem{Verstraete2004c}
+F.~Verstraete, J.~J. Garc{\'\i}a-Ripoll and J.~I. Cirac,
+\newblock \emph{{Matrix Product Density Operators: Simulation of
+  Finite-Temperature and Dissipative Systems}},
+\newblock Phys. Rev. Lett. \textbf{93}(20), 207204 (2004),
+\newblock \doi{10.1103/PhysRevLett.93.207204},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0406426]{10.48550/arXiv.cond-mat/0406426}.
+
+\bibitem{Haegeman2016}
+J.~Haegeman and F.~Verstraete,
+\newblock \emph{{Diagonalizing Transfer Matrices and Matrix Product Operators:
+  A Medley of Exact and Computational Methods}},
+\newblock Ann. Rev. Condensed Matter Phys. \textbf{8}, 355 (2017),
+\newblock \doi{10.1146/annurev-conmatphys-031016-025507},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1611.08519]{10.48550/arXiv.1611.08519}.
+
+\bibitem{Verstraete2004b}
+F.~Verstraete and J.~I. Cirac,
+\newblock \emph{{Renormalization algorithms for quantum-many body systems in
+  two and higher dimensions}}  (2004),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0407066]{10.48550/arXiv.cond-mat/0407066}.
+
+\bibitem{Schuch2010}
+N.~Schuch, I.~Cirac and D.~P{\'e}rez-Garc{\'\i}a,
+\newblock \emph{{PEPS as ground states: Degeneracy and topology}},
+\newblock Annals Phys. \textbf{325}, 2153 (2010),
+\newblock \doi{10.1016/j.aop.2010.05.008},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1001.3807]{10.48550/arXiv.1001.3807}.
+
+\bibitem{Levin2006b}
+M.~Levin and C.~P. Nave,
+\newblock \emph{{Tensor renormalization group approach to 2D classical lattice
+  models}},
+\newblock Phys. Rev. Lett. \textbf{99}, 120601 (2007),
+\newblock \doi{10.1103/PhysRevLett.99.120601},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0611687]{10.48550/arXiv.cond-mat/0611687}.
+
+\bibitem{Evenbly2015}
+G.~Evenbly and G.~Vidal,
+\newblock \emph{{Tensor Network Renormalization}},
+\newblock Phys. Rev. Lett. \textbf{115}(18), 180405 (2015),
+\newblock \doi{10.1103/PhysRevLett.115.180405},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1412.0732]{10.48550/arXiv.1412.0732}.
+
+\bibitem{Bal2017}
+M.~Bal, M.~Mari{\"e}n, J.~Haegeman and F.~Verstraete,
+\newblock \emph{{Renormalization group flows of Hamiltonians using tensor
+  networks}},
+\newblock Phys. Rev. Lett. \textbf{118}, 250602 (2017),
+\newblock \doi{10.1103/PhysRevLett.118.250602},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1703.00365]{10.48550/arXiv.1703.00365}.
+
+\bibitem{Bultinck2016}
+N.~Bultinck, D.~J. Williamson, J.~Haegeman and F.~Verstraete,
+\newblock \emph{{Fermionic matrix product states and one-dimensional
+  topological phases}},
+\newblock Phys. Rev. B \textbf{95}(7), 075108 (2017),
+\newblock \doi{10.1103/PhysRevB.95.075108},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1610.07849]{10.48550/arXiv.1610.07849}.
+
+\bibitem{Cirac2020}
+J.~I. Cirac, D.~Perez-Garcia, N.~Schuch and F.~Verstraete,
+\newblock \emph{{Matrix product states and projected entangled pair states:
+  Concepts, symmetries, theorems}},
+\newblock Rev. Mod. Phys. \textbf{93}(4), 045003 (2021),
+\newblock \doi{10.1103/RevModPhys.93.045003},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2011.12127]{10.48550/arXiv.2011.12127}.
+
+\bibitem{Pollmann2009a}
+F.~Pollmann, E.~Berg, A.~M. Turner and M.~Oshikawa,
+\newblock \emph{{Symmetry protection of topological phases in one-dimensional
+  quantum spin systems}},
+\newblock Phys. Rev. B \textbf{85}(7), 075125 (2012),
+\newblock \doi{10.1103/PhysRevB.85.075125},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0909.4059]{10.48550/arXiv.0909.4059}.
+
+\bibitem{Pollmann2009b}
+F.~Pollmann, A.~M. Turner, E.~Berg and M.~Oshikawa,
+\newblock \emph{{Entanglement spectrum of a topological phase in one
+  dimension}},
+\newblock Phys. Rev. B \textbf{81}(6), 064439 (2010),
+\newblock \doi{10.1103/PhysRevB.81.064439},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0910.1811]{10.48550/arXiv.0910.1811}.
+
+\bibitem{VanDamme}
+M.~Van~Damme, L.~Devos and J.~Haegeman,
+\newblock \emph{{MPSKit}},
+\newblock \doi{10.5281/zenodo.10654900} (2025).
+
+\bibitem{Ostrik2001}
+V.~Ostrik,
+\newblock \emph{{Module categories, weak Hopf algebras and modular
+  invariants}},
+\newblock Transform. Groups \textbf{8}(2), 177 (2003),
+\newblock \doi{10.1007/s00031-003-0515-6},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.math/0111139]{10.48550/arXiv.math/0111139}.
+
+\bibitem{Etingof2015}
+P.~Etingof, S.~Gelaki, D.~Nikshych and V.~Ostrik,
+\newblock \emph{Tensor Categories},
+\newblock American Mathematical Society (2015).
+
+\bibitem{Thorngren2019}
+R.~Thorngren and Y.~Wang,
+\newblock \emph{{Fusion category symmetry. Part I. Anomaly in-flow and gapped
+  phases}},
+\newblock JHEP \textbf{04}, 132 (2024),
+\newblock \doi{10.1007/JHEP04(2024)132},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1912.02817]{10.48550/arXiv.1912.02817}.
+
+\bibitem{GarreRubio2022}
+J.~Garre-Rubio, L.~Lootens and A.~Moln{\'a}r,
+\newblock \emph{{Classifying phases protected by matrix product operator
+  symmetries using matrix product states}},
+\newblock Quantum \textbf{7}, 927 (2023),
+\newblock \doi{10.22331/q-2023-02-21-927},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2203.12563]{10.48550/arXiv.2203.12563}.
+
+\bibitem{Bhardwaj2023}
+L.~Bhardwaj, L.~E. Bottini, D.~Pajer and S.~Schafer-Nameki,
+\newblock \emph{{Categorical Landau Paradigm for Gapped Phases}},
+\newblock Phys. Rev. Lett. \textbf{133}(16), 161601 (2024),
+\newblock \doi{10.1103/PhysRevLett.133.161601},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2310.03786]{10.48550/arXiv.2310.03786}.
+
+\bibitem{Lootens2024}
+L.~Lootens, C.~Delcamp and F.~Verstraete,
+\newblock \emph{{Entanglement and the density matrix renormalisation group in
+  the generalised Landau paradigm}}  (2024),
+\newblock \doi{10.1038/s41567-025-02961-2},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2408.06334]{10.48550/arXiv.2408.06334}.
+
+\bibitem{Etingof2002}
+P.~Etingof, D.~Nikshych and V.~Ostrik,
+\newblock \emph{{On fusion categories}}  (2002),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.math/0203060]{10.48550/arXiv.math/0203060}.
+
+\bibitem{Kitaev2005a}
+A.~Kitaev,
+\newblock \emph{{Anyons in an exactly solved model and beyond}},
+\newblock Annals Phys. \textbf{321}(1), 2 (2006),
+\newblock \doi{10.1016/j.aop.2005.10.005},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0506438]{10.48550/arXiv.cond-mat/0506438}.
+
+\bibitem{Beer2018}
+K.~Beer \emph{et~al.},
+\newblock \emph{{From categories to anyons: a travelogue}}  (2018),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1811.06670]{10.48550/arXiv.1811.06670}.
+
+\bibitem{Hahn2020}
+A.~Hahn and R.~Wolf,
+\newblock \emph{{Generalized string-net model for unitary fusion categories
+  without tetrahedral symmetry}},
+\newblock Phys. Rev. B \textbf{102}(11), 115154 (2020),
+\newblock \doi{10.1103/PhysRevB.102.115154},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2004.07045]{10.48550/arXiv.2004.07045}.
+
+\bibitem{Mueger2003}
+M.~Mueger,
+\newblock \emph{{On the Structure of Modular Categories}},
+\newblock Proceedings of the London Mathematical Society \textbf{87}(2),
+  291–308 (2003),
+\newblock \doi{10.1112/S0024611503014187}.
+
+\bibitem{Levin2013}
+M.~Levin,
+\newblock \emph{{Protected edge modes without symmetry}},
+\newblock Phys. Rev. X \textbf{3}(2), 021009 (2013),
+\newblock \doi{10.1103/PhysRevX.3.021009},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1301.7355]{10.48550/arXiv.1301.7355}.
+
+\bibitem{Kong2014}
+L.~Kong and X.-G. Wen,
+\newblock \emph{{Braided fusion categories, gravitational anomalies, and the
+  mathematical framework for topological orders in any dimensions}}  (2014),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1405.5858]{10.48550/arXiv.1405.5858}.
+
+\bibitem{Rowell2007}
+E.~Rowell, R.~Stong and Z.~Wang,
+\newblock \emph{{On Classification of Modular Tensor Categories}},
+\newblock Commun. Math. Phys. \textbf{292}(2), 343 (2009),
+\newblock \doi{10.1007/s00220-009-0908-z},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0712.1377]{10.48550/arXiv.0712.1377}.
+
+\bibitem{Levin2004}
+M.~A. Levin and X.-G. Wen,
+\newblock \emph{{String net condensation: A Physical mechanism for topological
+  phases}},
+\newblock Phys. Rev. B \textbf{71}, 045110 (2005),
+\newblock \doi{10.1103/PhysRevB.71.045110},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0404617]{10.48550/arXiv.cond-mat/0404617}.
+
+\bibitem{Kirillov2011}
+A.~Kirillov, Jr,
+\newblock \emph{{String-net model of Turaev-Viro invariants}}  (2011),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1106.6033]{10.48550/arXiv.1106.6033}.
+
+\bibitem{Nussinov2009}
+Z.~Nussinov and G.~Ortiz,
+\newblock \emph{{A symmetry principle for topological quantum order}},
+\newblock Annals Phys. \textbf{324}, 977 (2009),
+\newblock \doi{10.1016/j.aop.2008.11.002},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0702377]{10.48550/arXiv.cond-mat/0702377}.
+
+\bibitem{Gaiotto2014}
+D.~Gaiotto, A.~Kapustin, N.~Seiberg and B.~Willett,
+\newblock \emph{{Generalized Global Symmetries}},
+\newblock JHEP \textbf{02}, 172 (2015),
+\newblock \doi{10.1007/JHEP02(2015)172},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1412.5148]{10.48550/arXiv.1412.5148}.
+
+\bibitem{Mueger2001}
+M.~Mueger,
+\newblock \emph{{From subfactors to categories and topology II: The quantum
+  double of tensor categories and subfactors}},
+\newblock J. Pure Appl. Algebra \textbf{180}, 159 (2001),
+\newblock \doi{10.1016/S0022-4049(02)00248-7},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.math/0111205]{10.48550/arXiv.math/0111205}.
+
+\bibitem{Kitaev1997}
+A.~Y. Kitaev,
+\newblock \emph{{Fault tolerant quantum computation by anyons}},
+\newblock Annals Phys. \textbf{303}, 2 (2003),
+\newblock \doi{10.1016/S0003-4916(02)00018-0},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.quant-ph/9707021]{10.48550/arXiv.quant-ph/9707021}.
+
+\bibitem{Beigi2010}
+S.~Beigi, P.~W. Shor and D.~Whalen,
+\newblock \emph{{The Quantum Double Model with Boundary: Condensations and
+  Symmetries}},
+\newblock Commun. Math. Phys. \textbf{306}(3), 663 (2011),
+\newblock \doi{10.1007/s00220-011-1294-x},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1006.5479]{10.48550/arXiv.1006.5479}.
+
+\bibitem{Dauphinais2018}
+G.~Dauphinais, L.~Ortiz, S.~Varona and M.~A. Martin-Delgado,
+\newblock \emph{{Quantum Error Correction with the Semion Code}},
+\newblock New J. Phys. \textbf{21}(5), 053035 (2019),
+\newblock \doi{10.1088/1367-2630/ab1ed8},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1810.08204]{10.48550/arXiv.1810.08204}.
+
+\bibitem{Pfeifer2010}
+R.~N.~C. Pfeifer and G.~Vidal,
+\newblock \emph{{Translation invariance, topology, and protection of
+  criticality in chains of interacting anyons}},
+\newblock Phys. Rev. B \textbf{86}, 155111 (2012),
+\newblock \doi{10.1103/PhysRevB.86.155111},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1005.5486]{10.48550/arXiv.1005.5486}.
+
+\bibitem{Hu2015}
+Y.~Hu, N.~Geer and Y.-S. Wu,
+\newblock \emph{{Full dyon excitation spectrum in extended Levin-Wen models}},
+\newblock Phys. Rev. B \textbf{97}(19), 195154 (2018),
+\newblock \doi{10.1103/PhysRevB.97.195154},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1502.03433]{10.48550/arXiv.1502.03433}.
+
+\bibitem{Kitaev2011}
+A.~Kitaev and L.~Kong,
+\newblock \emph{{Models for Gapped Boundaries and Domain Walls}},
+\newblock Commun. Math. Phys. \textbf{313}(2), 351 (2012),
+\newblock \doi{10.1007/s00220-012-1500-5},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1104.5047]{10.48550/arXiv.1104.5047}.
+
+\bibitem{Kong2015}
+L.~Kong, X.-G. Wen and H.~Zheng,
+\newblock \emph{{Boundary-bulk relation for topological orders as the functor
+  mapping higher categories to their centers}}  (2015),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1502.01690]{10.48550/arXiv.1502.01690}.
+
+\bibitem{Lootens2020}
+L.~Lootens, J.~Fuchs, J.~Haegeman, C.~Schweigert and F.~Verstraete,
+\newblock \emph{{Matrix product operator symmetries and intertwiners in
+  string-nets with domain walls}},
+\newblock SciPost Phys. \textbf{10}(3), 053 (2021),
+\newblock \doi{10.21468/SciPostPhys.10.3.053},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2008.11187]{10.48550/arXiv.2008.11187}.
+
+\bibitem{Schaumann2012}
+G.~Schaumann,
+\newblock \emph{{Traces on module categories over fusion categories}},
+\newblock Journal of Algebra \textbf{379}, 382 (2013),
+\newblock \doi{10.1016/j.jalgebra.2013.01.013},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1206.5716]{10.48550/arXiv.1206.5716}.
+
+\bibitem{Greenough2010}
+J.~Greenough,
+\newblock \emph{Monoidal 2-structure of bimodule categories},
+\newblock Journal of Algebra \textbf{324}(8), 1818 (2010),
+\newblock \doi{https://doi.org/10.1016/j.jalgebra.2010.06.018}.
+
+\bibitem{Bridgeman2022}
+J.~C. Bridgeman, L.~Lootens and F.~Verstraete,
+\newblock \emph{{Invertible Bimodule Categories and Generalized Schur
+  Orthogonality}},
+\newblock Commun. Math. Phys. \textbf{402}(3), 2691 (2023),
+\newblock \doi{10.1007/s00220-023-04781-y},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2211.01947]{10.48550/arXiv.2211.01947}.
+
+\bibitem{Gu2009}
+Z.-C. Gu, M.~Levin, B.~Swingle and X.-G. Wen,
+\newblock \emph{{Tensor-product representations for string-net condensed
+  states}},
+\newblock Phys. Rev. B \textbf{79}(8), 085118 (2009),
+\newblock \doi{10.1103/PhysRevB.79.085118}.
+
+\bibitem{Buerschaper2009}
+O.~Buerschaper, M.~Aguado and G.~Vidal,
+\newblock \emph{{Explicit tensor network representation for the ground states
+  of string-net models}},
+\newblock Phys. Rev. B \textbf{79}(8), 085119 (2009),
+\newblock \doi{10.1103/PhysRevB.79.085119}.
+
+\bibitem{Williamson2017}
+D.~J. Williamson, N.~Bultinck and F.~Verstraete,
+\newblock \emph{{Symmetry-enriched topological order in tensor networks:
+  Defects, gauging and anyon condensation}}  (2017),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1711.07982]{10.48550/arXiv.1711.07982}.
+
+\bibitem{Sahinoglu2014}
+M.~B. {\c{S}}ahino{\u{g}}lu, D.~Williamson, N.~Bultinck, M.~Mari{\"e}n,
+  J.~Haegeman, N.~Schuch and F.~Verstraete,
+\newblock \emph{{Characterizing Topological Order with Matrix Product
+  Operators}},
+\newblock Annales Henri Poincare \textbf{22}(2), 563 (2021),
+\newblock \doi{10.1007/s00023-020-00992-4},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1409.2150]{10.48550/arXiv.1409.2150}.
+
+\bibitem{Bultinck2015}
+N.~Bultinck, M.~Mari{\"e}n, D.~J. Williamson, M.~B. {\c{S}}ahino{\u{g}}lu,
+  J.~Haegeman and F.~Verstraete,
+\newblock \emph{{Anyons and matrix product operator algebras}},
+\newblock Annals Phys. \textbf{378}, 183 (2017),
+\newblock \doi{10.1016/j.aop.2017.01.004},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1511.08090]{10.48550/arXiv.1511.08090}.
+
+\bibitem{Brehm2021}
+E.~M. Brehm and I.~Runkel,
+\newblock \emph{{Lattice models from CFT on surfaces with holes: I. Torus
+  partition function via two lattice cells}},
+\newblock J. Phys. A \textbf{55}(23), 235001 (2022),
+\newblock \doi{10.1088/1751-8121/ac6a91},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2112.01563]{10.48550/arXiv.2112.01563}.
+
+\bibitem{Brehm2024}
+E.~M. Brehm and I.~Runkel,
+\newblock \emph{{Lattice models from CFT on surfaces with holes II: Cloaking
+  boundary conditions and loop models}}  (2024),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2410.19938]{10.48550/arXiv.2410.19938}.
+
+\bibitem{Bloomquist2018}
+W.~Bloomquist and Z.~Wang,
+\newblock \emph{{On topological quantum computing with mapping class group
+  representations}},
+\newblock J. Phys. A \textbf{52}(1), 015301 (2019),
+\newblock \doi{10.1088/1751-8121/aaeea1},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1805.04622]{10.48550/arXiv.1805.04622}.
+
+\bibitem{Kong2012}
+L.~Kong,
+\newblock \emph{{Some universal properties of Levin-Wen models}}  (2012),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1211.4644]{10.48550/arXiv.1211.4644}.
+
+\bibitem{Ocneanu1993}
+A.~Ocneanu,
+\newblock \emph{Chirality for operator algebras},
+\newblock In \emph{Taniguchi Symposium on Operator Algebras} (1993).
+
+\bibitem{Izumi2000}
+M.~Izumi,
+\newblock \emph{{The structure of sectors associated with Longo-Rehren
+  inclusions. I: General theory}},
+\newblock Commun. Math. Phys. \textbf{213}, 127 (2000),
+\newblock \doi{10.1007/s002200000234}.
+
+\bibitem{Mueger2002}
+M.~Mueger,
+\newblock \emph{{From Subfactors to Categories and Topology I. Frobenius
+  algebras in and Morita equivalence of tensor categories}},
+\newblock Journal of Pure and Applied Algebra  (2002),
+\newblock \doi{10.1016/S0022-4049(02)00247-5},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.math/0111204]{10.48550/arXiv.math/0111204}.
+
+\bibitem{Bullivant2019}
+A.~Bullivant and C.~Delcamp,
+\newblock \emph{{Tube algebras, excitations statistics and compactification in
+  gauge models of topological phases}},
+\newblock JHEP \textbf{10}, 216 (2019),
+\newblock \doi{10.1007/JHEP10(2019)216},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1905.08673]{10.48550/arXiv.1905.08673}.
+
+\bibitem{Lan2013}
+T.~Lan and X.-G. Wen,
+\newblock \emph{{Topological quasiparticles and the holographic bulk-edge
+  relation in (2+1) -dimensional string-net models}},
+\newblock Phys. Rev. B \textbf{90}(11), 115119 (2014),
+\newblock \doi{10.1103/PhysRevB.90.115119},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1311.1784]{10.48550/arXiv.1311.1784}.
+
+\bibitem{Lootens2021a}
+L.~Lootens, B.~Vancraeynest-De~Cuiper, N.~Schuch and F.~Verstraete,
+\newblock \emph{{Mapping between Morita-equivalent string-net states with a
+  constant depth quantum circuit}},
+\newblock Phys. Rev. B \textbf{105}(8), 085130 (2022),
+\newblock \doi{10.1103/PhysRevB.105.085130},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2112.12757]{10.48550/arXiv.2112.12757}.
+
+\bibitem{Lootens2022}
+L.~Lootens, C.~Delcamp and F.~Verstraete,
+\newblock \emph{{Dualities in One-Dimensional Quantum Lattice Models:
+  Topological Sectors}},
+\newblock PRX Quantum \textbf{5}(1), 010338 (2024),
+\newblock \doi{10.1103/PRXQuantum.5.010338},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2211.03777]{10.48550/arXiv.2211.03777}.
+
+\bibitem{Dijkgraaf1989}
+R.~Dijkgraaf and E.~Witten,
+\newblock \emph{{Topological Gauge Theories and Group Cohomology}},
+\newblock Commun. Math. Phys. \textbf{129}, 393 (1990),
+\newblock \doi{10.1007/BF02096988}.
+
+\bibitem{Wakui1992}
+M.~Wakui,
+\newblock \emph{On dijkgraaf-witten invariant for 3-manifolds},
+\newblock Osaka Journal of Mathematics \textbf{29}(4), 675  (1992).
+
+\bibitem{Apruzzi2021}
+F.~Apruzzi, F.~Bonetti, I.~Garc{\'\i}a~Etxebarria, S.~S. Hosseini and
+  S.~Schafer-Nameki,
+\newblock \emph{{Symmetry TFTs from String Theory}},
+\newblock Commun. Math. Phys. \textbf{402}(1), 895 (2023),
+\newblock \doi{10.1007/s00220-023-04737-2},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2112.02092]{10.48550/arXiv.2112.02092}.
+
+\bibitem{Kaidi2022}
+J.~Kaidi, K.~Ohmori and Y.~Zheng,
+\newblock \emph{{Symmetry TFTs for Non-invertible Defects}},
+\newblock Commun. Math. Phys. \textbf{404}(2), 1021 (2023),
+\newblock \doi{10.1007/s00220-023-04859-7},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2209.11062]{10.48550/arXiv.2209.11062}.
+
+\bibitem{Kaidi2023}
+J.~Kaidi, E.~Nardoni, G.~Zafrir and Y.~Zheng,
+\newblock \emph{{Symmetry TFTs and anomalies of non-invertible symmetries}},
+\newblock JHEP \textbf{10}, 053 (2023),
+\newblock \doi{10.1007/JHEP10(2023)053},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2301.07112]{10.48550/arXiv.2301.07112}.
+
+\bibitem{Chatterjee2022b}
+A.~Chatterjee and X.-G. Wen,
+\newblock \emph{{Symmetry as a shadow of topological order and a derivation of
+  topological holographic principle}},
+\newblock Phys. Rev. B \textbf{107}(15), 155136 (2023),
+\newblock \doi{10.1103/PhysRevB.107.155136},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2203.03596]{10.48550/arXiv.2203.03596}.
+
+\bibitem{Ji2019}
+W.~Ji and X.-G. Wen,
+\newblock \emph{{Categorical symmetry and noninvertible anomaly in
+  symmetry-breaking and topological phase transitions}},
+\newblock Phys. Rev. Res. \textbf{2}(3), 033417 (2020),
+\newblock \doi{10.1103/PhysRevResearch.2.033417},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1912.13492]{10.48550/arXiv.1912.13492}.
+
+\bibitem{Ji2021}
+W.~Ji and X.-G. Wen,
+\newblock \emph{{A unified view on symmetry, anomalous symmetry and
+  non-invertible gravitational anomaly}}  (2021),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2106.02069]{10.48550/arXiv.2106.02069}.
+
+\bibitem{You2013}
+Y.-Z. You, Z.~Bi, A.~Rasmussen, K.~Slagle and C.~Xu,
+\newblock \emph{{Wave Function and Strange Correlator of Short Range Entangled
+  states}},
+\newblock Phys. Rev. Lett. \textbf{112}(24), 247202 (2014),
+\newblock \doi{10.1103/PhysRevLett.112.247202},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1312.0626]{10.48550/arXiv.1312.0626}.
+
+\bibitem{Vanhove2018}
+R.~Vanhove, M.~Bal, D.~J. Williamson, N.~Bultinck, J.~Haegeman and
+  F.~Verstraete,
+\newblock \emph{{Mapping topological to conformal field theories through
+  strange correlators}},
+\newblock Phys. Rev. Lett. \textbf{121}(17), 177203 (2018),
+\newblock \doi{10.1103/PhysRevLett.121.177203},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1801.05959]{10.48550/arXiv.1801.05959}.
+
+\bibitem{Delcamp2024}
+C.~Delcamp and N.~Ishtiaque,
+\newblock \emph{{Symmetry topological field theory and non-abelian
+  Kramers-Wannier dualities of generalised Ising models}},
+\newblock Annales Henri Poincare  (2024),
+\newblock \doi{10.1007/s00023-025-01591-x},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2408.06074]{10.48550/arXiv.2408.06074}.
+
+\bibitem{Singh2009}
+S.~Singh, R.~N.~C. Pfeifer and G.~Vidal,
+\newblock \emph{{Tensor network decompositions in the presence of a global
+  symmetry}},
+\newblock Phys. Rev. A \textbf{82}, 050301 (2010),
+\newblock \doi{10.1103/PhysRevA.82.050301},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0907.2994]{10.48550/arXiv.0907.2994}.
+
+\bibitem{Devos2025}
+L.~Devos and J.~Haegeman,
+\newblock \emph{{TensorKit.jl: A Julia package for large-scale tensor
+  computations, with a hint of category theory}}  (2025),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2508.10076]{10.48550/arXiv.2508.10076}.
+
+\bibitem{Fendley2020}
+P.~Fendley,
+\newblock \emph{{Integrability and braided tensor categories}},
+\newblock J. Statist. Phys. \textbf{182}, 43 (2021),
+\newblock \doi{10.1007/s10955-021-02712-6},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2008.02292]{10.48550/arXiv.2008.02292}.
+
+\bibitem{Freed2022}
+D.~S. Freed, G.~W. Moore and C.~Teleman,
+\newblock \emph{{Topological symmetry in quantum field theory}}  (2022),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2209.07471]{10.48550/arXiv.2209.07471}.
+
+\bibitem{Feiguin2006}
+A.~Feiguin, S.~Trebst, A.~W.~W. Ludwig, M.~Troyer, A.~Kitaev, Z.~Wang and M.~H.
+  Freedman,
+\newblock \emph{{Interacting anyons in topological quantum liquids: The golden
+  chain}},
+\newblock Phys. Rev. Lett. \textbf{98}, 160409 (2007),
+\newblock \doi{10.1103/PhysRevLett.98.160409},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.cond-mat/0612341]{10.48550/arXiv.cond-mat/0612341}.
+
+\bibitem{Eckart1930}
+C.~Eckart,
+\newblock \emph{{The Application of Group Theory to the Quantum Dynamics of
+  Monatomic Systems}},
+\newblock Rev. Mod. Phys. \textbf{2}, 305 (1930),
+\newblock \doi{10.1103/RevModPhys.2.305}.
+
+\bibitem{Wigner1960}
+E.~P. Wigner,
+\newblock \emph{{Group Theory and Its Application to the Quantum Mechanics of
+  Atomic Spectra}},
+\newblock American Journal of Physics \textbf{28}(4), 408 (1960),
+\newblock \doi{10.1119/1.1935822}.
+
+\bibitem{Lootens2021b}
+L.~Lootens, C.~Delcamp, G.~Ortiz and F.~Verstraete,
+\newblock \emph{{Dualities in One-Dimensional Quantum Lattice Models: Symmetric
+  Hamiltonians and Matrix Product Operator Intertwiners}},
+\newblock PRX Quantum \textbf{4}(2), 020357 (2023),
+\newblock \doi{10.1103/PRXQuantum.4.020357},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2112.09091]{10.48550/arXiv.2112.09091}.
+
+\bibitem{Cobanera2009}
+E.~Cobanera, G.~Ortiz and Z.~Nussinov,
+\newblock \emph{{Unified approach to Quantum and Classical Dualities}},
+\newblock Phys. Rev. Lett. \textbf{104}, 020402 (2010),
+\newblock \doi{10.1103/PhysRevLett.104.020402},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0907.0733]{10.48550/arXiv.0907.0733}.
+
+\bibitem{Cobanera2011}
+E.~Cobanera, G.~Ortiz and Z.~Nussinov,
+\newblock \emph{{The Bond-Algebraic Approach to Dualities}},
+\newblock Adv. Phys. \textbf{60}, 679 (2011),
+\newblock \doi{10.1080/00018732.2011.619814},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1103.2776]{10.48550/arXiv.1103.2776}.
+
+\bibitem{Moradi2022}
+H.~Moradi, S.~F. Moosavian and A.~Tiwari,
+\newblock \emph{{Topological holography: Towards a unification of Landau and
+  beyond-Landau physics}},
+\newblock SciPost Phys. Core \textbf{6}, 066 (2023),
+\newblock \doi{10.21468/SciPostPhysCore.6.4.066},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2207.10712]{10.48550/arXiv.2207.10712}.
+
+\bibitem{Moradi2023}
+H.~Moradi, {\"O}.~M. Aksoy, J.~H. Bardarson and A.~Tiwari,
+\newblock \emph{{Symmetry fractionalization, mixed-anomalies and dualities in
+  quantum spin models with generalized symmetries}}  (2023),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2307.01266]{10.48550/arXiv.2307.01266}.
+
+\bibitem{Jones2024}
+C.~Jones, K.~Schatz and D.~J. Williamson,
+\newblock \emph{{Quantum cellular automata and categorical dualities of spin
+  chains}}  (2024),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2410.08884]{10.48550/arXiv.2410.08884}.
+
+\bibitem{Kramers1941}
+H.~A. Kramers and G.~H. Wannier,
+\newblock \emph{{Statistics of the two-dimensional ferromagnet. Part 1.}},
+\newblock Phys. Rev. \textbf{60}, 252 (1941),
+\newblock \doi{10.1103/PhysRev.60.252}.
+
+\bibitem{Kennedy1992}
+T.~Kennedy and H.~Tasaki,
+\newblock \emph{{Hidden Z2\texttimes{}Z2 symmetry breaking in Haldane-gap
+  antiferromagnets}},
+\newblock Phys. Rev. B \textbf{45}(1), 304 (1992),
+\newblock \doi{10.1103/PhysRevB.45.304}.
+
+\bibitem{Seifnashri2024}
+S.~Seifnashri and S.-H. Shao,
+\newblock \emph{{Cluster State as a Noninvertible Symmetry-Protected
+  Topological Phase}},
+\newblock Phys. Rev. Lett. \textbf{133}(11), 116601 (2024),
+\newblock \doi{10.1103/PhysRevLett.133.116601},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2404.01369]{10.48550/arXiv.2404.01369}.
+
+\bibitem{Pace2024}
+S.~D. Pace, A.~Chatterjee and S.-H. Shao,
+\newblock \emph{{Lattice T-duality from non-invertible symmetries in quantum
+  spin chains}},
+\newblock SciPost Phys. \textbf{18}(4), 121 (2025),
+\newblock \doi{10.21468/SciPostPhys.18.4.121},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2412.18606]{10.48550/arXiv.2412.18606}.
+
+\bibitem{Chatterjee2024}
+A.~Chatterjee, {\"O}.~M. Aksoy and X.-G. Wen,
+\newblock \emph{{Quantum phases and transitions in spin chains with
+  non-invertible symmetries}},
+\newblock SciPost Phys. \textbf{17}(4), 115 (2024),
+\newblock \doi{10.21468/SciPostPhys.17.4.115},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2405.05331]{10.48550/arXiv.2405.05331}.
+
+\bibitem{Chavda2026}
+A.~Chavda, C.~Delcamp, A.~Turzillo and M.~You,
+\newblock \emph{{Algebras of order parameters in one-dimensional spin systems}}
+   (2026),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2605.27193]{10.48550/arXiv.2605.27193}.
+
+\bibitem{Fechisin2023}
+C.~Fechisin, N.~Tantivasadakarn and V.~V. Albert,
+\newblock \emph{{Noninvertible Symmetry-Protected Topological Order in a
+  Group-Based Cluster State}},
+\newblock Phys. Rev. X \textbf{15}(1), 011058 (2025),
+\newblock \doi{10.1103/PhysRevX.15.011058},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2312.09272]{10.48550/arXiv.2312.09272}.
+
+\bibitem{Inamura2024}
+K.~Inamura and S.~Ohyama,
+\newblock \emph{{1+1d SPT phases with fusion category symmetry: interface modes
+  and non-abelian Thouless pump}}  (2024),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2408.15960]{10.48550/arXiv.2408.15960}.
+
+\bibitem{Meng2024}
+C.~Meng, X.~Yang, T.~Lan and Z.~Gu,
+\newblock \emph{{Non-invertible SPTs: an on-site realization of (1+1)d
+  anomaly-free fusion category symmetry}}  (2024),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2412.20546]{10.48550/arXiv.2412.20546}.
+
+\bibitem{Seifnashri2025}
+S.~Seifnashri, S.-H. Shao and X.~Yang,
+\newblock \emph{{Gauging non-invertible symmetries on the lattice}},
+\newblock SciPost Phys. \textbf{19}(2), 063 (2025),
+\newblock \doi{10.21468/SciPostPhys.19.2.063},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2503.02925]{10.48550/arXiv.2503.02925}.
+
+\bibitem{Bhardwaj2017}
+L.~Bhardwaj and Y.~Tachikawa,
+\newblock \emph{{On finite symmetries and their gauging in two dimensions}},
+\newblock JHEP \textbf{03}, 189 (2018),
+\newblock \doi{10.1007/JHEP03(2018)189},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1704.02330]{10.48550/arXiv.1704.02330}.
+
+\bibitem{BenTov2014}
+Y.~BenTov,
+\newblock \emph{{Fermion masses without symmetry breaking in two spacetime
+  dimensions}},
+\newblock JHEP \textbf{07}, 034 (2015),
+\newblock \doi{10.1007/JHEP07(2015)034},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1412.0154]{10.48550/arXiv.1412.0154}.
+
+\bibitem{Radicevic2018}
+D.~Radicevic,
+\newblock \emph{{Spin Structures and Exact Dualities in Low Dimensions}}
+  (2018),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1809.07757]{10.48550/arXiv.1809.07757}.
+
+\bibitem{Lootens2023}
+L.~Lootens, C.~Delcamp, D.~Williamson and F.~Verstraete,
+\newblock \emph{{Low-Depth Unitary Quantum Circuits for Dualities in
+  One-Dimensional Quantum Lattice Models}},
+\newblock Phys. Rev. Lett. \textbf{134}(13), 130403 (2025),
+\newblock \doi{10.1103/PhysRevLett.134.130403},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2311.01439]{10.48550/arXiv.2311.01439}.
+
+\bibitem{Seiberg2024}
+N.~Seiberg, S.~Seifnashri and S.-H. Shao,
+\newblock \emph{{Non-invertible symmetries and LSM-type constraints on a tensor
+  product Hilbert space}},
+\newblock SciPost Phys. \textbf{16}, 154 (2024),
+\newblock \doi{10.21468/SciPostPhys.16.6.154},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2401.12281]{10.48550/arXiv.2401.12281}.
+
+\bibitem{Neshveyev2018}
+S.~Neshveyev and M.~Yamashita,
+\newblock \emph{A few remarks on the tube algebra of a monoidal category},
+\newblock Proceedings of the Edinburgh Mathematical Society \textbf{61}(3),
+  735–758 (2018),
+\newblock \doi{10.1017/S0013091517000426}.
+
+\bibitem{Wegner1971}
+F.~J. Wegner,
+\newblock \emph{{Duality in Generalized Ising Models and Phase Transitions
+  Without Local Order Parameters}},
+\newblock J. Math. Phys. \textbf{12}, 2259 (1971),
+\newblock \doi{10.1063/1.1665530}.
+
+\bibitem{Haegeman2014a}
+J.~Haegeman, K.~Van~Acoleyen, N.~Schuch, J.~I. Cirac and F.~Verstraete,
+\newblock \emph{{Gauging quantum states: from global to local symmetries in
+  many-body systems}},
+\newblock Phys. Rev. X \textbf{5}(1), 011024 (2015),
+\newblock \doi{10.1103/PhysRevX.5.011024},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1407.1025]{10.48550/arXiv.1407.1025}.
+
+\bibitem{Douglas2018}
+C.~L. Douglas and D.~J. Reutter,
+\newblock \emph{{Fusion 2-categories and a state-sum invariant for
+  4-manifolds}}  (2018),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1812.11933]{10.48550/arXiv.1812.11933}.
+
+\bibitem{Delcamp2023}
+C.~Delcamp and A.~Tiwari,
+\newblock \emph{{Higher categorical symmetries and gauging in two-dimensional
+  spin systems}},
+\newblock SciPost Phys. \textbf{16}(4), 110 (2024),
+\newblock \doi{10.21468/SciPostPhys.16.4.110},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2301.01259]{10.48550/arXiv.2301.01259}.
+
+\bibitem{Decoppet2024}
+T.~D. D{\'e}coppet, P.~Huston, T.~Johnson-Freyd, D.~Nikshych, D.~Penneys,
+  J.~Plavnik, D.~Reutter and M.~Yu,
+\newblock \emph{{The Classification of Fusion 2-Categories}}  (2024),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2411.05907]{10.48550/arXiv.2411.05907}.
+
+\bibitem{Wilson1974}
+K.~G. Wilson,
+\newblock \emph{{Confinement of Quarks}},
+\newblock Phys. Rev. D \textbf{10}, 2445 (1974),
+\newblock \doi{10.1103/PhysRevD.10.2445}.
+
+\bibitem{Kogut1979}
+J.~B. Kogut,
+\newblock \emph{{An Introduction to Lattice Gauge Theory and Spin Systems}},
+\newblock Rev. Mod. Phys. \textbf{51}, 659 (1979),
+\newblock \doi{10.1103/RevModPhys.51.659}.
+
+\bibitem{Kogut1982}
+J.~B. Kogut,
+\newblock \emph{{A Review of the Lattice Gauge Theory Approach to Quantum
+  Chromodynamics}},
+\newblock Rev. Mod. Phys. \textbf{55}, 775 (1983),
+\newblock \doi{10.1103/RevModPhys.55.775}.
+
+\bibitem{Gaiotto2019}
+D.~Gaiotto and T.~Johnson-Freyd,
+\newblock \emph{{Condensations in higher categories}}  (2019),
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1905.09566]{10.48550/arXiv.1905.09566}.
+
+\bibitem{JohnsonFreyd2020}
+T.~Johnson-Freyd and M.~Yu,
+\newblock \emph{{Fusion 2-categories With no Line Operators are Grouplike}},
+\newblock Bull. Austral. Math. Soc. \textbf{104}(3), 434 (2021),
+\newblock \doi{10.1017/S0004972721000095},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2010.07950]{10.48550/arXiv.2010.07950}.
+
+\bibitem{Choi2022}
+Y.~Choi, C.~Cordova, P.-S. Hsin, H.~T. Lam and S.-H. Shao,
+\newblock \emph{{Non-invertible Condensation, Duality, and Triality Defects in
+  3+1 Dimensions}},
+\newblock Commun. Math. Phys. \textbf{402}(1), 489 (2023),
+\newblock \doi{10.1007/s00220-023-04727-4},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2204.09025]{10.48550/arXiv.2204.09025}.
+
+\bibitem{Choi2024}
+Y.~Choi, Y.~Sanghavi, S.-H. Shao and Y.~Zheng,
+\newblock \emph{{Non-invertible and higher-form symmetries in 2+1d lattice
+  gauge theories}},
+\newblock SciPost Phys. \textbf{18}(1), 008 (2025),
+\newblock \doi{10.21468/SciPostPhys.18.1.008},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2405.13105]{10.48550/arXiv.2405.13105}.
+
+\bibitem{Delcamp2021}
+C.~Delcamp,
+\newblock \emph{{Tensor network approach to electromagnetic duality in (3+1)d
+  topological gauge models}},
+\newblock JHEP \textbf{08}, 149 (2022),
+\newblock \doi{10.1007/JHEP08(2022)149},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2112.08324]{10.48550/arXiv.2112.08324}.
+
+\bibitem{Lin2022}
+L.~Lin, D.~G. Robbins and E.~Sharpe,
+\newblock \emph{{Decomposition, Condensation Defects, and Fusion}},
+\newblock Fortsch. Phys. \textbf{70}(11), 2200130 (2022),
+\newblock \doi{10.1002/prop.202200130},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2208.05982]{10.48550/arXiv.2208.05982}.
+
+\bibitem{Roumpedakis2022}
+K.~Roumpedakis, S.~Seifnashri and S.-H. Shao,
+\newblock \emph{{Higher Gauging and Non-invertible Condensation Defects}},
+\newblock Commun. Math. Phys. \textbf{401}(3), 3043 (2023),
+\newblock \doi{10.1007/s00220-023-04706-9},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2204.02407]{10.48550/arXiv.2204.02407}.
+
+\bibitem{Davydov2010}
+A.~Davydov,
+\newblock \emph{Centre of an algebra},
+\newblock Advances in Mathematics \textbf{225}(1), 319 (2010),
+\newblock \doi{https://doi.org/10.1016/j.aim.2010.02.018}.
+
+\bibitem{Fuchs2002}
+J.~Fuchs, I.~Runkel and C.~Schweigert,
+\newblock \emph{{TFT construction of RCFT correlators 1. Partition functions}},
+\newblock Nucl. Phys. B \textbf{646}, 353 (2002),
+\newblock \doi{10.1016/S0550-3213(02)00744-7},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.hep-th/0204148]{10.48550/arXiv.hep-th/0204148}.
+
+\bibitem{Vancraeynest2025b}
+B.~Vancraeynest-De~Cuiper, J.~Garre-Rubio, F.~Verstraete, K.~Vervoort, D.~J.
+  Williamson and L.~Lootens,
+\newblock \emph{{From gauging to duality in one-dimensional quantum lattice
+  models}},
+\newblock SciPost Phys. \textbf{20}(4), 113 (2026),
+\newblock \doi{10.21468/SciPostPhys.20.4.113},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2509.22051]{10.48550/arXiv.2509.22051}.
+
+\bibitem{Vancraeynest2025a}
+B.~Vancraeynest-De~Cuiper and C.~Delcamp,
+\newblock \emph{{Twisted gauging and topological sectors in (2+1)d Abelian
+  lattice gauge theories}},
+\newblock SciPost Phys. \textbf{19}(2), 054 (2025),
+\newblock \doi{10.21468/SciPostPhys.19.2.054},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2501.16301]{10.48550/arXiv.2501.16301}.
+
+\bibitem{Decoppet2023b}
+T.~D. D{\'e}coppet,
+\newblock \emph{{The Morita theory of fusion 2-categories.}},
+\newblock High. Struct. \textbf{7}(1), 234 (2023),
+\newblock \doi{10.4171/QT/224},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2311.16827]{10.48550/arXiv.2311.16827}.
+
+\bibitem{Buerschaper2009b}
+O.~Buerschaper and M.~Aguado,
+\newblock \emph{{Mapping Kitaev{\textquoteright}s quantum double lattice models
+  to Levin and Wen{\textquoteright}s string-net models}},
+\newblock Phys. Rev. B \textbf{80}(15), 155136 (2009),
+\newblock \doi{10.1103/PhysRevB.80.155136},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0907.2670]{10.48550/arXiv.0907.2670}.
+
+\bibitem{Kadar2009}
+Z.~Kadar, A.~Marzuoli and M.~Rasetti,
+\newblock \emph{{Microscopic description of 2d topological phases, duality and
+  3d state sums}},
+\newblock Adv. Math. Phys. \textbf{2010}, 671039 (2010),
+\newblock \doi{10.1155/2010/671039},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.0907.3724]{10.48550/arXiv.0907.3724}.
+
+\bibitem{GarreRubio2024}
+J.~G. Rubio,
+\newblock \emph{{Emergent (2+1)D topological orders from iterative (1+1)D
+  gauging}},
+\newblock Nature Commun. \textbf{15}(1), 7986 (2024),
+\newblock \doi{10.1038/s41467-024-52320-7},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2403.07575]{10.48550/arXiv.2403.07575}.
+
+\bibitem{Williamson2016b}
+D.~J. Williamson,
+\newblock \emph{{Fractal symmetries: Ungauging the cubic code}},
+\newblock Phys. Rev. B \textbf{94}, 155128 (2016),
+\newblock \doi{10.1103/PhysRevB.94.155128},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1603.05182]{10.48550/arXiv.1603.05182}.
+
+\bibitem{Decoppet2023}
+T.~D. D{\'e}coppet and M.~Yu,
+\newblock \emph{{Fiber 2-Functors and Tambara{\textendash}Yamagami Fusion
+  2-Categories}},
+\newblock Commun. Math. Phys. \textbf{406}(3), 64 (2025),
+\newblock \doi{10.1007/s00220-025-05249-x},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2306.08117]{10.48550/arXiv.2306.08117}.
+
+\bibitem{Levin2012}
+M.~Levin and Z.-C. Gu,
+\newblock \emph{{Braiding statistics approach to symmetry-protected topological
+  phases}},
+\newblock Phys. Rev. B \textbf{86}, 115109 (2012),
+\newblock \doi{10.1103/PhysRevB.86.115109},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.1202.3120]{10.48550/arXiv.1202.3120}.
+
+\bibitem{Choi2023}
+Y.~Choi, B.~C. Rayhaun, Y.~Sanghavi and S.-H. Shao,
+\newblock \emph{{Remarks on boundaries, anomalies, and noninvertible
+  symmetries}},
+\newblock Phys. Rev. D \textbf{108}(12), 125005 (2023),
+\newblock \doi{10.1103/PhysRevD.108.125005},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2305.09713]{10.48550/arXiv.2305.09713}.
+
+\bibitem{Bullivant2020}
+A.~Bullivant and C.~Delcamp,
+\newblock \emph{{Gapped boundaries and string-like excitations in (3+1)d gauge
+  models of topological phases}},
+\newblock JHEP \textbf{07}, 025 (2021),
+\newblock \doi{10.1007/JHEP07(2021)025},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2006.06536]{10.48550/arXiv.2006.06536}.
+
+\bibitem{Bullivant2021}
+A.~Bullivant and C.~Delcamp,
+\newblock \emph{{Crossing with the circle in Dijkgraaf{\textendash}Witten
+  theory and applications to topological phases of matter}},
+\newblock J. Math. Phys. \textbf{63}(8), 081901 (2022),
+\newblock \doi{10.1063/5.0061214},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2103.12717]{10.48550/arXiv.2103.12717}.
+
+\bibitem{Huang2021}
+T.-C. Huang, Y.-H. Lin, K.~Ohmori, Y.~Tachikawa and M.~Tezuka,
+\newblock \emph{{Numerical Evidence for a Haagerup Conformal Field Theory}},
+\newblock Phys. Rev. Lett. \textbf{128}(23), 231603 (2022),
+\newblock \doi{10.1103/PhysRevLett.128.231603},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2110.03008]{10.48550/arXiv.2110.03008}.
+
+\bibitem{Vanhove2021b}
+R.~Vanhove, L.~Lootens, M.~Van~Damme, R.~Wolf, T.~J. Osborne, J.~Haegeman and
+  F.~Verstraete,
+\newblock \emph{{Critical Lattice Model for a Haagerup Conformal Field
+  Theory}},
+\newblock Phys. Rev. Lett. \textbf{128}(23), 231602 (2022),
+\newblock \doi{10.1103/PhysRevLett.128.231602},
+\newblock
+  \eprint[https://doi.org/10.48550/arXiv.2110.03532]{10.48550/arXiv.2110.03532}.
+
+\end{thebibliography}

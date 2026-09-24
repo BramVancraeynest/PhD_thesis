@@ -1,0 +1,27 @@
+\begin{tikzpicture}[baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{.9};
+	\def\h{.65};
+	
+	\draw[obj1] (.5*\l,0) -- (.5*\l,\h);
+	
+	
+	\node(int1) at (.18*\l,1.62*\h) {};
+	\node(int2) at (.82*\l,1.62*\h) {};
+	
+	\clipAroundNode{int1}{
+			\draw[obj1] (.5*\l,\h) -- (0,2*\h);
+	}
+	\clipAroundNode{int2}{
+		\draw[obj1] (.5*\l,\h) -- (\l,2*\h);
+	}
+	
+	\node[mor, circle, inner sep=3.3pt] at (.5*\l,\h) {};
+	\node at (.5*\l,\h) {$\sss i$};
+	
+	\node[above] at (0,2*\h) {$\sss Y_1$};
+	\node[above] at (\l,2*\h) {$\sss Y_2$};
+	
+	\node[below] at (\l/2,0) {$\sss Y_3$};
+	
+	\draw[obj2, wiggly] (\l,1.4*\h) arc (30:150:.57*\l);
+\end{tikzpicture}

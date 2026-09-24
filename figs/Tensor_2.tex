@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x={(1,0)},z={(.5,.5)},baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{1.};
+	\def\h{.8};
+	
+	\draw[obj1] (-.5*\l,0,0) -- (.5*\l,0,0);
+	\draw[obj1] (0,-.5*\l,0) -- (0,.5*\l,0);
+	
+	\draw[obj1] (0,0,0) -- (0,0,\h);
+	\node[mpstensor, inner sep=4pt] at (0,0,0) {};
+	
+	\node at (0,0,0) {$\sss A$};
+	
+	\node[xshift=6pt, yshift=6pt] at (0,0,\h) {$\sss i$};
+	\node[anchor=east] at (-.5*\l,0,0) {$\sss j$};
+	\node[anchor=south] at (0,.5*\l,0) {$\sss m$};
+	\node[anchor=west] at (.5*\l,0,0) {$\sss l$};
+	\node[anchor=north] at (0,-.5*\l,0) {$\sss k$};
+\end{tikzpicture}

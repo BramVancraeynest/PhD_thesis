@@ -1,0 +1,17 @@
+\begin{tikzpicture}[baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{.6};
+	\def\h{.75};
+	
+	\draw[obj2, wiggly] (0,0) -- (2*\l, 2*\h);	
+	
+	\node(int) at (\l,\h) {};
+	
+	\clipAroundNode{int}{
+		\draw[obj2] (2*\l,0) -- (0, 2*\h);
+	}
+	
+	\node[anchor=north] at (0,0) {$\sss Z$};
+	\node[anchor=north] at (2*\l,0) {$\sss X_1$};
+	\node[anchor=south] at (2*\l,2*\h) {$\sss Z$};
+	\node[anchor=south] at (0,2*\h) {$\sss X_1$};
+\end{tikzpicture}

@@ -1,0 +1,17 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{1.6};
+	\def\h{.65};
+	
+	\draw[obj2, dotted] (-1/2*\l,0) -- (2.5*\l,0);
+	
+	\foreach \x in {0,1,2}{
+		\draw[obj1] (\x*\l,\h) -- (\x*\l,-\h);
+		\node[mpotensor] at (\x*\l,0) {};
+		
+	}
+	\node[above] at (1.5*\l,0) {${\sss g}$};
+	
+	\node[anchor=east] at (0,-2/3*\h) {$\sss u_{\msf i-1}$};
+	\node[anchor=east] at (\l,-2/3*\h) {$\sss u_\msf i$};
+	\node[anchor=east] at (2*\l,-2/3*\h) {$\sss u_{\msf i+1}$};
+\end{tikzpicture}

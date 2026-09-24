@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=.8, baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{.7}
+	\def\d{.3};
+	
+	\node[] (n) at (\d,-\d) {};
+	
+	\draw[obj1] (-\d,-\d) -- (\d,\d);
+	\clipAroundNode{n}{
+		\draw[obj1] (\d,-\l) -- (\d,\l);
+	}
+	\draw[obj1] (-\l,-\d) -- (\l,-\d);
+	
+	\node[fusiontensor, inner sep=2.55pt] at (\d,\d) {};
+	\node[fusiontensor, inner sep=2.55pt] at (-\d,-\d) {};
+	\node at (-\d,-\d) {$+$};
+\end{tikzpicture}

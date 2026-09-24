@@ -1,0 +1,23 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{1.2};
+	\def\dx{.25};
+	\def\dy{.25};
+	
+	\draw[obj2] (-\l,\dy) -- (-\dx,\dy) -- (\dx,-\dy) -- (\l,-\dy);
+	\draw[obj2] (-\dx,\l) -- (-\dx,\dy);
+	\draw[obj2] (\dx,-\l) -- (\dx,-\dy);
+	
+	\fill[surf, rounded corners=0pt] (-\l,-\l) rectangle (\l,\l);
+	
+	\draw[surf, rounded corners=0pt, ->tt-=.51] (-\l,-\l) -- (\l,-\l);
+	\draw[surf, rounded corners=0pt, ->tt-=.51] (-\l,\l) -- (\l,\l);
+	
+	\draw[surf, rounded corners=0pt, ->t-=.51] (-\l,-\l) -- (-\l,\l);
+	\draw[surf, rounded corners=0pt, ->t-=.51] (\l,-\l) -- (\l,\l);
+	
+	\node[mor, draw, inner sep=3.8pt] at (-\dx,\dy) {};
+	\node[mor, draw, inner sep=3.8pt] at (\dx,-\dy) {};
+	\node[xshift=1pt, yshift=2pt] at (\dx,-\dy) {$\sss m^{\! \dagger}$};
+	\node at (-\dx,\dy) {$\sss m$};
+	\node[anchor=south west] at (-\l,-\l) {$\sss\mbb 1_{\TRep(G)}$};
+\end{tikzpicture}

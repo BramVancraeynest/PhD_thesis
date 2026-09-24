@@ -1,0 +1,62 @@
+\begin{tikzpicture}[
+	baseline={(current bounding box.center)},
+	scale=.65
+	]
+	
+	\def\l{1.3}
+	\def\c{cos(60)}
+	\def\s{sin(60)}
+	\def\Nx{2}
+	\def\Ny{3}
+	
+	\clip ({-(\Nx+1)*\l*(1+\c) - \l/2},{-1.5*\s*\l}) rectangle+ ({2*(\Nx+1)*\l*(1+\c) + \l},{(2*\Ny+1)*\l*\s});
+	
+	\newcommand{\cellA}[4]{
+		\begin{scope}[obj#3, shift={({2*\l*#1*(1+\c)+#4},{2*\s*\l*#2})}]
+			\draw (0,0) --+ (120:\l/2);
+			\draw (0,0) --+ (240:\l/2);
+			\draw (0,0) -- (\l,0);
+			\draw (\l,0) --+ (60:\l/2);
+			\draw (\l,0) --+ (-60:\l/2);
+			\node[mor] at (0,0) {};
+			\node[mor] at (\l,0) {};
+		\end{scope}
+	}
+	
+	\newcommand{\cellB}[4]{
+		\begin{scope}[obj#3, shift={({2*\l*#1*(1+\c)-\l*(1+\c)+#4},{(2*#2-1)*\s*\l})}]
+			\draw (0,0) --+ (120:\l/2);
+			\draw (0,0) --+ (240:\l/2);
+			\draw (0,0) -- (\l,0);
+			\draw (\l,0) --+ (60:\l/2);
+			\draw (\l,0) --+ (-60:\l/2);
+			\node[mor] at (0,0) {};
+			\node[mor] at (\l,0) {};
+		\end{scope}
+	}
+	
+	\foreach \y in {0,...,\Ny}
+	\foreach \x in {1,...,\Nx} {
+		\cellA{\x}{\y}{1}{0}
+		\cellB{\x}{\y}{1}{0}
+		\cellA{-\x}{\y}{2}{\c*\l}
+		\cellB{-\x}{\y}{2}{\c*\l}
+	}
+	
+	\foreach \y in {0,...,\Ny} {
+		\begin{scope}[shift={(0,{(2*\y-1)*\s*\l+\s*\l})}]
+			\draw[obj3] (0,{-1.5*\s*\l}) -- (0,{.5*\s*\l});
+			\draw[obj1] (0,0) -- (\l,0);
+			\draw[obj1] (\l,0) --+ (60:\l/2);
+			\draw[obj1] (\l,0) --+ (-60:\l/2);
+			\draw[obj2] (0,{-\s*\l}) -- (-\l,{-\s*\l});
+			\draw[obj2] (-\l,{-\s*\l}) --+ (120:\l/2);
+			\draw[obj2] (-\l,{-\s*\l}) --+ (-120:\l/2);
+			\node[mor] at (0,0) {};
+			\node[mor] at (0,{-\s*\l}) {};
+			\node[mor] at (-\l,{-\s*\l}) {};
+			\node[mor] at (\l,0) {};
+		\end{scope}
+	}
+	
+\end{tikzpicture}

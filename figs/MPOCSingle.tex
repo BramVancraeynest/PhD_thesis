@@ -1,0 +1,8 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{.8};
+	\def\h{.8};
+	
+	\draw[obj2] (-\l,0) node[text=black,anchor=east] {$\sss (\RCR{R_1}{X}{R_3},i)$} -- (\l,0) node[text=black,anchor=west] {$\sss (\RCR{R_4}{X}{R_2},l) $};
+	\draw[obj1] (0,\h) node[anchor=south] {$\sss (\RDR{R_3}{Y}{R_2},j)$} -- (0,-\h) node[anchor=north] {$\sss (\RDR{R_1}{Y}{R_4},k)$};
+	\node[mpotensor] at (0,0) {};
+\end{tikzpicture}

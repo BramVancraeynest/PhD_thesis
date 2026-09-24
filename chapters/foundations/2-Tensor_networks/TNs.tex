@@ -1,0 +1,138 @@
+Having established the importance of the \emph{area law} for gapped quantum many-body systems, we now introduce \emph{tensor networks} as the main tool used throughout this thesis. In brief, tensor networks are a class of many-body trial wave functions that, by construction, satisfy an area law for the entanglement entropy with respect to any bipartition. Parametrised by a number of variational parameters that only scales as a \emph{polynomial} in the system size, they also provide an exponentially more compressed description of the many-body wave functions of interest.
+
+At their core, tensor networks bring a holographic approach to the many-body problem in which the information of the wave function is encapsulated in local constituent tensors encoding both the \emph{physical} and \emph{entanglement} degrees of freedom. All the information --- local quantities such as the energy density, as well as non-local ones such as the correlation functions --- is stored locally into these tensors. Moreover, the parametrisation of states and operators in terms of tensor networks also allows one to formulate them directly in the \emph{thermodynamic limit}.
+
+Crucial for our purposes, all symmetries of a given model, both \emph{spacetime} symmetries and \emph{internal} symmetries, can typically be easily incorporated in tensor network ans\"atze. Enforcing symmetry significantly improves both the stability and implementation of numerical algorithms. Moreover, it facilitates the classification of gapped phases of matter. Indeed, in the language of tensor networks, phase classification often effectively boils down to classifying the inequivalent symmetry actions on the constituent tensors. But there is more: in recent years it has been understood that even in the absence of any physical symmetry, distinct \emph{intrinsically topologically ordered} phases may arise that can be characterised by the symmetry structure of the \emph{entanglement patterns} of the ground states. In this way, tensor networks reveal the \emph{hidden} \emph{topological} symmetries that characterise the long-range entanglement present in these gapped phases. The algebraic structure of these virtual symmetries is naturally described by a \emph{(higher-)fusion category}, and is inherited by their one-lower-dimensional \emph{edge theories}, which themselves may be gapped, gapless or topologically ordered. The description of the \emph{virtual MPO symmetries} of \emph{two-dimensional} non-chiral topological orders and their edge Hamiltonians is the content of \cref{ch:topo} and \cref{ch:GenSym} respectively.
+
+\bigskip\noindent The goal of this chapter is to provide a concise introduction to tensor network states and operators, and review the classification of gapped one-dimensional bosonic of phases of matter. After sketching the \emph{projected entangled-pair construction} of quantum many-body states with an area law for their entanglement entropy, we introduce the widely used graphical tensor network calculus. Next, we zoom in on the one-dimensional tensor network states, called \emph{matrix product states}, and formulate the \emph{fundamental theorem of MPS} which provides necessary and sufficient conditions for two MPS tensors to generate the same quantum state. We also briefly introduce \emph{matrix product operators}, as tensor network representations of linear operators acting on one-dimensional lattices. We comment on the two-dimensional \emph{projected entangled-pair states} and \emph{operators}. In conclusion we review in detail the classification of gapped one-dimensional phases. It will be shown that in the presence of an on-site symmetry group $G$, phases are classified by pairs $(H\subseteq G,\psi)$, where the subgroup $H$ defines the pattern of symmetry breaking $G\mapsto H\subseteq G$, and $\psi$ is a \emph{2-cocycle} of $G$ that is associated to the \emph{projective} symmetry action on the virtual degrees of freedom of the ground space matrix product state.
+\section{Tensor network states}
+The main lesson of the area law is that distribution of entanglement happens via the boundary of spatial regions. Trial wave functions whose entanglement entropy exhibits such a pattern, and at the same time respect all lattice symmetries can be constructed via a \emph{projected entangled-pair construction}, as advocated in ref.~\cite{Delgado2004}. In this framework, maximally entangled pairs of \emph{virtual} spins are first distributed between all pairs of neighbouring spins according to the connectivity of the lattice. Subsequently, one `\emph{projects}'\footnote{The local tensors are usually not idempotent linear maps.} onto the physical degrees of freedom of the model by means of a linear \emph{tensor map} on each site. These tensors contain a number of degrees of freedom which play the role of \emph{variational parameters} of the quantum state they generate. Schematically, this construction can be visualised on the two-dimensional square lattice as:
+\begin{equation}\label{eq:ProjState}
+	\inputtikz{ProjState} \,\,,
+\end{equation}
+where the nodes connected by wiggly lines represent the virtual pairs, and the arrows denote the local linear projection maps. The \emph{virtual} or \emph{entanglement} degrees of freedom are associated to a Hilbert space $\mathbb{C}^\chi$, where $\chi$ is called the \emph{bond dimension}. Though illustrated here for the two-dimensional square lattice, this construction generalises straightforwardly to any dimension, lattice geometry, choice of boundary conditions, or assignment of different tensors on each site. By choosing the tensor identical on every site, this construction provides an explicit way to construct generic quantum states with area law entanglement that enjoy all lattice symmetries.
+
+The area law is manifest in this construction, since the entanglement entropy across the boundary of any contiguous region of spins is upper bounded by $\log\chi$ times the number of virtual pairs that cross the boundary, or thus the surface area of the boundary of that region. This will be made more precise in what follows for the one-dimensional case.
+
+\bigskip\noindent Throughout this thesis, we use a graphical calculus in which tensors are represented by nodes with a number of legs representing their indices. Concretely, a rank-5 tensor $A$ can be expressed as:
+\begin{equation}
+	\begin{split}
+		\inputtikz{Tensor_1} &= \sum_{\substack{i,j,k\\ l,m}} \inputtikz{Tensor_2} |i,j,k\ra\la l, m | \\
+		&=  \sum_{\substack{i,j,k\\ l,m}} A_{jklm}^i \, |i,j,k\ra\la l, m |
+	\end{split}\,\, .
+\end{equation}
+We adopt the graphical convention that connected legs between tensors stand for a sum over the corresponding indices, in which case it is said that the legs are \emph{contracted}. Using this calculus, the state schematically represented in \cref{eq:ProjState} can be written more explicitly as
+\begin{equation}
+	\inputtikz{PEPS} \,\, .
+\end{equation}
+In this figure, and similar figures below, it is understood that the tensor networks extend to infinity in all lattice directions, unless specified otherwise.
+\section{Matrix product states}
+In one dimension, tensor network states boil down to the class of \emph{matrix product states} (MPS)~\cite{PerezGarcia2006}. In the translation invariant case, they can be parametrised directly in the thermodynamic limit by a single rank-3 tensor $A\in\mbb C^{d\chi^2}$ as:
+\begin{equation}\label{eq:MPS}
+	| \Psi[A] \ra = \inputtikz{MPS} \ .
+\end{equation}
+A matrix product state on a finite chain with boundary conditions specified by vectors $|v_L \ra,  | v_R \ra$ is then defined as
+\begin{equation}
+	| \Psi[A], v_L, v_R \ra = \inputtikz{FiniteMPS} \ .
+\end{equation}
+As discussed below, when the MPS describes the ground space of a \emph{symmetry-protected topological phase}, the virtual spaces near the boundaries provide a natural basis for the symmetry-protected \emph{edge modes}.
+
+Continuing along these lines, we can define MPSs with larger unit cells or with distinct tensors $A[\msf i]$ on every site. Notably, every state in the many-body Hilbert space of a finite chain can be represented by an MPS with a bond dimension that scales exponentially in the system size. To every matrix product state one can also associate a \emph{gapped} and \emph{frustration-free} \emph{parent Hamiltonian} for which the MPS is a ground state. When the MPS has a certain symmetry described by a group $G$, the parent Hamiltonian can be symmetrised so as to commute with $G$. We refer to this as the \emph{symmetric parent Hamiltonian}. Moreover, for a generic MPS it is the unique ground state of its parent Hamiltonian, as detailed below.
+
+Conversely, by the results of refs.~\cite{Verstraete2006a,Hastings2007,PerezGarcia2006}, the ground state of any local gapped quantum Hamiltonian is well approximated with an MPS whit \emph{small} bond dimension.
+
+We henceforth focus on the case of uniform MPS in the thermodynamic limit~\cite{Vanderstraeten2019}. In that case, the number of variational parameters is equal to $d\chi^2$ though not all of these are independent. Indeed, the dimension of the manifold of uniform matrix product states is strictly smaller, since for any invertible matrix $X$, transformations of the kind
+\begin{equation}\label{eq:GaugeTransform}
+	A^i \mapsto XA^iX^{-1}, \quad \forall i=1,2,\dots,d,
+\end{equation}
+leave the state $| \Psi[A] \ra$ unchanged as all occurrences of $X$ and $X^{-1}$ cancel on the bonds. As they describe a redundancy of the MPS description, they are called \emph{gauge transformations}. Taking these into account, a precise counting of the number of independent parameters reveals the dimension of the MPS manifold to be $\chi^2(d-1)$~\cite{Vanderstraeten2019}.
+
+Using appropriate gauge transformations matrix product states can be brought in left (right) \emph{canonical form} in which the MPS tensors are left (right) isometric:
+\begin{equation}
+	\sum_{i} A^{i \dagger} A^i = \mbb 1_\chi, \qquad
+	\sum_{i} A^i A^{i \dagger} = \mbb 1_\chi.
+\end{equation}
+Note that even after imposing the left or right canonical form, an MPS still enjoys residual gauge freedom as the MPS tensors can still be conjugated with \emph{unitary} gauge transformations that preserve the canonical form. Writing $A_L$ ($A_R$) for the MPS tensor $A$ in left (right) canonical form, we can introduce the matrix $C$ that intertwines them according to $A_L^i\, C= C\, A_R^i$, $\forall i$. An MPS that can be written as:
+\begin{equation}\label{eq:MPSMixedGauge}
+	| \Psi[A] \ra = \inputtikz{MPSMixedGauge}\,\,,
+\end{equation}
+is then said to be in the \emph{mixed canonical form}. The upshot of this gauge choice is that the entanglement spectrum of the state (across any bipartition) coincides with the singular values of $C$, as can be verified by comparing \cref{eq:MPSMixedGauge} with the Schmidt decomposition \cref{eq:SchmidtState}.
+
+\bigskip\noindent One of the key properties of MPSs is that correlation functions, expectation values of local operators and the MPS norm can be efficiently computed. Efficiently here means with a cost that scales linearly in the distance between operator insertions and polynomially in the bond dimensions, as argued below. An object which plays a pivotal role in these computations is the \emph{transfer matrix} defined as
+\begin{equation}
+	\mbb T_A := \sum_i A^i\otimes \bar A^i = \inputtikz{MPSTransfer}\,\,,
+\end{equation}
+and which is typically interpreted as a matrix from the right to the left (virtual) indices. A generic MPS has the property that $\mbb T_A$ has a unique dominant eigenvalue $\lambda_1$ by virtue of the \emph{quantum Frobenius-Perron theorem}~\cite{Albeverio1978}. By rescaling $A^i \mapsto A^i/\sqrt \lambda_1$, this eigenvalue can be made $1$. Its corresponding left (right) eigenvectors are denoted by $\Lambda$ ($\rho$), both are full rank and can be made positive. Furthermore, they can be normalised to ${\rm Tr}(\Lambda\rho)=1$:
+\begin{equation}
+	\inputtikz{MPSFPOverlap} = 1,
+\end{equation}
+which ensures the normalisation of the state in the thermodynamic limit, i.e. $\la \Psi[A] | \Psi[A] \ra=1$.
+
+Similarly, we can express the two-point correlation function of local operators $O_1$ and $O_2$ separated by a distance $L$ as:
+\begin{equation}\label{eq:MPSCorrelator}
+	\la O_1[1] O_2[L+1]\ra_{| \Psi[A] \ra} = \inputtikz{MPSCorrelator}\,\, .
+\end{equation}
+By exploiting the tensor network structure of the transfer matrix, this correlation function can be computed with a computational cost that scales as $\mc O(L\chi^3)$.
+Subtracting from \cref{eq:MPSCorrelator} the disconnected part $\la O_1\ra_{ \Psi[A]}\la O_2\ra_{\Psi[A]}$ and invoking the eigendecomposition of $\mbb T_A$ reveals that the dominant decay is exponential, i.e. $\sim\exp(-L/\xi)$, where the \emph{correlation length} $\xi$ is related to the second largest eigenvalue $\lambda_2$ of $\mbb T_A$ via $\xi=-1/\log(|\lambda_2|)$.
+
+The uniqueness of the dominant eigenvalue of the transfer matrix is a property called \emph{injectivity}. As mentioned above this is a generic property and a useful equivalent definition is the following. An MPS is injective if there exists a finite \emph{injectivity length} $L$ such that the collection of matrices $\{A^{i_1}A^{i_2}\dots A^{i_L}\}$ constitutes a basis for the $\chi\times\chi$ matrix algebra. Injective MPSs have the properties that the implicit choice of boundary conditions in \cref{eq:MPS} in the thermodynamic limit is immaterial and that they are the \emph{unique} ground state of their corresponding parent Hamiltonian. Below, we will interpret non-injective matrix product states as exhibiting spontaneous symmetry-breaking. As such they naturally show up in the classification of gapped phases of matter.
+
+\bigskip\noindent As argued above, MPSs satisfy an area law for the entanglement entropy across any bipartition~\cite{Verstraete2004a,Verstraete2006a,Hastings2007}. To make this precise in the case of a uniform MPS, notice that across any entanglement cut, the reduced density matrix with respect to the right-half chain can be depicted as:
+\begin{equation}
+	\rho_R = \inputtikz{MPSReducedDensity}.
+\end{equation}
+This demonstrates that the reduced density matrix $\rho_R$ can be interpreted as the product of a $d^L\times\chi$-dimensional matrix with a $\chi\times d^L$-dimensional one, where $L$ is formally the number of spins to the right of the cut. Hence, ${\rm rank}(\rho_R)\leq \chi$. This means that the entanglement entropy is upper bounded independent of the size of the right subsystem by $S_L \leq \log\chi$, which is the maximal amount of entanglement entropy for a state with Schmidt rank $\chi$.
+
+\bigskip\noindent Central to the classification of symmetric gapped phases is the following observation. Two MPSs $| \Psi[A] \ra$ and $| \Psi[B] \ra$ whose MPS matrices are related via a gauge transformation \cref{eq:GaugeTransform} obviously generate the same state. In virtue of the \emph{fundamental theorem of MPS} the converse also holds generically. More precisely, this theorem states that two uniform \emph{injective} matrix product states with periodic boundary conditions represent the same state independent of the system size, if and only if the MPS tensors are related by a non-singular gauge transformation:
+\begin{equation}\label{eq:FundTh}
+	|\Psi[A] \ra \sim | \Psi[B] \ra \iff A^i = e^{i\chi} XB^iX^{-1}, \quad\forall i.
+\end{equation}
+Despite its relevance, the proof of the fundamental theorem is surprisingly simple and can be formulated as a straightforward application of the Cauchy-Schwarz inequality for which we refer to e.g. ref.~\cite{Vancraeynest2025c}.
+
+\bigskip\noindent Importantly, two non-injective periodic MPSs can generate the same state while not simply being related by a gauge transformation \cref{eq:GaugeTransform}. Consider an MPS tensor which in a certain basis reads
+\begin{equation}
+	A^i =
+	\begin{pmatrix}
+		A^i_1 & A_o^i \\
+		0 & A^i_2
+	\end{pmatrix}, \quad \forall i.
+\end{equation}
+It follows directly from the block structure of this tensor that for any choice of the off-diagonal block $A_o^i$, $A^i$ generates the same state on periodic boundary conditions as the trace of the matrices $A^i$ is independent of $A^i_o$. The upper triangular block structure of the tensor signals the presence of an invariant subspace $W_1$, i.e. $A^iW_1\subseteq W_1$, $\forall i$. Writing $\mc P_{W_1}$ ($\mc P_{W_1^\bot}$) for the projector onto $W_1$ (and its orthogonal complement $W_1^\bot$), we can thus replace
+\begin{equation}
+	A^i \mapsto A^i_1 \oplus A^i_2 = \mc P_{W_1} A^i\mc P_{W_1} + \mc P_{W_1^\bot} A^i \mc P_{W_1^\bot}
+\end{equation}
+so as to bring $A_i$ in block diagonal form. By repeating this procedure a finite number of times we can thus bring any MPS tensor in the form
+\begin{equation}
+	A^i = \bigoplus_{k=1}^r \mu_k A_k^i,
+\end{equation}
+where all $\{A^i_k\}_k$ are injective, and are referred to as the \emph{injective blocks}. Such an MPS is said to be in \emph{canonical form}~\cite{PerezGarcia2006}.
+
+\bigskip\noindent Linear operators in turn can naturally be expressed in terms of \emph{matrix product operators} (MPOs)~\cite{Verstraete2004c,Haegeman2016}. In full, these are written as
+\begin{equation}
+	\sum_{\{i_k,j_k\}} \big(\cdots M^{i_k,j_k}M^{i_{k+1},j_{k+1}}\cdots \big) \ketbra{\dots, i_k,i_{k+1},\dots}{\dots, j_k,j_{k+1},\dots},
+\end{equation}
+and can graphically be depicted as
+\begin{equation}
+	\inputtikz{MPO}\,\, .
+\end{equation}
+A simple example is the pure density matrix $\rho=| \Psi[A] \ra\la \Psi[A] |$ with MPO tensor $M^{ij}=A^i\otimes\bar A^j$.
+
+Similar to the case of MPS, an MPO is called \emph{injective} when there exists a finite length for which the MPO matrices span the full matrix algebra.
+\section{Projected entangled-pair states}
+The natural generalisation of matrix product states to two dimensions is in terms of \emph{projected entangled-pair states} (PEPSs)~\cite{Verstraete2004b}. In the uniform case, we can parametrise a PEPS on a square lattice in terms of a single rank-5 tensor as follows:
+\begin{equation}
+	| \Psi[A] \ra = \inputtikz{PEPS} \, \, .
+\end{equation}
+Unlike the case of MPS, the contraction of a generic PEPS is computationally significantly more costly~\cite{Schuch2010}. To tackle this issue, approximate contraction schemes have been and are being developed and used with success in variational ground state optimisation~\cite{Levin2006b,Evenbly2015,Bal2017}.
+
+A further distinction from the one-dimensional case is the absence of a completely general fundamental theorem of PEPS that provides necessary and sufficient conditions for two PEPS tensors to generate the same wave function. For many systems of interest --- and in particular the \emph{string-net} ground states that are the topic of \cref{ch:topo} --- PEPS tensors generating the same state $| \Psi[A] \ra \sim | \Psi[B] \ra$ are intertwined via an MPO living purely on the virtual level obeying the \emph{pulling-through} equation:
+\begin{equation}
+	\inputtikz{PEPSPullingThrough_1} \,\,=\,\,
+	\inputtikz{PEPSPullingThrough_2}\,\,,
+\end{equation}
+together with the analogous relations in all other orientations.
+
+\bigskip\noindent Finally, analogous to matrix product operators, \emph{projected entangled-pair operators} are tensor network representations of linear operators in two dimensions:
+\begin{equation}
+	\inputtikz{PEPO}\,\,.
+\end{equation}

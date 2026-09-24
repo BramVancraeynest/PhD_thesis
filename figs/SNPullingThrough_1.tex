@@ -1,0 +1,15 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{.8};
+	\def\r{.7};
+	
+	\draw[obj1, rounded corners=7pt] (0, -1.75*\l) -- (0, -1.45*\l) --  (-1.25*\l, -.3*\l) -- (-1.25*\l,.3*\l) -- (0, 1.45*\l) -- (0, 1.75*\l);
+
+	
+	\draw[obj1, dotted] (0,0) circle (\r);
+	\fill[fill=black!12] (0,0) circle (.65*\r);
+	
+	\node[draw, fill = white, circle, inner sep = 1pt] at (0, -1.75*\l) {};
+	\node[draw, fill = white, circle, inner sep = 1pt] at (0, 1.75*\l) {};
+	
+	\node[anchor=east] at (-1.25*\l,0) {$X$};
+\end{tikzpicture}

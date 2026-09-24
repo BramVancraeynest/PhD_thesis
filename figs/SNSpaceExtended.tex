@@ -1,0 +1,67 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.6};
+	\def\r{.9}
+	\def\c{cos(30)};
+	\def\s{sin(30)};
+	
+	\draw[obj1] (0,0) -- (30:\l);
+	\draw[obj1] (0,0) -- (150:.5*\l);
+	% Left vertical edge
+	\draw[obj1] (0,-\l) -- (0,0);
+	% Right vertical edge
+	\draw[obj1] ({\c*\l*2},-\l) -- ({\c*\l*2},0);
+	
+	\draw[obj1] ({2*\l*\c},0) -- ++(30:.5*\l);
+	\draw[obj1] ({2*\l*\c},0) -- ++(150:\l);
+	\draw[obj1] ({\c*\l}, {-\l-\l*\s}) -- ++(150:\l);
+	\draw[obj1] ({\c*\l}, {-\l-\l*\s}) -- ++(30:\l);
+	\draw[obj1] ({2.5*\c*\l}, {-\l-.5*\l*\s}) -- ++(150:.5*\l);
+	\draw[obj1] ({-\c*.5*\l}, {-\l-.5*\l*\s}) -- ++(30:.5*\l);
+	\draw[obj1] ({\c*\l}, {\s*\l}) -- ++(0,.5*\l);
+	\draw[obj1] ({\c*\l}, {-\l-\l}) -- ++(0,.5*\l);
+	
+	\draw[obj1] (0,-1/3*\l) --+ ({2/3*\c*\l},0);
+	\draw[obj1] (0,-2/3*\l) --+ ({2/3*\c*\l},0);
+	
+	\node[mor, inner sep=3.2pt] at (0,0) {};
+	\node[mor, inner sep=3.2pt] at ({\l*\c},{\l*\s}) {};
+	\node[mor, inner sep=3.2pt] at ({2*\l*\c},0) {};
+	\node[mor, inner sep=3.2pt] at ({2*\l*\c},{-2*\l*\s}) {};
+	\node[mor, inner sep=3.2pt] at ({\l*\c},{-3*\l*\s}) {};
+	\node[mor, inner sep=3.2pt] at (0,{-2*\l*\s}) {};
+	\node[mor, inner sep=3.2pt] at (0,-1/3*\l) {};
+	\node[mor, inner sep=3.2pt] at (0,-2/3*\l) {};
+	
+	\node at (0,0) {$\sss i_3$};
+	\node at ({\l*\c},{\l*\s}) {$\sss i_4$};
+	\node at ({2*\l*\c},0) {$\sss i_5$};
+	\node at ({2*\l*\c},{-2*\l*\s}) {$\sss i_6$};
+	\node at ({\l*\c},{-3*\l*\s}) {$\sss i_7$};
+	\node at (0,-\l) {$\sss i_8$};
+	
+	\node at (0,-1/3*\l) {$\sss i_2$};
+	\node at (0,-2/3*\l) {$\sss i_1$};
+	
+	\node[anchor=east] at ({2*\c*\l},-\l/2) {$\sss Y_6$};
+	
+	\node[anchor=north, xshift=4pt] at (30:\l/2) {$\sss Y_4$};
+	\node[anchor=north, xshift=-4pt] at ({3/2*\c*\l},{\s*\l/2}) {$\sss Y_5$};
+	
+	\node[anchor=south, xshift=4pt] at ({1/2*\c*\l},{-\l-\s*\l/2}) {$\sss Y_8$};
+	\node[anchor=south, xshift=-4pt] at ({3/2*\c*\l},{-\l-\s*\l/2}) {$\sss Y_7$};
+	
+	\node[anchor=south] at (150:\l/4) {$\sss Y_{11}$};
+	\node[anchor=south] at ({2.2*\c*\l},{1/4*\s*\l}) {$\sss Y_{13}$};
+	\node[anchor=north] at ({-\c*\l/4},{-\l-\s*\l/4-.1}) {$\sss Y_{16}$};
+	\node[anchor=south] at ({2.4*\c*\l},{-\l-1/4*\s*\l}) {$\sss Y_{14}$};
+	
+	\node[anchor=west] at ({\c*\l},{\s*\l+\l/4}) {$\sss Y_{12}$};
+	\node[anchor=west] at ({\c*\l},{-\s*\l-5/4*\l}) {$\sss Y_{15}$};
+	
+	\node[anchor=east] at (0,-5/6*\l) {$\sss Y_1$};
+	\node[anchor=east] at (0,-1/2*\l) {$\sss Y_2$};
+	\node[anchor=east] at (0,-1/6*\l) {$\sss Y_3$};
+	
+	\node[anchor=south] at ({1/3*\c*\l},-1/3*\l) {$\sss Y_{10}$};
+	\node[anchor=north] at ({1/3*\c*\l},-2/3*\l) {$\sss Y_9$};
+\end{tikzpicture}

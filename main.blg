@@ -1,0 +1,93 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: frontmatter/titlepage.aux
+A level-1 auxiliary file: frontmatter/committee.aux
+A level-1 auxiliary file: frontmatter/acknowledgments.aux
+A level-1 auxiliary file: frontmatter/summary.aux
+A level-1 auxiliary file: frontmatter/samenvatting.aux
+A level-1 auxiliary file: chapters/foundations/1-Introduction/1-Introduction.aux
+A level-1 auxiliary file: chapters/foundations/2-Tensor_networks/2-Tensor_networks.aux
+A level-1 auxiliary file: chapters/foundations/3-Topo_order/3-Topo_order.aux
+A level-1 auxiliary file: chapters/foundations/4-Dualities/4-Dualities.aux
+A level-1 auxiliary file: chapters/applications/Les_Houches.aux
+A level-1 auxiliary file: chapters/applications/frieze.aux
+A level-1 auxiliary file: chapters/applications/string-net.aux
+A level-1 auxiliary file: chapters/applications/gauging.aux
+A level-1 auxiliary file: chapters/applications/codes.aux
+A level-1 auxiliary file: chapters/applications/twisted_gauging.aux
+A level-1 auxiliary file: chapters/conclusion/conclusion.aux
+The style file: BramBibStyle.bst
+Database file #1: refs.bib
+Repeated entry---line 1886 of file refs.bib
+ : @article{Lan2013
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "VanDamme" isn't style-file defined
+--line 2981 of file refs.bib
+Warning--empty booktitle in Hastings2010
+Warning--empty journal in Vancraeynest2025c
+Warning--empty journal in Verstraete2004b
+Warning--empty journal in Lootens2024
+Warning--empty journal in Etingof2002
+Warning--empty journal in Beer2018
+Warning--empty journal in Kong2014
+Warning--empty journal in Kirillov2011
+Warning--empty journal in Kong2015
+Warning--empty journal in Williamson2017
+Warning--empty journal in Brehm2024
+Warning--empty journal in Kong2012
+Warning--empty journal in Ji2021
+Warning--empty journal in Devos2025
+Warning--empty journal in Freed2022
+Warning--empty journal in Moradi2023
+Warning--empty journal in Jones2024
+Warning--empty journal in Chavda2026
+Warning--empty journal in Inamura2024
+Warning--empty journal in Meng2024
+Warning--empty journal in Radicevic2018
+Warning--empty journal in Douglas2018
+Warning--empty journal in Decoppet2024
+Warning--empty journal in Gaiotto2019
+You've used 168 entries,
+            2473 wiz_defined-function locations,
+            1834 strings with 35503 characters,
+and the built_in function-call counts, 66115 in all, are:
+= -- 4687
+> -- 1744
+< -- 0
++ -- 1408
+- -- 436
+* -- 5156
+:= -- 7521
+add.period$ -- 170
+call.type$ -- 168
+change.case$ -- 167
+chr.to.int$ -- 0
+cite$ -- 192
+duplicate$ -- 6654
+empty$ -- 6303
+format.name$ -- 561
+if$ -- 14429
+int.to.chr$ -- 0
+int.to.str$ -- 168
+missing$ -- 1554
+newline$ -- 1100
+num.names$ -- 168
+pop$ -- 2325
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1682
+stack$ -- 0
+substring$ -- 1961
+swap$ -- 4729
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 24
+while$ -- 305
+width$ -- 171
+write$ -- 2331
+(There was 1 error message)

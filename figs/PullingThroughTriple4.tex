@@ -1,0 +1,62 @@
+\begin{tikzpicture}[scale=1.15,baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\r{4pt};
+	\def\l{3.5};
+	\def\sp{0.08};
+	\def\red{0.5};
+	
+	\clip (0.65,-1.35) rectangle (2.85,1.85);
+	\coordinate (a1) at (0,0);
+	\coordinate (a2) at (\l,0);
+	\coordinate (a3) at (\l/2,{sqrt(3)*\l/2});	    	    	
+	\middleCoo{a1}{a2}{m12}{m12-1}{m12-2}{\sp};
+	\middleCoo{a2}{a3}{m23}{m23-2}{m23-3}{\sp};
+	\middleCoo{a1}{a3}{m13}{m13-1}{m13-3}{\sp};
+	\barycentre{a1}{a2}{a3}{b123}{b123-1}{b123-2}{b123-3}{\sp};
+	\foreach \x in {m12,m12-1,m12-2}{
+		\coordinate (\x) at ($(\x)+(0,\red)$);
+	}
+	\draw[obj1,->1-=0.71] (b123) --node[pos=0.38,sloped,fill=white,rectangle,inner sep=0pt] {${\sss Y_1}$} (m13);
+	\draw[obj1,->1-=0.71] (b123) --node[pos=0.38,sloped,fill=white,rectangle,inner sep=0pt] {${\sss Y_2}$} (m23);
+	\draw[mor] 
+	(m13-1) to[out=-30, in=-30, looseness=1.5] (m13-3)
+	(m23-2) to[out=-150, in=-150, looseness=1.5] (m23-3);
+	\draw[obj3, rounded corners=\r] 
+	(m12-1) -- (b123-1) -- (m13-1)
+	(m12-2) -- (b123-2) -- (m23-2)
+	(m23-3) -- (b123-3) -- (m13-3);
+	
+	\def\sp{0.16};
+	\coordinate (b1) at (\l/4,-\l/2+\red);
+	\coordinate (b2) at (3*\l/4,-\l/2+\red);
+	\coordinate (b3) at (\l/4,\red);
+	\coordinate (b4) at (3*\l/4,\red);
+	\middleCoo{b1}{b3}{n13}{n13-1}{n13-3}{\sp};
+	\middleCoo{b2}{b4}{n24}{n24-2}{n24-4}{\sp};
+	\middleCoo{b1}{b2}{n12}{n12-1}{n12-2}{\sp};
+	\barycentreSq{b1}{b2}{b3}{b4}{b1234}{b1234-1}{b1234-2}{b1234-3}{b1234-4};
+	\draw[obj2,->2-=0.7] (n24) --node[pos=0.35,fill=white,rectangle,inner sep=0pt,text=black] {${\sss X}$} node[mask point, pos=0.5](mk1){}  (n13);
+	\clipAroundNode{mk1}{
+		\draw[obj1,->1-=0.8] (n12) --node[pos=0.6,fill=white,rectangle,inner sep=0pt] {${\sss Y_3}$} (b123);  
+	} 
+	\draw[mor] 
+	(n12-1) to[out=90, in=90, looseness=1.5] (n12-2)
+	(n13-1) to[out=0, in=0, looseness=1.5] (n13-3)
+	(n24-2) to[out=-180, in=-180, looseness=1.5] (n24-4);
+	\draw[obj3, rounded corners=\r]
+	(m12-1) -- (b1234-3) -- (n13-3)
+	(m12-2) -- (b1234-4) -- (n24-4)
+	(n12-1) -- (b1234-1) -- (n13-1)
+	(n12-2) -- (b1234-2) -- (n24-2);
+	\node[mor, circle, inner sep=4pt] at (b123) {};    
+	\node at (b123) {${\sss m}$};
+	\node[xshift=-8pt,yshift=-8pt] at (b1234-1) {${\sss R_1}$};
+	\node[xshift=8pt,yshift=-8pt] at (b1234-2) {${\sss R_2}$};
+	\node[xshift=-8pt,yshift=14pt] at (b1234-3) {${\sss R_3'}$};
+	\node[xshift=8pt,yshift=14pt] at (b1234-4) {${\sss R_4'}$};
+	\node[yshift=9pt] at (b123-3) {${\sss R_5'}$};
+	\node[yshift=3pt] at (n12) {${\sss n}$};
+	\node[xshift=2pt,yshift=-1.5pt] at (m13) {${\sss k}$};
+	\node[xshift=-2pt,yshift=-1.5pt] at (m23) {${\sss l}$};
+	\node[xshift=3pt] at (n13) {${\sss i}$};
+	\node[xshift=-3pt] at (n24) {${\sss j}$};
+\end{tikzpicture}

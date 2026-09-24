@@ -1,0 +1,26 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{.8};
+	\def\h{.7};
+	
+	\draw[obj2] (-2*\l,0) -- (\l,0);
+	
+	\draw[obj1] (-\l/2,-\h) -- (-\l/2,-2*\h);
+	\draw[obj1, rounded corners=3pt] (0,\h) -- (0,-\h) -- (-\l/2,-\h);
+	\draw[obj1, rounded corners=3pt] (-\l,\h) -- (-\l,-\h) -- (-\l/2,-\h);
+	
+	\node[mpstensor, inner sep=2.9pt] at (-\l/2,-\h) {};
+	
+	\node[draw=black, line width=.7pt, fill=gray!20, rectangle, inner sep=3.8pt, rounded corners=2pt] at (0,0) {};
+	\node[draw=black, line width=.7pt, fill=gray!20, rectangle, inner sep=3.8pt, rounded corners=2pt] at (-\l,0) {};
+	\node at (-\l/2,-\h) {$\sss i$};
+	
+	\node[anchor=east] at (-\l,\h/2) {$\sss Y_1$};	
+	\node[anchor=west] at (0,\h/2) {$\sss Y_2$};
+	\node[anchor=east] at (-\l/2,-3*\h/2) {$\sss Y_3$};
+	\node[anchor=north] at (-\l/2,0) {$\sss X$};
+	
+	\node[draw, inner sep=6pt, rounded corners=3pt, anchor=east] at (-2*\l,-3*\h/2) {};
+	\node[draw, inner sep=6pt, rounded corners=3pt, anchor=east] at (-2*\l,\h/2) {};
+	\node[anchor=east, xshift=1.5pt] at (-2*\l,-3*\h/2) {$\sss \mc R$};
+	\node[anchor=east, xshift=2.3pt] at (-2*\l,\h/2) {$\sss \mc R'$};
+\end{tikzpicture}

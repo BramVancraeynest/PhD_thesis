@@ -1,0 +1,86 @@
+\begin{tikzpicture}[scale=1.15,baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\r{4pt};
+	\def\l{3.5};
+	\def\sp{0.08};
+	\def\red{0.5};
+		
+	\clip (-0.4,-0.05) rectangle (3.9,3.5);
+	\coordinate (a1) at (0,0);
+	\coordinate (a2) at (\l,0);
+	\coordinate (a3) at (\l/2,{sqrt(3)*\l/2});	    	    	
+	\middleCoo{a1}{a2}{m12}{m12-1}{m12-2}{\sp};
+	\middleCoo{a2}{a3}{m23}{m23-2}{m23-3}{\sp};
+	\middleCoo{a1}{a3}{m13}{m13-1}{m13-3}{\sp};
+	\barycentre{a1}{a2}{a3}{b123}{b123-1}{b123-2}{b123-3}{\sp};
+	\foreach \x in {m13,m13-1,m13-3}{
+		\coordinate (\x) at ($(\x)+({cos(30)*\red},{-sin(30)*\red})$);
+	}
+	\foreach \x in {m23,m23-2,m23-3}{
+		\coordinate (\x) at ($(\x)+({-cos(30)*\red},{-sin(30)*\red})$);
+	}
+	\draw[obj1,->1-=0.77] (m12) --node[pos=0.45,fill=white,rectangle,inner sep=1pt] {${\sss Y_3}$} (b123);       
+	\draw[mor] (m12-1) to[out=90, in=90, looseness=1.5] (m12-2);
+	\draw[obj3, rounded corners=\r] 
+	(m12-1) -- (b123-1) -- (m13-1)
+	(m12-2) -- (b123-2) -- (m23-2)
+	(m23-3) -- (b123-3) -- (m13-3);
+	
+	\def\sp{0.16};
+	\coordinate (b1) at ($({\l*cos(60)/4},{\l*sin(60)/4})+({cos(30)*\red},{-sin(30)*\red})$);
+	\coordinate (b2) at ($({3*\l*cos(60)/4},{3*\l*sin(60)/4})+({cos(30)*\red},{-sin(30)*\red})$);
+	\coordinate (b3) at ($(b1)+({-\l*cos(30)/2},{\l*sin(30)/2})$);
+	\coordinate (b4) at ($(b2)+({-\l*cos(30)/2},{\l*sin(30)/2})$);
+	\middleCoo{b1}{b3}{n13}{n13-1}{n13-3}{\sp};
+	\middleCoo{b2}{b4}{n24}{n24-2}{n24-4}{\sp};
+	\middleCoo{b3}{b4}{n34}{n34-3}{n34-4}{\sp};
+	\barycentreSq{b1}{b2}{b3}{b4}{b1234}{b1234-1}{b1234-2}{b1234-3}{b1234-4};
+	\draw[obj2, shorten <=-1pt,->2-=0.7] (n24) -- node[mask point, pos=0.5](mk1){} (n13);
+	\clipAroundNode{mk1}{
+		\draw[obj1,->1-=0.5] (b123) --node[pos=0.25,sloped,fill=white,rectangle,inner sep=0pt] {${\sss Y_1}$} (n34);
+	} 
+	\draw[mor] 
+	(n34-3) to[out=-30, in=-30, looseness=1.5] (n34-4)
+	(n13-1) to[out=60, in=60, looseness=1.5] (n13-3);
+	\draw[obj3, rounded corners=\r]
+	(m13-1) -- (b1234-1) -- (n13-1)
+	(m13-3) -- (b1234-2) -- (n24-2)
+	(n13-3) -- (b1234-3) -- (n34-3)
+	(n34-4) -- (b1234-4) -- (n24-4);
+	
+	\coordinate (c1) at ($(a2)+({-3*\l*cos(60)/4},{3*\l*sin(60)/4})+({-cos(30)*\red},{-sin(30)*\red})$);
+	\coordinate (c2) at ($(a2)+({-\l*cos(60)/4},{\l*sin(60)/4})+({-cos(30)*\red},{-sin(30)*\red})$);
+	\coordinate (c3) at ($(c1)+({\l*cos(30)/2},{\l*sin(30)/2})$);
+	\coordinate (c4) at ($(c2)+({\l*cos(30)/2},{\l*sin(30)/2})$);
+	\middleCoo{c1}{c3}{o13}{o13-1}{o13-3}{\sp};
+	\middleCoo{c2}{c4}{o24}{o24-2}{o24-4}{\sp};
+	\middleCoo{c3}{c4}{o34}{o34-3}{o34-4}{\sp};
+	\barycentreSq{c1}{c2}{c3}{c4}{c1234}{c1234-1}{c1234-2}{c1234-3}{c1234-4};
+	\draw[obj2,shorten >= -1pt,->2-=0.7] (o24) -- node[mask point, pos=0.5](mk1){} (o13);
+	\clipAroundNode{mk1}{
+		\draw[obj1,->1-=0.5] (b123) --node[pos=0.25,sloped,fill=white,rectangle,inner sep=0pt] {${\sss Y_2}$} (o34);
+	} 
+	\draw[mor] 
+	(o34-3) to[out=-150, in=-150, looseness=1.5] (o34-4)
+	(o24-2) to[out=120, in=120, looseness=1.5] (o24-4);
+	\draw[obj3, rounded corners=\r]
+	(m23-2) -- (c1234-2) -- (o24-2)
+	(m23-3) -- (c1234-1) -- (o13-1)
+	(o13-3) -- (c1234-3) -- (o34-3)
+	(o34-4) -- (c1234-4) -- (o24-4);
+	
+	\draw[line width = 0.7pt, line join=round, line cap=join, color=BrickRed] (o13) to[out=120,in=60,looseness=1] node[pos=0.5,fill=white,rectangle,inner sep=0pt,text=black](){${\sss X}$} (n24);
+	\draw[obj3] (n24-2) to[out=60,in=120,looseness=1] (o13-1);
+	\draw[obj3] (n24-4) to[out=60,in=120,looseness=1] node[pos=0.5,yshift=6pt,text=black](){${\sss R_5}$} (o13-3);
+	\node[mor, circle, inner sep=4pt] at (b123) {};    
+	\node at (b123) {${\sss m}$};
+	\node[yshift=9pt] at (b123-3) {${\sss }$};
+	\node[yshift=-6pt,xshift=-4pt] at (m13-1) {${\sss R_1}$};
+	\node[yshift=-6pt,xshift=4pt] at (m23-2) {${\sss R_2}$};
+	\node[xshift=-10pt,yshift=-3pt] at (b1234-3) {${\sss R_3}$};
+	\node[xshift=10pt,yshift=-3pt] at (c1234-4) {${\sss R_4}$};
+	\node[yshift=3pt] at (m12) {${\sss n}$};
+	\node[xshift=1.5pt,yshift=2.6pt] at (n13) {${\sss i}$};
+	\node[xshift=2.5pt,yshift=-1.5pt] at (n34) {${\sss k}$};
+	\node[xshift=-1.5pt,yshift=2.6pt] at (o24) {${\sss j}$};
+	\node[xshift=-2.5pt,yshift=-1.5pt] at (o34) {${\sss l}$};
+\end{tikzpicture}

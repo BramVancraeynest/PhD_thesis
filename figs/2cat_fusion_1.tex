@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)},
+	z={(0,1)},y={(0.41,0.41)}]
+	\def\l{.9};
+	\def\d{1.1};
+
+	\node (n1) at (.51*\l,\d,-\l) {};
+	\node (n2) at (-\l,\d,.51*\l) {};
+	
+	
+	
+	\clipAroundTwoNodes{n1}{n2}{
+		\draw[line width = 0.8pt, line join=round, line cap=round, rounded corners=2pt] (-\l,\d,-\l) rectangle (\l,\d,\l);
+	}
+	
+	\fill[fill=black, fill opacity=.06, rounded corners=2pt] (-\l,\d,-\l) rectangle (\l,\d,\l);
+	
+	\draw[surf] (-\l,0,-\l) rectangle (\l,0,\l);
+	
+	\node[anchor=south west] at (-\l,0,-\l) {$\sss X_1$};
+	\node[anchor=south west] at (-\l,\d,-\l) {$\sss X_2$};
+\end{tikzpicture}

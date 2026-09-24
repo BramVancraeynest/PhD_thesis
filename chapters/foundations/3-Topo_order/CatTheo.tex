@@ -1,0 +1,177 @@
+In the previous chapter we outlined the classification of one-dimensional bosonic gapped phases of matter, which required the presence of a symmetry to protect a non-trivial phase. This radically changes in one dimension higher since even in the absence of any symmetries, gapped \emph{intrinsic topological phases} arise. These phases are characterised by a \emph{robust ground state degeneracy} that depends only on the topology of the underlying spatial manifold, \emph{anyonic} quasiparticle excitations and in some cases \emph{edge modes}.
+
+In this chapter we focus on \emph{non-chiral} topological phases that admit \emph{gapped boundary conditions}. It is believed that these phases are fully characterised by their anyon content, corresponding fusion rules and braiding statistics. This brings us into the realm of \emph{category theory} since these data are naturally encapsulated in a \emph{modular fusion category}, specifically the \emph{Drinfeld} or \emph{monoidal centre} $\mc Z(\mc D)$ of a generically non-braided \emph{input} fusion category $\mc D$.
+
+Importantly, every such topological order admits a lattice realisation directly in terms of this input $\mc D$. This is precisely the \emph{Levin-Wen string-net condensation model} that provides a frustration-free Hamiltonian whose torus ground state sectors and excitation spectrum exactly reproduce $\mc Z(\mc D)$. From the point-of-view of tensor networks, these string-net ground states admit particularly elegant PEPS representations characterised by the existence of MPO symmetries that live purely on the \emph{virtual} level, form a representation of a \emph{Morita equivalent} fusion category $\mc C$ and that can be continuously deformed through the lattice. Consequently, these MPO symmetries survive small physical perturbations and characterise the long-range entanglement structure.
+
+\bigskip\noindent In this chapter, we review the string-net models and their PEPS representations. Significant attention is devoted to the classification and construction of their gapped boundaries. Beyond being interesting in their own right, the data characterising the gapped boundaries also classify \emph{gapped phases} of the string-net boundary Hamiltonians that inherit the (non-invertible) symmetries of the bulk topological order. This is the content of the \emph{generalised Landau paradigm} and is treated in the next chapter.
+\section{Fusion categories for topological orders}
+The description of non-chiral topological orders and their realisation in terms of string-net models requires the language of \emph{fusion categories} and \emph{modular fusion categories}.  Whereas the former is used to define the microscopic Hilbert space and Hamiltonian of the string-net models, the exchange statistics of the anyonic excitations are described by the \emph{non-degenerate}, \emph{modular}, \emph{braiding} encapsulated in the latter.
+
+In what follows we will provide the necessary aspects of (braided) fusion categories, and thereby introduce their \emph{graphical calculus}. We invite the reader to consult the literature for a more precise and more complete technical treatment of these topics~\cite{Etingof2002,Kitaev2005a,Etingof2015,Beer2018}.
+
+\bigskip\noindent It should be kept in mind that even though fusion categories are strictly richer structures than finite groups and their representation theory, they may in fact be regarded as a natural generalisation of both. Indeed, much of the structure of a fusion category can be understood as the categorical counterpart of familiar concepts from group and representation theory, a perspective that we illustrate in detail below. As a result, fusion categories provide a unified framework in which conventional symmetries encoded in groups and \emph{topological}, \emph{generalised} symmetries can be treated on equal footing.
+\subsection{Algebraic structure of fusion categories}
+\subsubsection{Simple objects and fusion}
+Succinctly, a \emph{unitary fusion (1-)category} (UFC) $\mc C$ consists of a collection of objects $\ob(\mc C)$ to which we will refer as \emph{topological defects}, \emph{topological lines}, \emph{sectors} or \emph{charges}, depending on the context. Every $X\in\ob(\mc C)$ admits a decomposition as a direct sum of finitely many \emph{simple objects} $\mc I_\mc C=\{X_i\}_i$, i.e.:
+\begin{equation}
+	X = \bigoplus_{X'\in\mc I_\mc C} N_{X}^{X'} X',
+\end{equation}
+for non-negative integers $N_{X}^{X'}$ counting the multiplicity of each direct summand. The decomposition is unique for every object $X$, up to a permutation of the factors. The set $\ob(\mc C)$ is endowed with a \emph{monoidal} or \emph{tensor product} $\otimes: \mc C\times\mc C\rightarrow\mc C$ encoding the \emph{fusion} of defects. We will express this product in terms of an integer rank-3 tensor $N$ via:
+\begin{equation}\label{eq:FusionRule}
+	X_1 \otimes X_2 = \bigoplus_{X_3\in\mc I_\mc C} N_{X_1X_2}^{X_3} X_3,
+\end{equation}
+for simple objects $X_1, X_2$. These fusion rules are \emph{associative} so that for any four simple objects we have that $\sum_X N_{X_1X_2}^X N_{XX_3}^{X_4} = \sum_X N_{X_1X}^{X_4} N_{X_2X_3}^X$. Generically $N_{X_1X_2}^{X_3}\neq N_{X_2X_1}^{X_3}$. Moreover, since the tensor product $\otimes$ distributes over the direct sum $\oplus$, the product of all objects is defined fully by \cref{eq:FusionRule}. Among the simple objects, there exists a unique \emph{monoidal unit} notated as $\mbb 1_\mc C$ or simply $\mbb 1$ that satisfies $\mbb 1\otimes X= X\otimes\mbb 1= X$, $\forall X\in\ob(\mc C)$. To every object $X$ there corresponds a unique \emph{dual} $X^*$ characterised by $N_{XX^*}^{\mbb 1} = 1$.
+
+Below, we also make use of the \emph{quantum dimensions} $d_X$ of the simple objects which are completely specified by
+\begin{equation}
+	\begin{split}
+		d_X &> 0, \\
+		d_{X_1}\, d_{X_2} &= \sum_{X_3\in\mc I_\mc C} N_{X_1X_2}^{X_3} \, d_{X_3}.
+	\end{split}
+\end{equation}
+In particular we have $d_\mbb 1=1$ and $d_{X}=d_{X^*}$, for all $X\in\ob(\mc C)$. Also, the quantum dimensions are additive over the direct sum, so that $d_X=\sum_{X'\in\mc I_\mc C} N_{X}^{X'} d_{X'}$ for any $X\in\ob(\mc C)$.
+\subsubsection{Graphical calculus}
+The different ways in which simple objects $X_1$ and $X_2$ can fuse to $X_3$ is captured by the \emph{fusion space} $\mc C(X_1\otimes X_2,X_3)\simeq\mbb C^{N_{X_1X_2}^{X_3}}$ for which we use the shorthand $\mc C^{X_1X_2}_{X_3}$. In category theoretic parlance, this Hilbert space for every triple of objects is referred to as \emph{Hom}, \emph{fusion} or \emph{junction space}. Notably, for simple objects $X_1,X_2$ we have $\mc C(X_1,X_2) = \delta_{X_1,X_2}\mbb C$. Basis vectors are notated as $|X_1X_2X_3; i \ra \in \mc C^{X_1X_2}_{X_3}$ with $i=1,2,\dots,N_{X_1X_2}^{X_3}$. These vectors and their duals can be depicted in terms of strings diagrams as follows:
+\begin{equation}
+	|X_1X_2X_3; i \ra \equiv \inputtikz{FusionVertex}\, , \quad \la X_1X_2X_3; i | \equiv \inputtikz{SplittingVertex}\, .
+\end{equation}
+Here and below, all string diagrams are implicitly oriented downwards. We adopt a normalisation of these basis vectors such that the following graphical identity holds:
+\begin{equation}\label{eq:BubblePop}
+	\inputtikz{BubblePop1} = \delta_{X_3,X_3'} \delta_{i,j} \, \sqrt{\frac{d_{X_1}d_{X_2}}{d_{X_3}}} \, \inputtikz{BubblePop2}\, .
+\end{equation}
+Note that the basis vectors are not normalised to one. Indeed the inner product of basis vectors can be depicted as:
+\begin{equation}
+	\la X_1X_2X_3; i | X_1X_2X_3; j \ra = \inputtikz{VertexNorm} = \delta_{i,j} \sqrt{d_{X_1}d_{X_2}d_{X_3}},
+\end{equation}
+which for the particular case of $X_1=\mbb 1$, $X_2=X_3\equiv X$ specialises to
+\begin{equation}\label{eq:qdim}
+	\inputtikz{qdim} = d_X.
+\end{equation}
+This normalisation is referred to as the \emph{isotopy invariant} normalisation convention, but other conventions are used throughout the literature~\cite{Kitaev2005a}. In this normalisation, the completeness of the basis then boils down to:
+\begin{equation}\label{eq:ResId}
+	\inputtikz{ResId1} = \sum_{X_3,i} \sqrt{\frac{d_{X_3}}{d_{X_1}d_{X_2}}} \,\, \inputtikz{ResId2}.
+\end{equation}
+Consider now the fusion of three simple objects. In virtue of the associativity of the fusion rules, the associated Hom space capturing the fusion of these three objects decomposes in two distinct but isomorphic ways as follows:
+\begin{equation}
+	\mc C^{X_1X_2X_3}_{X_4} \simeq \bigoplus_{X_5} \mc C^{X_1X_2}_{X_5} \otimes \mc C^{X_5X_3}_{X_4} \simeq \bigoplus_{X_6} \mc C^{X_1X_6}_{X_4} \otimes \mc C^{X_2X_3}_{X_6},
+\end{equation}
+for all simples $X_4$ appearing in the decomposition of $X_1\otimes X_2 \otimes X_3$. The unitary isomorphism between both decompositions is given by the \emph{$F$-symbol} or \emph{associator}\footnote{The $F$-symbol has an interpretation as the complex number that $\mc C$ assigns to the planar projection of a tetrahedron whose edges are decorated by objects in $\ob(\mc C)$ and vertices decorated by junction spaces. In what follows we will assume the $F$-symbol to be independent of the chosen projection. This property is known as \emph{tetrahedral symmetry}, and not every UFC satisfies this. We refer to ref.~\cite{Hahn2020} for the generalisation of the string-net construction to fusion categories that do not enjoy this symmetry.} $F^{X_1X_2X_3}$ and its matrix components are conveniently depicted in terms of the \emph{F-move}
+\begin{equation}\label{eq:Fmove}
+	\inputtikz{Fmove1} = \sum_{X_6,k,l} \big(F^{X_1X_2X_3}_{X_4}\big)_{X_5,ij}^{X_6,kl} \inputtikz{Fmove2}.
+\end{equation}
+An $F$-symbol is set to zero when not all of the involved fusion rules are fulfilled. Crucially, they also satisfy a \emph{consistency equation} or \emph{coherence axiom} colloquially known as the \emph{pentagon equation} which in full reads:
+\begin{equation}\label{eq:pent}
+	\begin{gathered}
+		\sum_o \left(F^{X_6X_3X_4}_{X_5}\right)^{X_8,no}_{X_7,lm}
+		\left(F^{X_1X_2X_8}_{X_5}\right)^{X_9,pq}_{X_6,ko} \\
+		= \sum_{X_{10},rst}
+		\left(F^{X_1X_2X_3}_{X_7}\right)^{j,rs}_{X_6,kl}
+		\left(F^{X_1X_{10}X_4}_{X_5}\right)^{X_9,tq}_{X_7,sm}
+		\left(F^{X_2X_3X_4}_{X_9}\right)^{X_8,np}_{X_{10},rt}
+	\end{gathered}.
+\end{equation}
+In virtue of \emph{Ocneanu rigidity}, the number of solutions to the pentagon equation, up to basis transformations of the Hom spaces, is finite for any valid set of fusion rules.
+\subsection{Examples}
+Before proceeding, let us provide a few paradigmatic examples of these rather abstract definitions.
+\subsubsection{Finite group symmetry: $\Vect_G^\omega$} Let $G$ be a finite group. The fusion category $\Vect_G$ is the category of (complex finite-dimensional) $G$-graded vector spaces. Its fusion rules are completely defined by
+\begin{equation}
+	(V\otimes W)_g = \bigoplus_{hk=g} V_h \otimes W_k
+\end{equation}
+$\forall g,h,k\in G$, where $V_g$ stands for the $g$-graded component of $V$. Representative simple objects of $\Vect_G$ are the one-dimensional vector spaces $\{\mbb C_g\}_{g\in G}$ and are thus in bijection with the group elements of $G$. Abusing notation, they are sometimes simply denoted by $g\equiv\mbb C_g$. The non-vanishing $F$-symbols are all equal to one when all fusion rules are fulfilled. Whenever $G$ possesses a non-trivial \emph{third cohomology group} $H^3(G,\rU(1))$, a non-trivial 3-cocycle $\omega$ can be used to construct $\Vect_G^\omega$. This fusion category is constructed analogously to $\Vect_G$ where now the non-zero components of the $F$-symbols evaluate to $\omega$. In that case, the pentagon equation is equivalent to the 3-cocycle condition satisfied by $\omega$.
+\subsubsection{Finite group representations: $\Rep(G)$} Intimately connected to $\Vect_G$ is the category $\Rep(G)$, again for a finite group $G$.\footnote{For all $G$, $\Vect_G$ and $\Rep(G)$ are \emph{Morita equivalent}, as explained below. This means that their Drinfeld centres $\mc Z(\Vect_G)$ and $\mc Z(\Rep(G))$ are equivalent as braided fusion categories.} This category encodes as objects the (unitary finite-dimensional) representations of $G$. Representative \emph{irreducible} representations then constitute the simple objects and their fusion is given by the usual tensor product of $G$-representations. It can then be deduced that the 6-j symbols are in this case the matrix coefficients of the monoidal associator.
+\subsubsection{The Fibonacci fusion category: $\Fib$} The \emph{Fibonacci} UFC $\Fib$ consists of two objects labelled by $\{\mbb 1, \tau\}$ whose only non-trivial fusion rule reads $\tau\otimes\tau=\mbb 1\oplus \tau$. The quantum dimension of $\tau$ is easily found to be the golden ratio $d_\tau = \varphi = \frac{1+\sqrt 5}{2}=1.618\dots$, indicative of the fact that $\Fib$ is not realised as the representation category of any finite group as this would require $d_\tau$ to be a non-negative integer. The non-trivial $F$-symbols read:
+\begin{equation}
+	F^{\tau\tau\tau}_{\tau} =
+	\frac{1}{\varphi}
+	\begin{pmatrix}
+		1 & \sqrt{\varphi} \\
+		\sqrt{\varphi} & -1
+	\end{pmatrix}.
+\end{equation}
+
+\bigskip\noindent As anticipated above, we come to the intermediate conclusion that fusion categories provide a framework that not only unifies finite group and representation theory --- as exemplified by the fusion categories $\Vect_G$ and $\Rep(G)$ --- but also extends it --- e.g. in the form of the Fibonacci category. As a guide to the reader, we compactly summarise this in  \cref{tab:categorical}:
+\vfill
+\begin{table}[h]
+	\centering
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{|>{\centering\arraybackslash}p{4cm}
+			|>{\centering\arraybackslash}p{4cm}
+			|>{\centering\arraybackslash}p{4cm}|}
+		\hline
+		$\Vect_G$ & $\Rep(G)$ & Categorical notion \\
+		\hline
+		$G$-graded vector spaces $V, W, U,\dots$
+		& $G$-representations $(V_i, \rho_i)$
+		& Objects $\ob(\mc C)$ \\
+		\hline
+		Grading-preserving linear maps $\phi: V \to W$ 
+		& Intertwiners $f \circ \rho_1 = \rho_2 \circ f$ 
+		& Hom spaces $\mc C(X,X')$ \\
+		\hline
+		$\Vect_G(\mbb C_{g_1}, \mbb C_{g_2}) = \delta_{g_1, g_2}\, \mbb C$
+		& $\Rep(G)(\alpha_i, \alpha_j) = \delta_{i,j}\,\mbb C$, w/ $\alpha_i,\alpha_j$ irreps \;(Schur)
+		& Simple objects $\mc C(X_1,X_2) = \delta_{X_1,X_2}\,\mbb C$ \\
+		\hline
+		$(V \otimes W)_g = \bigoplus_{hk=g} V_h \otimes W_k$
+		& $\alpha_i \otimes \alpha_j \simeq \bigoplus_k N_{ij}^k\,\alpha_k$
+		& Monoidal product \& fusion rules \\
+		\hline
+		$\mbb C_1 \otimes V \simeq V \simeq V \otimes\, \mbb C_1$
+		& $\ub 1 \otimes \rho \simeq \rho \simeq \rho \otimes \ub 1$, w/
+		$\ub 1$ the trivial irrep
+		& Monoidal unit $\mbb 1$ \\
+		\hline
+		$\mbb C_g \otimes \mbb C_{g^{-1}} \simeq \mbb C_1$
+		& $\alpha \otimes \alpha^* \ni \ub 1$
+		& Dual object \\
+		\hline
+		$F: (V \otimes W) \otimes U \xrightarrow{\sim} V \otimes (W \otimes U)$, w/ $F$ trivial
+		& $F: (\alpha_1 \otimes \alpha_2) \otimes \alpha_3 \xrightarrow{\sim} \alpha_1 \otimes (\alpha_2 \otimes \alpha_3)$, w/ $F$ the 6-j symbols
+		& $F$-symbol (Monoidal associator) \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of $\Vect_G$, $\Rep(G)$, and their categorical generalisations.}
+	\label{tab:categorical}
+\end{table}
+\vfill
+\clearpage
+\subsection{Braiding}
+Finally, we introduce the \emph{braiding} of two defects diagrammatically as:
+\begin{equation}\label{eq:Braid}
+	R^{X_1X_2} := \inputtikz{Braid_1}, \qquad \big(R^{X_1X_2}\big)^{-1} := \inputtikz{Braid_2}.
+\end{equation}
+Typically, $R^{X_1X_2}\circ R^{X_2X_1}\neq {\rm id}_{X_1\otimes X_2}$ so that in the graphical calculus one should keep track of the distinction between \emph{over} and \emph{underbraiding} of the strands. Categories for which $R^{X_1X_2}\circ R^{X_2X_1}$ is the identity map on $X_1\otimes X_2$, are called \emph{symmetric}.
+
+The components of the braiding \cref{eq:Braid} in our choice of basis then give rise to the unitary \emph{R-matrix} defined via:
+\begin{equation}\label{eq:RMove}
+	\inputtikz{RMove1} = \sum_j \big( R^{X_1X_2}_{X_3}\big)_{ij} \inputtikz{RMove2}.
+\end{equation}
+The braiding is required to satisfy a consistency equation called the \emph{hexagon equation} that also involves the $F$-symbols. A fusion category is called \emph{braided} or \emph{pre-modular} when it is endowed with a braiding that satisfies the hexagon axiom. For any braided fusion category we then define the \emph{topological S-matrix} $S_{X_1,X_2}$ via the amplitudes
+\begin{equation}\label{eq:Smat}
+	\begin{gathered}
+		S_{X_1,X_2} := \frac{1}{\Dim\,\mc C} \inputtikz{Smat} \\
+		= \frac{1}{\Dim\,\mc C} \sum_{X_3} N_{X_1X_2}^{X_3} d_{X_3} {\rm Tr}\big( R^{X_1X_2}_{X_3}R^{X_2X_1}_{X_3}\big),
+	\end{gathered}
+\end{equation}
+where we have defined the \emph{total quantum dimension} or \emph{Frobenius-Perron dimension of $\mc C$} as $\Dim\,\mc C := \sum_{X\in\mc I_\mc C} d_X^2$. Physically, the amplitudes \cref{eq:Smat} correspond to an interferometry process in which two defects $X_1$ and $X_2$ are created from the vacuum, exchanged and annihilated again. Notably, if for every $X_1\neq\mbb 1$ there exists at least one $X_2\neq\mbb 1$ such that their double-braiding $R^{X_1X_2}\circ R^{X_2X_1}$ is non-trivial, the S-matrix is non-degenerate~\cite[Cor. 2.16]{Mueger2003}. Physically, this means that every non-trivial defect can be distinguished from the vacuum by double-braiding it with a suitable probe defect. This is called the \emph{principle of remote detectability}~\cite{Levin2013,Kong2014}. This motivates the definition of a \emph{modular} fusion category, which is a pre-modular fusion category with non-degenerate S-matrix.
+\subsection{Examples}
+\subsubsection{Finite group symmetry: $\Vect_G^\omega$} Evidently, $\Vect_G$ only admits a braiding if $G$ is abelian. In that case the braiding is provided by a choice of \emph{bilinear form} $b$, meaning a map $b:G\times G\to \rU(1)$ satisfying
+\begin{equation}
+	\begin{split}
+		b(g_1,g_3)\cdot b(g_2,g_3) &= b(g_1g_2,g_3), \\
+		b(g_1,g_2)\cdot b(g_1,g_3) &= b(g_1,g_2g_3),
+	\end{split}
+\end{equation}
+for all $g_1,g_2,g_3\in G$. When the associator belongs to a non-trivial class $[\omega]\in H^3(G,\rU(1))$,  admissible associator-braiding pairs are in one-to-one correspondence with the elements of the \emph{abelian} cohomology group $H^3_{\rm ab}(G,\rU(1))$. We refer to the relevant literature for a precise definition and construction of the braiding~\cite{Etingof2015}.
+\subsubsection{Finite group representations: $\Rep(G)$} The category $\Rep(G)$ admits a symmetric braiding that amounts to the transposition of representation spaces, i.e. $R:V_1\otimes V_2 \to V_2\otimes V_1$ for $(V_1,\rho_1)$, $(V_2,\rho_2)$ in $\ob(\Rep(G))$.
+\subsubsection{The Fibonacci fusion category: $\Fib$} The Fibonacci category admits a \emph{modular} braiding. Indeed, its $S$-matrix
+\begin{equation}
+	S =
+	\frac{1}{\sqrt{2+\varphi}}
+	\begin{pmatrix}
+		1 & \varphi \\
+		\varphi & -1
+	\end{pmatrix},
+\end{equation}
+is non-degenerate~\cite{Rowell2007}.

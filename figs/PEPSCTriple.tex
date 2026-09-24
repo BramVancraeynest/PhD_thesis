@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=1.15,baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\r{4pt};
+	\def\l{3.5};
+	\def\sp{0.08};
+	
+	\coordinate (a1) at (0,0);
+	\coordinate (a2) at (\l,0);
+	\coordinate (a3) at (\l/2,{sqrt(3)*\l/2});
+	
+	\clip ({(0.5-\sp)*\l*cos(60)-0.05},-0.05) rectangle ({\l-(0.5-\sp)*\l*cos(60)+0.05},{\l-(0.5+\sp)*\l*sin(60)+0.05});
+	
+	\middleCoo{a1}{a2}{m12}{m12-1}{m12-2}{\sp};
+	\middleCoo{a2}{a3}{m23}{m23-2}{m23-3}{\sp};
+	\middleCoo{a1}{a3}{m13}{m13-1}{m13-3}{\sp};
+	\barycentre{a1}{a2}{a3}{b123}{b123-1}{b123-2}{b123-3}{\sp};
+	
+	\draw[obj2,->2-=0.7, shorten >= 1pt] (b123) --node[pos=0.38,fill=white,rectangle,inner sep=1pt,text=black] {${\sss X_3}$} (m12);
+	\draw[obj2,->2-=0.8, shorten <= 1pt] (m13) --node[pos=0.46,sloped,fill=white,rectangle,inner sep=0pt,text=black] {${\sss X_1}$} (b123);
+	\draw[obj2,->2-=0.8, shorten <= 1pt] (m23) --node[pos=0.46,sloped,fill=white,rectangle,inner sep=0pt,text=black] {${\sss X_2}$} (b123);
+	
+	\draw[mor] 
+	(m12-1) to[out=90, in=90, looseness=1.5] (m12-2)
+	(m13-1) to[out=-30, in=-30, looseness=1.5] (m13-3)
+	(m23-2) to[out=-150, in=-150, looseness=1.5] (m23-3);
+	\node[mor, circle, inner sep=4pt] at (b123) {};
+	
+	\draw[rounded corners=\r, obj3] 
+	(m12-1) -- (b123-1) -- (m13-1)
+	(m12-2) -- (b123-2) -- (m23-2)
+	(m23-3) -- (b123-3) -- (m13-3);
+	\node[yshift=-5pt, xshift=-8pt] at (b123-1) {${\sss R_2}$};
+	\node[yshift=-5pt, xshift=8pt] at (b123-2) {${\sss R_1}$};
+	\node[yshift=9pt] at (b123-3) {${\sss R_3}$}; 
+	\node[] at (b123) {${\sss i}$};
+	\node[yshift=3.5pt] at (m12) {${\sss j}$};
+	\node[yshift=-1.5pt, xshift=2.5pt] at (m13) {${\sss l}$};
+	\node[yshift=-1.5pt, xshift=-2.5pt] at (m23) {${\sss k}$};
+\end{tikzpicture}

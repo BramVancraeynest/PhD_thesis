@@ -1,0 +1,10 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{.4};
+	\def\h{.65};
+	
+	\draw[obj1] (0,0) -- (0,-2*\h);
+	\draw[obj1] (2*\l,0) -- (2*\l,-2*\h);
+	\draw[obj1, fill=black!10, rounded corners=3pt] (-.2*\l,-2/3*\h) rectangle (2.2*\l,-4/3*\h);
+	
+	\node at (\l,-\h) {$\sss h$};
+\end{tikzpicture}

@@ -1,0 +1,63 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.4};
+	\def\r{.9}
+	\def\c{cos(30)};
+	\def\s{sin(30)};
+	
+	\def\o{.42};
+	
+	\draw[obj1] (0,0) -- (30:\l);
+	\draw[obj1] (0,0) -- (150:.5*\l);
+	% Left vertical edge
+	\draw[obj1] (0,-\l) -- (0,0);
+	% Right vertical edge
+	\draw[obj1] ({\c*\l*2},-\l) -- ({\c*\l*2},0);
+	
+	\draw[obj1] ({2*\l*\c},0) -- ++(30:.5*\l);
+	\draw[obj1] ({2*\l*\c},0) -- ++(150:\l);
+	\draw[obj1] ({\c*\l}, {-\l-\l*\s}) -- ++(150:\l);
+	\draw[obj1] ({\c*\l}, {-\l-\l*\s}) -- ++(30:\l);
+	\draw[obj1] ({2.5*\c*\l}, {-\l-.5*\l*\s}) -- ++(150:.5*\l);
+	\draw[obj1] ({-\c*.5*\l}, {-\l-.5*\l*\s}) -- ++(30:.5*\l);
+	\draw[obj1] ({\c*\l}, {\s*\l}) -- ++(0,.5*\l);
+	\draw[obj1] ({\c*\l}, {-\l-2*\s*\l}) -- ++(0,.5*\l);
+	
+%	\node[anchor=north east, xshift=3pt, yshift=2.5pt] at ({\l*\c+\r/sqrt(2)}, {-\l*\s + \r/sqrt(2)}) {$\sss X$};
+	
+	\draw[obj1, ->1-=. 55] ({\o*\c},{\o*\s}) arc (30:-90:\o);
+	\draw[obj1, -<1-=. 45] ({\l*\c-\c*\o},{\l*\s-\s*\o}) arc (-150:-30:\o);
+	\draw[obj1, -<1-=. 45] ({2*\l*\c-\o*\c},{\s*\o}) arc (150:270:\o);
+	
+	\draw[obj1, -<1-=. 45] ({2*\l*\c},{-\l+\o}) arc (90:210:\o);
+	
+	\draw[obj1, ->1-=. 56] ({\l*\c-\o*\c},{\o*\s-3*\l*\s}) arc (150:30:\o);
+	
+	\draw[obj1, ->1-=. 55] (0,{-\l+\o}) arc (90:-30:\o);
+	
+	\node[mor, inner sep=2.8pt] at (0,0) {};
+	\node[mor, inner sep=2.8pt] at (0,-\o) {};
+	
+	\node[mor, inner sep=2.8pt] at ({\o*\c},{\o*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c - \o*\c},{\l*\s - \o*\s}) {};
+
+	\node[mor, inner sep=2.8pt] at ({\l*\c+\c*\o},{\l*\s-\s*\o}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c-\o*\c},{\s*\o}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c},-\o) {};
+	
+	\node[mor, inner sep=2.8pt] at ({2*\c*\l},{\o-2*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\c*\l-\c*\o},{-\s*\o-2*\l*\s}) {};
+	
+	\node[mor, inner sep=2.8pt] at ({\l*\c + \o*\c},{-3*\l*\s + \o*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c - \o*\c},{-3*\l*\s + \o*\s}) {};
+	
+	\node[mor, inner sep=2.8pt] at (0,{-\l+\o}) {};
+	\node[mor, inner sep=2.8pt] at ({\o*\c},{-\l-\s*\o}) {};
+	
+	\node[mor, inner sep=2.8pt] at ({\l*\c},{\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c},0) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c},{-2*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c},{-3*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at (0,{-2*\l*\s}) {};
+	
+	\draw[obj1, pattern=north west lines] ({\l*\c},{-\l*\s}) circle (.4*\r);
+\end{tikzpicture}

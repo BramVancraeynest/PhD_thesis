@@ -1,0 +1,15 @@
+\begin{tikzpicture}[baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{.9};
+	\def\h{.65};
+	\node(int) at (.5*\l,.5*\h) {};
+	
+	\draw[obj1, rounded corners = 3pt] (0,0) -- (\l,\h);
+	\clipAroundNode{int}{
+		\draw[obj1, rounded corners = 3pt] (\l,0) -- (0,\h);
+	}
+	
+	\node[below] at (0,0) {$\sss X_2$};
+	\node[below] at (\l,0) {$\sss X_1$};
+	\node[above] at (0,\h) {$\sss X_1$};
+	\node[above] at (\l,\h) {$\sss X_2$};
+\end{tikzpicture}

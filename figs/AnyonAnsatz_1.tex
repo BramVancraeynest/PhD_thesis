@@ -1,0 +1,16 @@
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\def\r{.9};
+	\def\i{.3};
+	\def\o{1.4};
+	
+	\draw[obj2] (0,0) circle (\r);
+	
+	\foreach \a in {30,150,-90}{
+		\draw[obj1] (\a:\i) -- (\a:\o);
+		\node[mpotensor,rotate=\a] at (\a:\r) {};
+	}
+	
+	\draw[obj2, wiggly] (-30:\i) -- (-30:\o);
+	\node[fusiontensor] at (-30:\r) {};
+	\node[anchor=north, yshift=-4pt] at (-30:\r) {$\sss Z$};
+\end{tikzpicture}

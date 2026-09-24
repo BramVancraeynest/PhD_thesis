@@ -1,0 +1,29 @@
+\begin{tikzpicture}[x={(1,0)},z={(.5,.5)},baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{1.4};
+	\def\o{.16};
+	\def\h{1.2};
+	
+	\clip (.5*\l,.5*\l) rectangle (3.5*\l,3.5*\l);
+
+	
+	\foreach \y in {0,...,3}{
+		\foreach \x in {0,...,3}{
+			\node[fill=black!16, circle, inner sep=3.4pt] at (\x*\l,\y*\l,0) {};
+		}
+	}
+	\foreach \y in {0,...,3}{
+		\foreach \x in {0,...,3}{
+			
+			\draw[obj1, wiggly] ({\x*\l+\o},\y*\l,0) -- ({\x*\l+\l-\o},\y*\l,0);
+			\draw[obj1, wiggly] (\x*\l,{\y*\l+\o},0) -- (\x*\l,{\y*\l+\l-\o},0);
+			
+			\node[fill=BlueViolet, circle, inner sep=1.2pt] at ({\x*\l+\o},\y*\l,0) {};
+			\node[fill=BlueViolet, circle, inner sep=1.2pt] at (\x*\l,{\y*\l+\o},0) {};
+			\node[fill=BlueViolet, circle, inner sep=1.2pt] at ({\x*\l+\l-\o},\y*\l,0) {};
+			\node[fill=BlueViolet, circle, inner sep=1.2pt] at (\x*\l,{\y*\l+\l-\o},0) {};
+			
+			\node[fill=BlueViolet, circle, inner sep=1.2pt] at (\x*\l,\y*\l,\h) {};
+			\draw[obj1, ->1-=.7] (\x*\l,\y*\l,.10*\h) -- (\x*\l,\y*\l,.85*\h);
+		}
+	}
+\end{tikzpicture}

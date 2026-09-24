@@ -1,0 +1,197 @@
+\section{Tensor network representations}\label{sec:SNPEPS}
+\subsection{Ground state representations}
+As anticipated in \cref{sec:SNModels}, PEPS representations of string-net ground states are straightforward to construct since the ground state projector can be expressed as a product of local commuting projectors, namely $\prod_\msf p B_\msf p^\mc D$. To this end, one acts with the projector on an admissible reference state in the string-net Hilbert space, typically chosen as the one with the identity object $\mbb 1_\mc D$ on every edge $\msf e\in\msf E(\Lambda)$. Explicitly, the resulting state is a superposition of all admissible string configurations, with amplitudes given by products of $F$-symbols, one for each vertex $\msf v\in\msf V(\Lambda)$. The local PEPS tensor therefore evaluates to an $F$-symbol multiplied by appropriate quantum dimension factors. These PEPS ground states are characterised by the existence of MPOs that live purely on the virtual level and can be freely moved through the lattice, without implementing a physical symmetry action. In fact, the (indecomposable) MPOs form a representation of the fusion rules of $\mc D$ under multiplication, which is implemented locally via \emph{fusion tensors} that intertwine them. Also the topological invariance of the MPOs in the ground states is characterised locally by a \emph{pulling-through condition} satisfied by the PEPS and MPO tensors. Algebraically, this condition follows from the pentagon equation satisfied by the $F$-symbols. Since these MPOs are not related to any physical symmetry action, they survive small perturbations on the physical level. This construction of string-net ground states is covered in refs.~\cite{Gu2009,Buerschaper2009,Williamson2017}, but turns out to not be the most general construction.
+
+\bigskip\noindent Indeed, provided the input category $\mc D$, distinct PEPS representations may exist~\cite{Lootens2020}. In the tensor network framework, the defining feature of a string-net wave function is the existence of locally deformable MPO symmetries. As demonstrated in ref.~\cite{Lootens2020}, the collection of consistency equations that these PEPS and MPO tensors have to satisfy are precisely the six pentagon equations associated to an invertible $(\mc C,\mc D)$-bimodule category $\mc R$. For every such choice of $\mc R$, the corresponding PEPS tensors evaluate to the components of the $\mc R$-module associator $\rF$, while the MPO symmetries now form a representation of the Morita dual category $\mc C=\mc D^\star_\mc R$. Although the \emph{physical} degrees of freedom are still specified by $\mc D$, the choice of $\mc R$ together with $\mc D$ defines the \emph{virtual} level of the PEPS. The Morita equivalence between $\mc D$ and $\mc C$ is equivalent to \emph{MPO injectivity}, a technical condition that guarantees a ground state degeneracy independent of system size~\cite{Sahinoglu2014,Bultinck2015,Lootens2020,Bridgeman2022}. As in the canonical construction, these generalised string-net ground states can be obtained by acting on a reference product state with a ground state projector, now defined in terms of $\mc R$ and denoted by $ \prod_{\msf p} B_{\msf p}^{\mc R}$.
+
+\bigskip\noindent Let us unpack this construction in more detail. First, we consider for any (right) $\mc D$-module category $\mc R$ the following \emph{module} plaquette operators:
+\begin{equation}\label{eq:BpR}
+	B^\mc R_\msf p = \sum_{R\in\mc I_\mc R} \frac{d_R}{\Dim\mc R} B_\msf p^R =: \, \inputtikz{SNModBp} \,\, .
+\end{equation}
+The action of $B_\msf p^\mc R$ is now defined via the insertion of a loop labelled by $R\in \mc I_\mc R$ in the punctured plaquette $\msf p$ and fusing it into the physical lattice, thereby making use of \cref{eq:ModResId2,eq:ModFmove,eq:ModBubblePop}. From these local rules it also follows readily that these module plaquette operators together with the $B_\msf p^\mc D$'s and $B_\msf p^\mc C$'s as defined in \cref{eq:BpD} obey
+\begin{equation}
+	B^\mc R_\msf p \cdot B^\mc C_\msf p = B^\mc R_\msf p, \qquad
+	B^\mc D_\msf p \cdot B^\mc R_\msf p = B^\mc R_\msf p,
+\end{equation}
+for every $\msf p$. Hence, acting with the projector $\prod_\msf p B_\msf p^\mc R$ on any reference state yields a ground state of the $\mc D$-string-net model.\footnote{By reversing the orientation of the loops in \cref{eq:BpR} --- or, equivalently, considering the module plaquette operators $B^{\mc R^{\rm op}}_{\msf p}$ for the \emph{opposite module category} $\mc R^{\rm op}$ -- one obtains a ground state projector for the $\mc C$-string-net model.} Note, however, that the reference state is now necessarily one in $\mc H_\mc C(\Lambda)$, for example one that corresponds to assigning $\mbb 1_\mc C$ to all edges $\msf e\in\msf E(\Lambda)$.
+
+Putting everything together, we can thus summarise the derivation of the ground state PEPS representation of the $\mc D$-string-net with a generic module category as:
+\begin{gather}
+	\inputtikz{SNPEPS_1}
+	\overset{\eqref{eq:ModResId2}}{\mapsto} \sum \{d\} \inputtikz{SNPEPS_2}\\
+	\overset{\substack{\eqref{eq:ModFmove} \\ \eqref{eq:ModBubblePop}}}{\mapsto} \sum \{d\} \{F\}\inputtikz{SNPEPS_3}. \label{eq:SNPEPSderiv}
+\end{gather}
+Notably, all the wave function amplitudes derived via \cref{eq:SNPEPSderiv} are written in terms of $|\msf V(\Lambda)|$ $\rF$-symbols. Their specific form invites us to consider tensors whose non-vanishing components are depicted by:
+\begin{equation}\label{eq:PEPSDTriple}
+	\begin{gathered}
+		\inputtikz{PEPSDTriple} \, \, \equiv
+		\inputtikz{PEPSDSingle} \\ 
+		= \frac{1}{\sqrt{d_{R_3}}} \bigg(\frac{d_{Y_1}d_{Y_2}}{d_{Y_3}}\bigg)^{1/4}
+		\big(\rF^{R_1Y_1Y_2}_{R_2}\big)_{R_3,ij}^{Y_3,kl}
+	\end{gathered}\,,
+\end{equation}
+as well as a mirrored version evaluating to the complex conjugate $F$-symbol. In what follows we typically suppress the orientation of the tensor legs. Note that every tensor index corresponds to a triple of objects and a multiplicity index. As per our convention that $F$-symbols for which not all fusion rules are fulfilled are zero, some of the objects need to be shared among different tensor legs for the component to be non-vanishing. Due to their internal structure, we thus refer to these kinds of tensors as \emph{triple line tensors}. Contraction of these tensors happens via identification of objects on legs of concatenated tensors, identification of basis vectors and summing over them. We also assume the convention that every closed loop in such a contraction is weighted with an additional factor of a quantum dimension~\cite{Williamson2017}.
+
+It follows from the module pentagon equation \cref{eq:ModPent} that two distinct ways to contract these tensors are related via an $F$-symbol as follows:
+\begin{equation}\label{eq:Fmove_tensors}
+	\inputtikz{Fmove_tensors_1} = \sum_{Y_6,k,l} \big(F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \inputtikz{Fmove_tensors_2}.
+\end{equation}
+The tensors \cref{eq:PEPSDTriple} can thus be viewed as an explicit representation of the graphical calculus of the fusion category $\mc D$.
+
+Finally, it can be easily checked that contraction of tensors \cref{eq:PEPSDTriple} according to the connectivity of the underlying lattice $\Lambda$ and weighted with the appropriate factors of quantum dimensions exactly reproduces the ground state \cref{eq:SNPEPSderiv}.
+\subsection{MPO symmetries}
+The PEPS ground state representation enjoys topological MPO symmetries acting only on the virtual level as foreshadowed above. Provided $\mc D$ and $\mc R$, these topological symmetries are organised in the Morita dual category $\mc C=\mc D_\mc R^\star$. In order to derive the MPO representation of these topological lines, we consider similarly as in \cref{eq:SNPEPSderiv} the ground state projector acting on an empty string configuration with a loop labelled by an object $X\in\ob(\mc C)$ inserted, for instance:
+\begin{equation}
+	\inputtikz{SNPEPS_line} \,\,.
+\end{equation}
+Note that the intersections of the $X$-labelled loop with the physical lattice are trivial. Topological invariance of these loops is guaranteed by the following \emph{sliding property} of the ground state projectors:
+\begin{equation}\label{eq:SNProjectorPT}
+	\inputtikz{SNProjectorPT_1} = \inputtikz{SNProjectorPT_2},
+\end{equation}
+for every $X\in\ob(\mc C)$. This sliding property is immediately derived from the by now familiar graphical calculus. In a way the ground state projector can thus be interpreted as a defect that hides the punctures from the topological lines and is therefore sometimes referred to as a \emph{cloaking} defect or boundary condition~\cite{Brehm2021,Brehm2024}, or \emph{Kirby colour}~\cite{Bloomquist2018}.
+
+By carefully working out the recoupling of configurations with strings, one finds that in the presence of a loop the resulting PEPS ground state should be modified by inserting triple line tensors of the form
+\begin{equation}\label{eq:MPOCTriple}
+	\begin{gathered}
+		\inputtikz{MPOCTriple} \,\,\equiv \inputtikz{MPOCSingle} \\
+		= \frac{1}{\sqrt{d_{R_1}d_{R_2}}} \big( \bF^{XR_1Y}_{R_2} \big)_{R_3,ij}^{R_4,kl}\,,
+	\end{gathered}
+\end{equation}
+along the path of the loop at every intersection with the physical lattice. The full MPO is then obtained by contracting these tensor along the `horizontal' direction. In fact, the simple objects $X\in\mc I_\mc C$ and $Y\in\mc I_\mc D$ label the \emph{injective blocks} of these topological MPOs in either direction. It follows from the consistency equation \cref{eq:Pent4} that these tensors together with the ground state PEPS tensors satisfy the \emph{pulling-through} or \emph{zipper equation}:
+%\begin{equation}\label{eq:TripleLinePT}
+%	\inputtikz{PullingThroughTriple1} \,\,\, = \, \inputtikz{PullingThroughTriple2} \,\, ,
+%\end{equation}
+\begin{equation}\label{eq:TensorPT}
+	\inputtikz{PullingThrough1} \,\,\, = \, \inputtikz{PullingThrough2} \,\, ,
+\end{equation}
+that does not modify the physical index $i$, so that these MPOs can move freely on the virtual level of the PEPS. In fact, by turning things around, one can interpret the PEPS tensors as \emph{intertwiners} for the MPO tensors in the `vertical' direction.
+
+Continuing along these lines, we can show that two MPOs labelled by $X_1$ and $X_2$ supported on homologous loops $\ell_1\sim\ell_2$ can be fused and decomposed according to $X_1\otimes X_2=\sum_{X_3\in\mc I_\mc C} N_{X_1X_2}^{X_3} X_3$. This fusion product can be implemented \emph{locally} in terms of \emph{fusion} tensors defined in terms of the left module associator $\lF$:
+\begin{equation}\label{eq:PEPSCTriple}
+	\begin{gathered}
+		\inputtikz{PEPSCTriple} \,\,\equiv \inputtikz{PEPSCSingle} \\
+		=\frac{1}{\sqrt{d_{R_3}}} \bigg(\frac{d_{X_1}d_{X_2}}{d_{X_3}}\bigg)^{1/4} \big(\lF^{X_1X_2R_1}_{R_2}\big)_{X_3,ij}^{R_3,kl} \,,
+	\end{gathered}
+\end{equation}
+that together with the MPO tensors \cref{eq:MPOCTriple} satisfy a pulling-through equation akin to a rotated version of \cref{eq:TensorPT}.
+
+\bigskip\noindent In summary, a $\mc D$-string-net PEPS representation fully exploits the structure provided by an invertible $(\mc C,\mc D)$-bimodule category $\mc R$. The bimodule category encodes a collection of five unitary $F$-symbols in terms of which the PEPS tensors, MPO tensors and their fusion tensors are defined. These $F$-symbols simultaneously satisfy six coupled pentagon equations. Two of these pentagon equations involve only the associators of $\mc D$ and $\mc C$ respectively. Two others --- \cref{eq:ModPent} and its left counterpart --- involve also the left and right module associators and are interpreted as recoupling relations for the PEPS and fusion tensors akin to \cref{eq:Fmove_tensors}. The remaining two involve the bimodule associator $\bF$ and are in turn interpreted as intertwining relations of the MPO tensors in either direction, as in \cref{eq:TensorPT}.
+
+\bigskip\noindent As an aside, let us note that techniques very similar to those presented in this chapter can be used to construct explicit PEPS representations of the gapped boundaries and domain walls discussed in \cref{sec:DomainWalls}~\cite{Lootens2020}. In this way, one obtains a complete tensor network realisation of the Kitaev-Kong framework for gapped boundaries and interfaces in string-net models~\cite{Kitaev2011,Kong2012}.
+
+The reader may also wonder how PEPS torus ground states of the same $\mc D$-string net model corresponding to different choices of module categories $\mc R$ and $\mc R'$ are related. As argued in ref.~\cite{Lootens2020}, one can construct MPO \emph{intertwiners} that locally change the choice of module category by pulling this MPO through the PEPS tensors. The existence of these intertwiners guarantees that the distinct PEPS representations are \emph{locally} indistinguishable, but may differ \emph{globally}. In the next chapter, these intertwiners are reviewed in detail and shown to implement \emph{duality} transformations of the boundary theories.
+\subsection{Example: the toric code}\label{sec:TC}
+Let us illustrate the above formalism for arguably the simplest non-chiral topological order: Kitaev's \emph{toric code}~\cite{Kitaev1997}. Within the string-net formalism, the toric code model corresponds to the input category $\Vect_{\mbb Z_2}$. In virtue of the $\Vect_G$-module category classification reviewed in \cref{par:VecGMods}, there exist two module categories over $\Vect_{\mbb Z_2}$: $\Vect_{\mbb Z_2}$ itself and $\Vect$. For both cases the triple line tensors from which their PEPS ground states are constructed can be drastically simplified. In fact, they can be fully expressed in terms of \emph{GHZ tensors} in the Pauli-$X$ and Pauli-$Z$ basis:
+\begin{equation}\label{eq:TCTensors}
+	\raisebox{0pt}{\inputtikz{TC_tensor_1_a}} = | 00\cdots0 \ra + | 11\cdots1 \ra,\qquad \raisebox{0pt}{\inputtikz{TC_tensor_2}} = |+\!+ + \ra + | - \! - - \ra\,\,,
+\end{equation}
+with $\{|0\ra,|1\ra\}$ denoting the Pauli-Z eigenbasis, and $|\pm\ra := 1/\sqrt 2 \, (|0\ra \pm|1\ra)$. These tensors satisfy a number of invariance properties under conjugation by the Pauli matrices. Concretely, the first one is invariant under conjugation by two Pauli-$Z$ operators on any pair of legs, as well as simultaneous conjugation with Pauli-$X$ operators on all legs:
+\begin{equation}\label{eq:TCTensorsSyms}
+		\raisebox{5pt}{\inputtikz{TC_tensor_1_b}} \,\, = \inputtikz{TC_tensor_1_c} = \,\inputtikz{TC_tensor_1_a}\,\,,
+\end{equation}
+whereas the second tensor in \cref{eq:TCTensors} has the same symmetries with $X$ and $Z$ interchanged. Using them, the toric code ground states for $\mc R=\Vect_{\mbb Z_2}$ and $\mc R=\Vect$ are respectively written as:
+\begin{equation}
+	\inputtikz{TC_1}\qquad\,,
+\end{equation}
+and
+\begin{equation}
+	\inputtikz{TC_2}\qquad\,.
+\end{equation}
+The dotted lines in the first PEPS representation serve as a guide to the eye and represent the primal hexagonal lattice. It can be readily verified by making use of the symmetry properties \cref{eq:TCTensorsSyms} that both states are indeed eigenstates of the toric code plaquette operators.
+
+Also the virtual MPO symmetries simplify drastically, as they have bond dimension 1 in both cases. In fact, they are implemented via loops of Pauli-$X$ and -$Z$ operators on the virtual level. For example:
+\begin{equation}\label{eq:TC_1_string}
+	\inputtikz{TC_1_string}\qquad\,,
+\end{equation}
+and
+\begin{equation}
+	\inputtikz{TC_2_string}\qquad\,.
+\end{equation}
+The red dotted line in either figure traces out the path of the corresponding loop operator. The topological invariance of these loop operators follows directly from the symmetries of the tensors \cref{eq:TCTensorsSyms}.
+\subsection{Anyonic excitations and the tube algebra}\label{sec:TubeAlgebra}
+We now proceed to discuss the construction of excited states and complete bases of torus ground states. As mentioned above, both excited states and distinct ground states can be obtained by studying the action of loop and string operators labelled by elements of $\mc Z(\mc D)$ on a reference ground state. From the perspective of tensor networks it is however more natural to describe these states in terms of the \emph{tube algebra}. In fact, the tube algebra provides a natural framework for computing the Drinfeld centre of a fusion category and the associated half-braidings that appear in the definition of string operators. Formally, this follows from the existence of a braided equivalence between the category of representations of the tube algebra and the Drinfeld centre~\cite{Ocneanu1993,Izumi2000,Mueger2002,Mueger2001,Kirillov2011,Bullivant2019}.
+
+\bigskip\noindent Up to this point, we have been somewhat vague about the precise nature of the anyonic excitations appearing in the string-net models. Physically, anyons can be viewed as quasiparticle excitations whose local energy density is slightly higher than that of the ground state. They are always created in particle-antiparticle pairs on top of a reference torus ground state, a feature that also becomes manifest in the tensor network anyon ansatz discussed below. Since the (extended) string-net Hamiltonian is a local commuting-projector Hamiltonian, anyonic excitations correspond to violations of a small number of plaquette terms, vertex terms, or a mixture of both.
+
+In essence, the idea underlying the tube algebra is to regard anyon excitations as different \emph{ground state sectors} of the theory defined on a \emph{punctured surface}, where the punctures coincide with the locations of the anyons, rather than viewing them as defects above a ground state on the unpunctured lattice. The ground space on such a punctured surface decomposes into sectors characterised by fixed boundary conditions around the punctures~\cite{Lan2013,Bultinck2015,Williamson2017,Bullivant2019}. These sectors form indecomposable \emph{modules} under the action of the tube algebra, and the irreducible representations of the tube algebra precisely label the different anyon species. Since the tube algebra can be endowed with the structure of a (finite-dimensional) $C^*$-algebra, the existence of these irreducible modules is guaranteed by the \emph{Artin-Wedderburn theorem}.
+
+\bigskip\noindent Let us now provide a qualitative definition of the tube algebra. As an algebra, it is spanned by basis elements that may be represented diagrammatically as cylinders decorated by $\mc C$-coloured graphs and containing a number of marked points on each boundary. Different choices for the number of marked boundary points give rise to different tube algebras. Although these algebras are not isomorphic, they are all \emph{Morita equivalent}. Recall that Morita equivalence is a strictly weaker notion of equivalence than algebra isomorphism but guarantees that the corresponding categories of representations are equivalent, implying that all such tube algebras describe the same anyon theory. The multiplication of tubes is defined diagrammatically by stacking two decorated cylinders on top of one another and subsequently applying the graphical calculus to rewrite the resulting diagram as a linear combination of basis tubes. In this way, the structure factors are determined entirely by the associator of the underlying fusion category.
+
+The attentive reader might have noticed that we discuss tube algebras based on $\mc C$, even though we argued that the ground states and excitations are labelled by $\mc Z(\mc D)$. In virtue of $\mc Z(\mc C)\simeq\mc Z(\mc D)$, the ground states and excitations that we construct momentarily thus physically correspond to the associated sectors of $\mc Z(\mc D)$ under this equivalence. In fact, this equivalence can be implemented via the aforementioned bimodule tubes.
+
+\bigskip\noindent Without loss of generality, we restrict ourselves to the tube algebra with a single boundary label on each side of the cylinder. Within the tensor network formalism, the basis elements of the tube algebra can be represented as matrix product operators on periodic boundary conditions of the following form~\cite{Sahinoglu2014,Bultinck2015,Williamson2017}:
+\begin{equation}\label{eq:MPOTube}
+	\fr T^{A,A',X,X',i,j} := \inputtikz{MPOTube_1}\,\, ,
+\end{equation}
+for all $A,A',X,X'\in\mc I_\mc C$ such that $X'\in X\otimes A$, $X'\in A'\otimes X$ and where $i\in\mc C(X',A'\otimes X)$ and $j\in\mc C(X\otimes A,X')$. In this figure, we explicitly show the arrows on the tensor legs, in preparation of the definition of the Hermitian conjugate below. Crucially, the multiplication rules of the tube algebra are independent of the number of MPO tensors appearing in \cref{eq:MPOTube}. This follows from the zipper equation \cref{eq:TensorPT} that they satisfy. We then compute the product $\fr T^{A',A'',X_1,X'_1,i,j} \cdot \fr T^{A, \tilde A,X_2,X'_2,k,l}$, which is non-vanishing only when $A'=\tilde A$, by recoupling the tensor network diagram
+\begin{equation}
+	\delta_{A',\tilde A} \,\,\, \inputtikz{MPOTube_2} \,\, ,
+\end{equation}
+which yields:
+\begin{equation}\label{eq:TubeMult}
+	\begin{gathered}
+		\fr T^{A',A'',X_1,X'_1,i,j} \cdot \fr T^{A, \tilde A,X_2,X'_2,k,l} \\
+		= \sum_{\substack{X_3,X_3' \\ m,n,o \\ p,q}}
+		\sqrt{\frac{d_{X_3'}d_{A'}d_{X_1}d_{X_2}}{d_{X_3}d_{X_1'}d_{X_2'}}} \,
+		\big( F^{X_1A'X_2}_{X_3'} \big)^{X_2',lo}_{X_1',jn} \,
+		\big( \bar F^{X_1X_2A}_{X_3'} \big)^{X_2',lo}_{X_3,mq} \, \\
+		\times
+		\big( \bar F^{A''X_1X_2}_{X_3'} \big)^{X_2,mp}_{X_1',in}
+		\,\cdot\, 
+		\fr T^{A,A'',X_3,X'_3,p,q}.
+	\end{gathered}
+\end{equation}
+Moreover, the algebra is closed under taking the \emph{Hermitian conjugate} defined as:
+\begin{equation}
+	\big(\fr T^{A,A',X,X',i,j} \big)^\dagger := \inputtikz{MPOTube_3}\,\, .
+\end{equation}
+We can express this conjugate in the basis of tubes \cref{eq:MPOTube} by making use of the $F$-moves on the fusion tensors, as well as additional graphical identities for reinstating the orientation of the arrows on the tensor legs~\cite{Bultinck2015}. Eventually, one finds
+\begin{equation}
+\begin{gathered}
+	\big(\fr T^{A,A',X,X',i,i'} \big)^\dagger =
+	d_X^2 \sqrt{\frac{d_{X''}}{d_{X'}}}
+	\sum_{\substack{j,j',\\k,k'}}
+	\big( F^{A'XX}_{A'} \big)_{X',ik}^{\mbb 1, 11}
+	\big( \bar F^{XA\bar X}_{A'} \big)_{X',i'k}^{X'',jk'} \\
+	\times
+	\big( F^{\bar XX\bar X}_X\big)_{\mbb 1, 11}^{\mbb 1, 11}
+	\big(\bar F^{\bar XXX''}_{X''}\big)_{\mbb 1,11}^{A',k'j'}
+	\,\cdot\,
+	\fr T^{A',A,\bar X,X'',j,j'}
+\end{gathered}\,\,.
+\end{equation}
+Altogether this endows the collection of tubes with the structure of a $C^*$-algebra.
+
+\bigskip\noindent Invoking the Artin-Wedderburn theorem on this algebra, we are guaranteed the existence of an isomorphism between the tube algebra and a direct sum of simple matrix algebras, the number of which is equal to the simple objects in $\mc Z(\mc C)$. Concretely, we can construct linear combinations of tubes that behave as \emph{matrix units} within each block under the multiplication \cref{eq:TubeMult}~\cite{Izumi2000,Bultinck2015,Lootens2021a,Lootens2022}, viz.:
+\begin{equation}
+	e^{Z,A_i,B_j} \cdot e^{Z',C_k,D_l} = \delta_{Z,Z'} \, \delta_{B,C}\, \delta_{j,k}\,  e^{Z,A_i,D_l},
+\end{equation}
+where $Z,Z'$ label simple objects of $\mc Z(\mc C)$, and $A,B$ ($C,D$) denote the simple objects appearing in the decomposition of $Z$ ($Z'$) as object of $\mc C$, with $i,j$ ($k,l$) denoting their multiplicity within this decomposition. Under taking the conjugate, they are transposed according to
+\begin{equation}
+	\big( e^{Z,A_i,B_j} \big)^\dagger = e^{Z,B_j,A_i}.
+\end{equation}
+Notably, matrix units of the form $e^{Z,A_i,A_i}$ are \emph{(simple) idempotents}, while off-diagonal elements $e^{Z,A_i,B_j}$, $A_i\neq B_j$ are \emph{nilpotents}. Summing over all simple idempotents within the same block provides the \emph{minimal central idempotents}
+\begin{equation}
+	\mc P^Z := \sum_{A_i} e^{Z,A_i,A_i}.
+\end{equation}
+Connecting back to the string operators, it can be shown that the coefficients of the central idempotents when expressed in the basis \cref{eq:MPOTube} exactly coincide with the coefficients of the half-braiding isomorphisms~\cref{eq:HalfBraid} $\mc Z(\mc C)$~\cite{Izumi2000,Lan2013,Lootens2022}.
+
+\bigskip\noindent Let us denote the minimal central idempotents now as follows
+\begin{equation}
+	\inputtikz{AnyonAnsatz_1}\,\, ,
+\end{equation}
+wherein compared to \cref{eq:MPOTube} we have explicitly depicted the periodic boundary condition, and conflated the fusion tensors into one tensor labelled by $Z$. The anyon ansatz of ref.~\cite{Bultinck2015} now stipulates that in order to define a $(Z,Z^*)$-anyon--anti-anyon pair, one replaces one of the PEPS ground state tensors by a new type of tensor supported on the image of the corresponding idempotent, interpreted as a matrix from the `outer' to the `inner' indices, i.e.:
+\begin{equation}
+	\inputtikz{AnyonAnsatz_2} = \delta_{Z,Z'} \inputtikz{AnyonAnsatz_3}\,\, ,
+\end{equation}
+and analogously for $Z^*$, with the additional requirement that the pair $(Z,Z^*)$ is in the vacuum sector, as spelled out in detail in ref.~\cite{Bultinck2015}. Putting everything together, we could depict such a state as:
+\begin{equation}
+	\inputtikz{SNAnyonPair}\,\, .
+\end{equation}
+Let us stress once again that the location of the string connecting the anyons is not detectable as it can be freely moved through the lattice in virtue of the pulling-through condition \cref{eq:TensorPT}. With this we conclude our discussion of the anyon ansatz, but let us remark that from it, the anyonic braiding statistics and the fusion rules of the anyons, as encoded in $\mc Z(\mc C)$, can be computed directly, as demonstrated in ref.~\cite{Bultinck2015}.
+
+\bigskip\noindent Given these tubes, a complete basis for the $\mc D$-string-net torus ground space is also straightforward to construct. For each anyon $Z\in\mc I_{\mc Z(\mc C)}$ one constructs a ground state with an anyon flux $Z$ threading the `vertical' cycle of the torus by inserting the corresponding tube and closing it. Schematically:
+\begin{equation}\label{eq:SNGroundState}
+	\hspace{-10pt} \sum_{X\in\mc I_\mc C} \,\, \inputtikz{SNGroundState} \,\, .
+\end{equation}
+Note that we also could have used a simple idempotent to construct a ground state. As argued in ref.~\cite{Bultinck2015}, all simple idempotents contained in the same central idempotent yield the same ground state.

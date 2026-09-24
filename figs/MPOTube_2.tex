@@ -1,0 +1,37 @@
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\def\l{1.4};
+	\def\h{.65};
+	
+	\draw[obj2] (-.5*\l,0) -- (4.5*\l,0);
+	\draw[obj2] (-.5*\l,-1.5*\h) -- (4.5*\l,-1.5*\h);
+	
+	\draw[obj2] (3*\l,-2.5*\h) -- (3*\l,-1.5*\h);
+	\draw[obj2] (2*\l,0) -- (2*\l,\h);
+	\draw[obj2] (2*\l,-1.5*\h) to[out=90, in=-90] node[pos=.40, sloped, above, black] {$\sss A'$} (3*\l,0);
+	
+	\foreach \x in {0,1,4}{
+		\draw[obj1] (\x*\l,-2.5*\h) -- (\x*\l,\h);
+		\node[mpotensor] at (\x*\l,-1.5*\h) {};
+		\node[mpotensor] at (\x*\l,0) {};
+	}
+
+	\node[fusiontensor] at (2*\l,-1.5*\h) {};
+	\node[fusiontensor] at (3*\l,-1.5*\h) {};
+	\node[fusiontensor] at (2*\l,0) {};
+	\node[fusiontensor] at (3*\l,0) {};
+	
+	\node at (2*\l,-1.5*\h) {$\sss k$};
+	\node at (3*\l,-1.5*\h) {$\sss l$};
+	\node at (2*\l,0) {$\sss i$};
+	\node at (3*\l,0) {$\sss j$};
+	
+	\node[below] at (3.5*\l,-1.5*\h) {${\sss X_2}$};
+	\node[below] at (1.5*\l,-1.5*\h) {${\sss X_2}$};
+	\node[below] at (2.5*\l,-1.5*\h) {${\sss X'_2}$};
+	
+	\node[above] at (2*\l,\h) {$\sss A''$};
+	\node[below] at (3*\l,-2.5*\h) {$\sss A$};
+	\node[above] at (3.5*\l,0) {${\sss X_1}$};
+	\node[above] at (1.5*\l,0) {${\sss X_1}$};
+	\node[above] at (2.5*\l,0) {${\sss X'_1}$};
+\end{tikzpicture}

@@ -1,0 +1,197 @@
+\section{String-net models}\label{sec:SNModels}
+\subsection{Hilbert space and Hamiltonian}
+Let $\mc D$ be a UFC whose objects we denote by $\{Y\}$, and $\Lambda$ be an \emph{oriented trivalent lattice} $\Lambda$ without boundary. The microscopic string-net Hilbert space on $\Lambda$ is constructed from the \emph{input} $\mc D$ as follows~\cite{Levin2004,Kirillov2011}. A basis state corresponds to an assignment, or \emph{$\mc D$-colouring}~\cite{Kirillov2011}, of simple objects $Y\in\mc I_\mc D$ to all the edges $\msf E(\Lambda)$, with the requirement that the fusion rules are satisfied on all vertices $\msf V(\Lambda)$. Conventionally, reversing the orientation of an edge $\msf e\to-\msf e$ amounts to taking the dual object on that edge. Then, to every vertex with adjacent edges labelled $Y_1,Y_2,Y_3$ the junction space $\mc C(Y_1\otimes Y_2,Y_3)$ is attached. In what follows we specialise to the \emph{hexagonal lattice}. On it,  the Hilbert space $\mc H_\mc D(\Lambda)$ is thus defined as:
+\begin{equation}
+	\mc H_{\mc D}(\Lambda)  := {\rm Span}_\mbb C \Bigg\{ \quad \inputtikz{SNSpace} \quad \big| \, \{Y\}, \{i\}\Bigg\},
+\end{equation}
+where it is understood that the picture extends over the entire lattice. In correspondence with our graphical calculus, we also assume all edges to be oriented downwards.
+
+\bigskip\noindent On every plaquette $\msf p\in\msf P(\Lambda)$ and for every $Y\in\mc I_\mc D$ we subsequently define a local operator $B_\msf p^Y$. This operator admits a particularly intuitive definition as inserting a \emph{non-contractible} counter-clockwise loop labelled by the simple object $Y$ in the plaquette and fusing it into the physical lattice with local applications of the resolution of the identity $F$-moves, and normalisation of the basis vectors \cref{eq:ResId,eq:Fmove,eq:BubblePop}. In order for this to be consistent with our graphical calculus, and in particular the quantum dimension relation \cref{eq:qdim}, we should therefore think of the underlying manifold as being \emph{punctured} in the interior of every plaquette in $\msf P(\Lambda)$. Schematically, the action can therefore be depicted as:
+\begin{gather}
+	B_\msf p^Y \cdot \ket{\Psi} =
+	\inputtikz{SNPlaquette_1}
+	\overset{\eqref{eq:ResId}}{\mapsto}
+	\sum \{d\} \inputtikz{SNPlaquette_2} \\
+	\overset{\substack{\eqref{eq:Fmove} \\ \eqref{eq:BubblePop}}}{\mapsto}
+	\sum \{d\}\{F\} \inputtikz{SNPlaquette_3}.
+\end{gather}
+Herein, we have for simplicity omitted all edge and vertex labels; $\{d\}$ and $\{F\}$ are placeholders for the quantum dimensions and $F$-symbols obtained via repeated use of the aforementioned identities. We refer to \cite{Levin2004} for an explicit computation of these matrix elements. We can also infer from application of our graphical calculus that these plaquette operators form a representation of the fusion rules, viz.:
+\begin{equation}\label{eq:ProdBp}
+	B_\msf p^{Y_1}\cdot B_\msf p^{Y_2} = \sum_{Y_3} N_{Y_1Y_2}^{Y_3} B_\msf p^{Y_3}.
+\end{equation}
+With these plaquette operators at our disposal, the local Hamiltonian terms are constructed as:
+\begin{equation}\label{eq:BpD}
+	B_\msf p^\mc D = \sum_{Y\in\mc I_\mc D} \frac{d_Y}{\Dim\mc D} B_\msf p^Y =: \, \inputtikz{SNBp} \,\, .
+\end{equation}
+From combining \cref{eq:ProdBp} with the identity
+\begin{equation}
+	d_Y\, \Dim\mc D = \sum_{Y_1, Y_2} N_{Y_1Y_2}^Y d_{Y_1} d_{Y_2},
+\end{equation}
+it directly follows that $B_\msf p^\mc D$ is an idempotent for every $\msf p\in\msf P(\Lambda)$, i.e. $B_\msf p^\mc D \cdot B_\msf p^\mc D=B_\msf p^\mc D$, $\forall\msf p$. Commutation of plaquette operators $B_\msf p^\mc D$ and $B_{\msf p'\neq\msf p}^\mc D$ is immediate when $\msf p$ and $\msf p'$ are far separated. When $\msf p$ and $\msf p'$ share an edge this follows from comparing the matrix elements of both application orders and invoking the pentagon equation \cref{eq:pent} on their matrix elements. The string-net Hamiltonian is then finally given by
+\begin{equation}
+	H_{\mc D}(\Lambda) = -\sum_{\msf p\in\msf P(\Lambda)} B_\msf p^\mc D.
+\end{equation}
+Remark that a ground state of $H_{\mc D}(\Lambda)$ can be constructed by acting with the ground state projector $\prod_\msf p B_\msf p^\mc D$ --- which is well-defined since all $B_\msf p^\mc D$'s commute --- on a generic string-net state in $\mc H_\mc D(\Lambda)$. This is exactly the approach taken in \cref{sec:SNPEPS} to write down the ground state PEPS representations.
+
+Importantly, the ground state subspace is one-dimensional when the underlying lattice has the topology of a two-sphere~\cite{Kirillov2011}. However, on the two-torus the ground space is degenerate, and the degeneracy does not depend on the system size. Due to the absence of any global symmetry, this degeneracy cannot be traced back to ordinary symmetry breaking as discussed in \cref{sec:1Dphases}. Rather, the ground state degeneracy can be understood as the breaking of a more general type of symmetry whose operators are supported on oriented \emph{freely deformable} loops $\ell$ on the lattice. Such operators constitute an example of a \emph{global 1-form} symmetry~\cite{Nussinov2009,Gaiotto2014,McGreevy2022}.\footnote{In general, a $(D+1)$-dimensional quantum theory is said to host a \emph{global $p$-form symmetry} if there exist symmetry operators supported on freely-deformable closed submanifolds of \emph{codimension} $p$ with respect to the spatial dimension~\cite{Gaiotto2014,McGreevy2022}.}
+
+These loop operators, and their multiplication rules, are encoded in the \emph{monoidal} or \emph{Drinfeld centre} $\mc Z(\mc D)$ of $\mc D$.
+\subsection{Loop operators and ground states}\label{sec:SNGSs}
+Formally, the centre $\mc Z(\mc D)$ is a unitary fusion category whose simple objects are pairs $(Z,\gamma_{Z,\bullet})$ where $Z$ is a (generically non-simple) object in $\mc D$ and $\gamma_{Z,\bullet}$ is a natural isomorphism, called the \emph{half-braiding}. Its matrix elements can be expressed graphically as
+\begin{equation}\label{eq:HalfBraid}
+	\inputtikz{HalfBraid1} = \sum_{Y_2} \sum_{i,j} \big( \Gamma^{Y_1Z}_{Y_2}\big)_{ij} \inputtikz{HalfBraid2} \, ,
+\end{equation}
+$\forall Y_1\in\mc I_\mc D$. The half-braiding satisfies a hexagon consistency axiom involving the associator of $\mc D$. Consequently, $\mc Z(\mc D)$ can be endowed with a \emph{modular} braiding, defined directly in terms of $\gamma_{Z,\bullet}$~\cite{Mueger2001}. Naturality of $\gamma_{Z,\bullet}$ implies the following graphical equality:
+\begin{equation}\label{eq:SNPT}
+	\inputtikz{SNPullingThrough_3} = \inputtikz{SNPullingThrough_4} \, ,
+\end{equation}
+for all admissible junctions $| Y_1Y_2Y_3, i \ra$. Below, we often abuse notation and write simply $Z$ instead of $(Z,\gamma_{Z,\bullet})$.
+
+In order to define the action of a loop labelled by $(Z,\gamma_{Z,\bullet})$ on a state, one proceeds in a similar fashion as in the definition of the plaquette operators. One inserts the object $Z$ along the path $\ell$, and locally fuses it into the physical lattice, thereby making use of the half-braiding \cref{eq:HalfBraid} at every crossing with the physical lattice and the usual local recoupling identities \cref{eq:ResId,eq:Fmove,eq:BubblePop}. An illustration of such a loop is:
+\begin{equation}
+	\inputtikz{SNTopoLine1}\,\,.
+\end{equation}
+Although drawn as a line, it should be remarked that these operators act (diagonally) on edges adjacent to their path and are therefore more precisely interpreted as \emph{ribbon operators} with a finite width. These coincide with those introduced by Kitaev in ref.~\cite{Kitaev1997} and Levin and Wen in ref.~\cite{Levin2004}, see also refs.~\cite{Beigi2010,Dauphinais2018}.
+
+The \emph{topological} nature of the loop operator follows directly from the naturality condition \cref{eq:SNPT}, which ensures that $Z$ can slide freely across any junction of the physical lattice without altering the resulting operator. Note that this topological invariance also accounts for the commutativity with the Hamiltonian. When a loop and a plaquette operator have disjoint support, they commute trivially. When they have overlapping support, one can deform the loop away from the plaquette before acting with the latter, and subsequently restore the path of the loop, so that the combined action remains unchanged.
+
+\bigskip\noindent Provided a reference string-net ground state one can construct a complete basis of torus ground states by acting with all simple loop operators $(Z,\gamma_{Z,\bullet})\in\mc I_{\mc Z(\mc D)}$ along a non-contractible cycle of the torus. We therefore conclude that the torus ground state degeneracy is given by $|\mc I_{\mc Z(\mc D)}|$. This also implies that orthogonal ground states are locally indistinguishable, as the precise location of the $Z$-loop can be continuously deformed and is thus invisible for any local operator. Acting on the other hand with loop operators along the perpendicular non-contractible cycle provides a different set of ground states that are related to the former via the unitary basis transformation given by the $S$-matrix of $\mc Z(\mc D)$ defined in \cref{eq:Smat}~\cite{Pfeifer2010}.
+\newpage
+\subsection{String operators and excited states}\label{sec:LoopsExcited}
+Similar to the construction of ground states via loop operators, excited states are constructed by acting on the ground states with \emph{open} string operators, also labelled by objects $(Z,\gamma_{Z,\bullet})\in\mc I_{\mc Z(\mc D)}$. Such a state corresponds to an \emph{$(Z,Z^*)$-anyon--anti-anyon pair}, and schematically can be depicted as
+\begin{equation}\label{eq:AnyonPairStrings}
+	\inputtikz{AnyonPairStrings}\,\,.
+\end{equation}
+In this sense, the different ground states constructed in \cref{sec:SNGSs} can be understood as the result of creating a $(Z,Z^*)$-pair from a reference ground state, dragging one of the anyons around a non-contractible cycle before annihilating the pair.
+
+\bigskip\noindent Importantly, note that in fusing the open string in \cref{eq:AnyonPairStrings} to the physical lattice, one is in general left with dangling vertical edges on the plaquettes on which the string starts and terminates, if $Z$ decomposes as a non-trivial object of $\mc D$. In that case the obtained state does not belong to the string-net Hilbert space, and the corresponding anyons are said to possess a non-trivial \emph{charge}. Accommodating this type of excitations naturally leads us to consider the \emph{extended} string-net models, first introduced in ref.~\cite{Hu2015}. In this framework, the string-net Hilbert space is extended with extra open strands or \emph{tails}, one for every vertex of the original lattice. Consequently, all anyonic excitations, also those with a non-trivial charge, can be considered without the need to leave the Hilbert space or violate the $\mc D$ fusion rules. Concretely, on the hexagonal lattice, the extended Hilbert space is defined as:
+\begin{equation}
+	\mc H_{\mc D}^{\rm Ext.}(\Lambda)  := {\rm Span}_\mbb C \Bigg\{ \quad \inputtikz{SNSpaceExtended} \quad \big| \, \{Y\}, \{i\}\Bigg\}\,.
+\end{equation}
+In this depiction, an identification between every tail and the closest vertex of the hexagonal lattice is assumed. The extended Hamiltonian consists of the plaquette terms which generalise those introduced in \cref{eq:BpD}, and are defined in detail in ref.~\cite{Hu2015}, and additionally \emph{vertex terms} $Q_\msf v^\mc D$ for every $\msf v\in\msf V$. These act by projecting the tail corresponding to $\msf v$ to the identity object. Concretely, locally:
+\begin{equation}
+	Q_\msf v^\mc D \,\, \Bigg| \inputtikz{SNextendedQ_1} \Bigg> = \delta_{Y,\mbb 1} \,\, \Bigg| \inputtikz{SNextendedQ_2} \Bigg>\,\,.
+\end{equation}
+Collecting everything, the extended string-net Hamiltonian is of the form
+\begin{equation}
+	H_{\mc D}^{\rm Ext.}(\Lambda) = -\sum_{\msf p\in\msf P(\Lambda)} B_\msf p^\mc D -\sum_{\msf v\in\msf V(\Lambda)} Q_\msf v^\mc D .
+\end{equation}
+
+Notably, in the subspace defined by $Q^\mc D_\msf v=1$, $\forall\msf v\in\msf V$, the extended string-net model coincides with the original Levin-Wen string-net.
+
+\bigskip\noindent At this point we will not attempt to describe in further detail the action of the loop operators, the explicit ground states or excited states. Rather, we demonstrate in \cref{sec:SNPEPS} the construction of distinct PEPS representations of string-net ground states. The upshot of the tensor network approach is that a complete basis of torus ground states can be constructed by inserting a network of \emph{matrix product operators} living purely on the \emph{virtual level} of the PEPS. The network to insert corresponds concretely to \emph{central idempotents} of the \emph{tube algebra}. In fact, the representation theory of the tube algebra is often used to construct an explicit realisation of the Drinfeld centre. This description of the torus ground states is significantly simpler than working with the ribbon operators. Also, crucially, since the MPOs live on the virtual level, they survive physical perturbations and hence furnish a representation of the symmetries of the boundary Hamiltonians discussed in \cref{sec:dualities}. In a similar spirit, by introducing a new type of tensors whose support is specified by a central idempotent of the tube algebra, excited states also admit a PEPS representation.
+\section{Gapped boundaries and domain walls}\label{sec:Bdry}
+\subsection{Gapped boundaries} 
+So far we have restricted our attention to the case of closed boundary conditions. As anticipated in the introduction, we can define string-net models with different types of open boundary conditions while preserving the gap. One choice of boundary is obtained by simply terminating the lattice, in which case the edge degrees of freedom are labelled by objects and junctions in $\mc D$. This demonstrates that every string-net model has at least one gapped boundary, to which we refer as the \emph{regular} or \emph{smooth} boundary condition, but depending on the input $\mc D$, other choices might be possible~\cite{Kitaev2011,Kong2015}.
+
+The boundary conditions that we will study momentarily are constructed in such a way that the bulk plaquette operators can be extended to the boundary degrees of freedom while retaining their mutual commutativity. Commutation of the plaquette operators follows, similar as in the bulk, from local relations involving the $F$-symbols of $\mc D$.
+
+To this end, let us introduce a new set of labels $\mc I_\mc R = \{R_1,R_2,\dots\}$ for these boundary degrees of freedom, and an action of $\mc D$ on those labels implemented via $R_1\cat Y = \sum_{R_2\in\mc I_\mc R} N_{R_1Y}^{R_2}R_2$ so that vertices on the boundary host a new type of vector space with basis vectors $|R_1YR_2; i \ra$, $i=1,2,\dots,N_{R_1Y}^{R_2}$. Schematically, the lattice of the string-net states in the presence of such a boundary looks like:
+\begin{equation}
+	\inputtikz{SNSmoothBoundary}\,\,\, ,
+\end{equation}
+where we draw edges that carry labels in $\mc I_\mc R$ in {\color{BlueViolet}blue}. The type of Hom space can be inferred from the colour of the adjacent edges.
+Similar as in the bulk we define a unitary isomorphism $\rF$, generically distinct from the earlier defined $F$-symbol, whose matrix entries are defined graphically in terms of an \emph{$\rF$-move}:
+\begin{equation}\label{eq:ModFmove}
+	\inputtikz{ModuleAssociator1} = \sum_{Y_3,ij} \big( \rF^{R_1Y_1Y_2}_{R_2} \big)^{Y_3,kl}_{R_3,ij} \,\, \inputtikz{ModuleAssociator2}.
+\end{equation}
+We refer to $\rF$ as the \emph{(right) module associator}, and explain this terminology below. We require the $\rF$-symbols to adhere to a consistency axiom involving the $F$-symbols of $\mc D$ that is of the form
+\begin{equation}\label{eq:ModPent}
+	\rF \, \rF = \sum F\, \rF \, \rF.
+\end{equation}
+Its explicit form is straightforward to derive and spelled out in many places, e.g. ref.~\cite{Lootens2020}. For later reference, let us also introduce quantum dimensions of objects in $\mc I_\mc R$ in the sense of refs.~\cite{Schaumann2012,Etingof2015} via:
+\begin{equation}
+	\begin{split}
+		d_R &> 0 \\
+		d_R\, d_Y &= \sum_{R'\in\mc I_R} N_{RY}^{R'} \, d_{R'},
+	\end{split}
+\end{equation}
+for all $Y\in\mc I_\mc D$. The quantum dimensions $d_R$ are defined up to a global rescaling $d_R\mapsto \lambda \, d_R,\, \forall R\in\mc I_R$ for any $R$-independent positive real scalar $\lambda$. To fix it, we will adopt the canonical normalisation
+\begin{equation}
+	\Dim\mc R := \sum_{R\in\mc I_\mc R} d_R^2 = \sum_{Y\in\mc I_\mc D} d_Y^2 =: \Dim\mc D.
+\end{equation}
+In this normalisation, we have the resolution of the identity
+\begin{equation}\label{eq:ModResId}
+	\inputtikz{ModResId1} = \sum_{R',i} \sqrt{\frac{d_{R'}}{d_{R}d_{Y}}} \,\, \inputtikz{ModResId2},
+\end{equation}
+and the inner product
+\begin{equation}\label{eq:ModBubblePop}
+	\inputtikz{ModBubblePop1} = \delta_{R_2,R_2'} \delta_{i,j} \, \sqrt{\frac{d_{R_1}d_{Y}}{d_{R_2}}} \, \inputtikz{ModBubblePop2}\, .
+\end{equation}
+Succinctly, provided a unitary fusion category $\mc D$, the set of boundary labels $\mc I_\mc R$, together with the action $\cat$ and a solution to the pentagon equation \cref{eq:ModPent} form the defining data of a (unitary) \emph{right module category} $\mc R$ over $\mc D$~\cite{Ostrik2001,Etingof2015}. Similarly, we can define a \emph{left} module category to construct a gapped right boundary condition.
+
+Notably, the \emph{opposite} of a \emph{right} module category $\mc R$ over $\mc D$, notated as $\mc R^{\rm op}$, is naturally a \emph{left} module category whose module action is defined as~\cite{Schaumann2012,Etingof2015}:
+\begin{equation}
+	Y \act^{\rm op} R := R \cat Y^*.
+\end{equation}
+The objects of this opposite module category can be interpreted as \emph{duals} of the objects in $\mc R$. This leads to the following graphical identity
+\begin{equation}\label{eq:ModResId2}
+	\inputtikz{ModResId3} = \sum_{Y,i} \sqrt{\frac{d_{Y}}{d_{R}d_{R^*}}} \,\, \inputtikz{ModResId4}.
+\end{equation}
+
+\bigskip\noindent For a generic choice of module category $\mc R$, the bulk plaquette operators are extended to plaquettes adjacent to the boundary by again inserting a punctured counter-clockwise loop labelled by $\bigoplus_{X\in\mc I_\mc D}\frac{d_X}{\Dim\,\mc D} X$ in the boundary plaquettes and absorbing them into the physical lattice by making use of the different resolutions of the identity, $F$-moves and normalisations eqs. \eqref{eq:ResId}, \eqref{eq:ModResId}, \eqref{eq:Fmove}, \eqref{eq:ModFmove}, \eqref{eq:BubblePop} and \eqref{eq:ModBubblePop}. It can be verified that the boundary plaquette operators commute with all the other Hamiltonian terms by virtue of \cref{eq:ModPent}, so that the Hamiltonian remains gapped near the boundary.
+\subsection{Examples}
+\subsubsection{The regular module category}
+Every UFC $\mc D$ trivially defines a unitary indecomposable module category over itself. We will refer to this as the \emph{regular} module category. For this choice, the corresponding boundary condition is the smooth boundary condition.
+\subsubsection{$\Vect_G$-module categories}\label{par:VecGMods} As anticipated in \cref{sec:1Dphases}, indecomposable (left) module categories over $\Vect_G$ are -- up to conjugacy -- specified by pairs $(H\subseteq G,\psi)$ where $[\psi]\in H^2(H,\rU(1))$. In what follows we write the corresponding module category as $\mc R(H, \psi)$.
+
+The explicit construction of $\mc R(H, \psi)$ from the data $(H,\psi)$ is reviewed in detail in \cref{app:gauging}. Here we only recall a few key facts. For one, the object set $\mc I_\mc R$ is a transitive left $G$-set so that it can be identified with the cosets $G/H$ endowed with the canonical left $G$-action. The module associator $\lF$ can then be constructed from the cocycle $\psi$ by making use of Shapiro's isomorphism between the cohomology groups $H^2(H,\rU(1)) \simeq H^2(G,{\rm Fun}(G/H,\rU(1)))$, where ${\rm Fun}(G/H,\rU(1))$ is the $G$-module of functions $G/H\rightarrow \rU(1)$.
+%
+%
+%From this data, the module category is constructed explicitly as follows.
+%
+%The object set $\mc I_\mc R$ is a transitive left $G$-set, hence it can be identified with the cosets $G/H$ endowed with the canonical left $G$-action. Let $s:G/H\rightarrow G$ be a section so that for any coset $R\in G/H$, $s(R)H = R$. We also assume that the representative of $H$ is $\mbb 1$. Notice that in general $s(gR)\neq gs(R)$ but differs by a group element in $H$ that we will write as $h_{g,R}$, i.e. $gs(R)=s(gR)h_{g,R}$. In virtue of the associativity of the group multiplication it holds that $h_{g_1,g_2R} h_{g_2,R} = h_{g_{12},R}$, $\forall g_1,g_2\in G,\, R\in G/H$. The components $\lF$ of the module associator $\lF$ are scalars and adhere to the consistency condition
+%\begin{equation}\label{eq:GroupModPent}
+%	\lF(g_2,g_3)(M) \, \lF(g_1,g_2g_3)(M) = 
+%	\lF(g_1,g_2)(g_3M) \, \lF(g_1g_2,g_3)(M).
+%\end{equation}
+%Considering ${\rm Fun}(G/H,\rU(1))$ as the $G$-module of functions $G/H\rightarrow \rU(1)$, \cref{eq:GroupModPent} exactly expresses that $\lF$ is a representative of a class in $H^2(H,{\rm Fun}(G/H,\rU(1)))$. We then define $\lF(g,h)(R)$ as the image of $\psi$ under Shapiro's isomorphism
+%\begin{equation}
+%	H^2(H,\rU(1)) \simeq H^2(H,{\rm Fun}(G/H,\rU(1))) 
+%\end{equation}
+%induced by
+%\begin{equation}
+%	\lF_\psi(g_1,g_2)(R) = \psi(h_{g_1,g_2R},h_{g_2,R}).
+%\end{equation}
+%Indeed, it is easy to verify that \cref{eq:GroupModPent} is solved in virtue of the 2-cocycle equation satisfied by $\psi$.
+
+Notably, for the choice $H=G$ and trivial 2-cocycle, the corresponding module category $\mc R(G,1)$ contains only one simple object, so that $\mc R(G,1)$ is equivalent to the category $\Vect$ of finite-dimensional complex vector spaces.
+
+For $H=\{\mbb 1\}$, the regular module category is obtained: $\mc R(\{\mbb 1\},1)=\Vect_G$.
+\subsubsection{$\Vect_G^\omega$-module categories} Analogously to the untwisted case, module categories over $\Vect_G^\omega$ are in one-to-one correspondence with pairs $(H,\psi)$ where now $\psi$ trivialises the 3-cocycle $\omega$ on the subgroup $H$. This imposes constraints on the allowed subgroups $H\subseteq G$. 
+
+The object set $\mc I_\mc R$ can again be identified with the left cosets $G/H$, and in this case the module associator can be expressed in terms of both $\omega$ and $\psi$, see e.g. ref.~\cite{GarreRubio2022} for an explicit formula.
+\subsubsection{$\Rep(G)$-module categories} In virtue of the \emph{Morita equivalence} between $\Rep(G)$ and $\Vect_G$ --- a notion introduced momentarily --- pairs $(H,\psi)$ also label the indecomposable module categories over $\Rep(G)$. Provided such a pair, the corresponding module category is $\Rep^\psi(H)$, the category of (unitary finite-dimensional) $\psi$-projective $H$-representations. The module action is given by $\lambda\act\pi := {\Res}^G_H(\lambda)\otimes_H\pi$ where ${\Res}^G_H$ stands for the restriction from $G$ to $H$ and $\otimes_H$ is the tensor product of $H$-representations. Notably, for $H=\{\mbb 1\}$ the corresponding module category is $\Vect$ and the associated $\lF$-symbols evaluate to the \emph{Clebsch-Gordan coefficients} implementing the basis transformation
+\begin{equation}
+	\CC{\alpha_1}{\alpha_2}{\alpha_3,\, i}{-}{-}{\,\, -} : V_1 \otimes V_2 \rightarrow V_3, \qquad i =1,2,\dots, N_{\alpha_1\alpha_2}^{\alpha_3},
+\end{equation}
+for irreps $(V_i,\alpha_i)\in\mc I_{\Rep(G)}$.\footnote{Notably, there is a \emph{2-equivalence} between $\Mod(\Vect_G)$ and $\Mod(\Rep(G))$, the \emph{2-categories} of module categories over $\Vect_G$ and $\Rep(G)$ respectively. Under this equivalence, $\Rep^\psi(H)$ and $\mc R(H,\psi)$ are identified~\cite{Greenough2010}. We refer to \cref{ch:GenSym} for an application of $\Mod(\Rep(G))$.}
+\subsubsection{$\Fib$}
+The fusion category $\Fib$ can be explicitly verified to have no non-trivial module categories besides the regular module category.
+\subsection{Domain walls}\label{sec:DomainWalls}
+Finally, we would like to similarly define gapped interfaces or \emph{domain walls} between string-net models based on different fusion categories $\mc C$ and $\mc D$. From the above considerations it is easy to convince oneself that such an interface $\mc R$ should in particular be simultaneously  a left $\mc C$- and right $\mc D$-module category. Compatibility of both models in turn implies an additional collection of unitary isomorphisms notated as $\bF$ that allows one to `commute' $\mc C$ and $\mc D$ strands in the sense of
+\begin{equation}\label{eq:BimodAssoc}
+	\inputtikz{BimodAssoc1} = \sum_{R_2,k,l} \big( \bF^{XR_1Y}_{R_2} \big)^{R_2',kl}_{R'_1,ij} \inputtikz{BimodAssoc2}\,\,,
+\end{equation}
+where $X\in\mc I_\mc C$ and $Y\in\mc I_\mc D$. Together with the left and right module associators these $\bF$-symbols adhere to an additional collection of pentagon equations that are of the form
+\begin{align}
+	\bF\lF &= \sum\lF\bF\bF, \label{eq:Pent3}\\
+	\rF\bF &= \sum\bF\bF\rF \label{eq:Pent4}.
+\end{align}
+With this additional structure, $\mc R$ is a \emph{$(\mc C,\mc D)$-bimodule category}.
+
+Similar as to the string-net Hilbert space in the presence of an $\mc R$ gapped boundary, the Hilbert space in the presence of an $\mc R$ domain wall takes the form:
+\begin{equation}
+	\inputtikz{SNDomainWall}\,\,\, ,
+\end{equation}
+where the edges in {\color{BrickRed}red} are valued in $\ob(\mc C)$.
+
+\bigskip\noindent Note that up to this point we have assumed $\mc C$ and $\mc D$ to be completely unrelated. In particular we have not assumed the topological orders $\mc Z(\mc C)$ and $\mc Z(\mc D)$ to be related in any way. Categories $\mc C$ and $\mc D$ for which $\mc Z(\mc C)$ and $\mc Z(\mc D)$ are equivalent as braided fusion categories are said to be \emph{Morita equivalent}. Importantly, Morita equivalence admits an equivalent characterisation as the existence of an \emph{invertible} bimodule category $\mc R$ between $\mc C$ and $\mc D$. Physically, such an invertible bimodule category describes a completely transparent gapped interface between the $\mc C$- and $\mc D$-string--nets for which all anyons in either model can tunnel through the domain wall without \emph{condensing} on it. From the mathematical point of view, invertibility of a bimodule category can be deduced from the explicit matrix components of the bimodule associators $\bF$, as proven in ref.~\cite{Bridgeman2022}.
+
+Turning things around, for any fusion category $\mc C$ and module category $\mc R$, there exists a \emph{unique} fusion category $\mc D$ for which $\mc R$ can be endowed with the structure of an invertible $(\mc C,\mc D)$-bimodule category. In category theoretic jargon, this fusion category $\mc D$ is called the \emph{Morita dual} category of $\mc C$ with respect to $\mc R$ and is often notated as $\mc D=\mc C^\star_\mc R$. Vice versa also $\mc D^\star_\mc R=\mc C$. By definition, the Morita dual $\mc C^\star_\mc R$ is the category of \emph{$\mc C$-module endofunctors of $\mc R$}, denoted $\Fun_\mc C(\mc R,\mc R)$. This is explained below in \cref{sec:dualities} in more detail.
+
+\subsubsection{Example} Consider the left $\Vect_G$-module category $\Vect$. The Morita dual $(\Vect_G)^\star_\Vect$ corresponds to $\Rep(G)$~\cite{Etingof2015}. Given a representation $(V,\rho)\in\ob(\Rep(G))$, and $g\equiv\mbb C_g\in\mc I_{\Vect_G}$, the $\bF$-symbol evaluates to
+\begin{equation}\label{eq:BimodAssocG}
+	\big( \bF^{g\mbb C\rho}_{\mbb C} \big)_{\mbb C,1j}^{\mbb C,i1} = \rho(g)_{ij},
+\end{equation}
+for basis vectors $i,j$ in $V$.

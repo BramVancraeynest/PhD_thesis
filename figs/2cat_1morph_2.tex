@@ -1,0 +1,11 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{.9};
+	
+	\draw[obj2] (0,-\l) to[out=145, in=-25] (0,\l);
+	
+	\draw[surf] (-\l,-\l) rectangle (\l,\l);
+	
+	\node[anchor=east] at (0,0) {$\sss f$};
+	\node[anchor=south west] at (-\l,-\l) {$\sss X'$};
+	\node[anchor=south east] at (\l,-\l) {$\sss X$};
+\end{tikzpicture}

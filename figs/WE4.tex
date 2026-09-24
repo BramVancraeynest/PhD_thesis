@@ -1,0 +1,20 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{.8};
+	\def\h{.65};
+	
+	\draw[obj1] (0,0) -- (0,-\h);
+	\draw[obj1, rounded corners=3pt] (\l/2,\h) -- (\l/2,0) -- (-\l/2,0) -- (-\l/2,\h);
+	\draw[obj1, rounded corners=3pt] (\l/2,-2*\h) -- (\l/2,-\h) -- (-\l/2,-\h) -- (-\l/2,-2*\h);
+	
+	\node[mpstensor] at (0,0) {};
+	\node[mpstensor] at (0,-\h) {};
+	
+	\node[anchor=east] at (-\l/2,\h/2) {$\sss\alpha$};
+	\node[anchor=west] at (\l/2,\h/2) {$\sss\alpha$};
+	\node[anchor=east] at (0,-1/2*\h) {$\sss\beta$};
+	\node[anchor=east] at (-\l/2,-3/2*\h) {$\sss\alpha$};
+	\node[anchor=west] at (\l/2,-3/2*\h) {$\sss\alpha$};
+	
+	\node at (0,0) {$\sss k$};
+	\node at (0,-\h) {$\sss k$};
+\end{tikzpicture}

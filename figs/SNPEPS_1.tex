@@ -1,0 +1,43 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.4};
+	\def\r{.9}
+	\def\c{cos(30)};
+	\def\s{sin(30)};
+	
+	\draw[obj2, dotted] (0,0) -- (30:\l);
+	\draw[obj2, dotted] (0,0) -- (150:.5*\l);
+	% Left vertical edge
+	\draw[obj2, dotted] (0,-\l) -- (0,0);
+	% Right vertical edge
+	\draw[obj2, dotted] ({\c*\l*2},-\l) -- ({\c*\l*2},0);
+	
+	\draw[obj2, dotted] ({2*\l*\c},0) -- ++(30:.5*\l);
+	\draw[obj2, dotted] ({2*\l*\c},0) -- ++(150:\l);
+	\draw[obj2, dotted] ({\c*\l}, {-\l-\l*\s}) -- ++(150:\l);
+	\draw[obj2, dotted] ({\c*\l}, {-\l-\l*\s}) -- ++(30:\l);
+	\draw[obj2, dotted] ({2.5*\c*\l}, {-\l-.5*\l*\s}) -- ++(150:.5*\l);
+	\draw[obj2, dotted] ({-\c*.5*\l}, {-\l-.5*\l*\s}) -- ++(30:.5*\l);
+	\draw[obj2, dotted] ({\c*\l}, {\s*\l}) -- ++(0,.5*\l);
+	\draw[obj2, dotted] ({\c*\l}, {-\l-2*\s*\l}) -- ++(0,.5*\l);
+	
+	\draw[obj3, dashed] ({\l*\c},{-\l*\s}) circle (\r);
+%	\node[anchor=north east, xshift=3pt, yshift=2.5pt] at ({\l*\c+\r/sqrt(2)}, {-\l*\s + \r/sqrt(2)}) {$\sss R$};
+	
+	\centerarc[obj3, dashed](0,{2*\s*\l})(0:-120:\r);
+	\centerarc[obj3, dashed]({2*\c*\l},{2*\s*\l})(-60:-180:\r);
+	
+	\centerarc[obj3, dashed]({-\c*\l},-\l/2)(60:-60:\r);
+	\centerarc[obj3, dashed]({3*\c*\l},-\l/2)(120:240:\r);
+	
+	\centerarc[obj3, dashed](0,{-\l-2*\s*\l})(0:120:\r);
+	\centerarc[obj3, dashed]({2*\c*\l},{-\l-2*\s*\l})(60:180:\r);
+	
+%	\node[mor, inner sep=2.8pt] at (0,0) {};
+%	\node[mor, inner sep=2.8pt] at ({\l*\c},{\l*\s}) {};
+%	\node[mor, inner sep=2.8pt] at ({2*\l*\c},0) {};
+%	\node[mor, inner sep=2.8pt] at ({2*\l*\c},{-2*\l*\s}) {};
+%	\node[mor, inner sep=2.8pt] at ({\l*\c},{-3*\l*\s}) {};
+%	\node[mor, inner sep=2.8pt] at (0,{-2*\l*\s}) {};
+	
+	\draw[obj1, pattern=north west lines] ({\l*\c},{-\l*\s}) circle (.4*\r);
+\end{tikzpicture}

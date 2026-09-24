@@ -1,0 +1,20 @@
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{.9};
+	
+	\draw[obj2] (0,-\l) -- (0,\l);
+	
+	\draw[surf] (-\l,-\l) rectangle (\l,\l);
+	
+	\node[anchor=east, yshift=3pt] at (0,2/3*\l) {$\sss f$};
+	\node[anchor=east] at (0,0) {$\sss g$};
+	\node[anchor=east, yshift=-3pt] at (0,-2/3*\l) {$\sss h$};
+	
+	\node[mor, draw] at (0,\l/3) {};
+	\node[mor, draw] at (0,-\l/3) {};
+	
+	\node at (0,\l/3) {$\sss \varphi$};
+	\node at (0,-\l/3) {$\sss \psi$};
+	
+	\node[anchor=south west] at (-\l,-\l) {$\sss X'$};
+	\node[anchor=south east] at (\l,-\l) {$\sss X$};
+\end{tikzpicture}

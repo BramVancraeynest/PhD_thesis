@@ -1,0 +1,49 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.4};
+	\def\r{.9}
+	\def\c{cos(30)};
+	\def\s{sin(30)};
+	\def\o{0.35};
+	
+	\node(int1) at ({\c*\l + \c*\o}, {\s*\l - \s*\o}) {};
+	\node(int2) at ({2*\c*\l}, {-\l + \o}) {};
+	
+	\draw[obj1] (0,0) -- (30:\l);
+	\draw[obj1] (0,0) -- (150:.5*\l);
+	% Left vertical edge
+	\draw[obj1] (0,-\l) -- (0,0);
+	% Right vertical edge
+	\clipAroundNode{int2}{
+		\draw[obj1] ({\c*\l*2},-\l) -- ({\c*\l*2},0);
+	}
+		\clipAroundNode{int1}{
+		\draw[obj1] ({2*\l*\c},0) --++ (150:\l);
+	}
+	
+	\draw[obj1] ({2*\l*\c},0) --++ (30:.5*\l);
+	
+	\draw[obj1] ({\c*\l}, {-\l-\l*\s}) --++ (150:\l);
+	\draw[obj1] ({\c*\l}, {-\l-\l*\s}) --++ (30:\l);
+	\draw[obj1] ({2.5*\c*\l}, {-\l-.5*\l*\s}) --++ (150:.5*\l);
+	\draw[obj1] ({-\c*.5*\l}, {-\l-.5*\l*\s}) --++ (30:.5*\l);
+	\draw[obj1] ({\c*\l}, {\s*\l}) --++ (0,.5*\l);
+	\draw[obj1] ({\c*\l}, {-\l-2*\s*\l}) --++ (0,.5*\l);
+	
+	\node[mor, inner sep=2.8pt] at (0,0) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c},{\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c},0) {};
+	\node[mor, inner sep=2.8pt] at ({2*\l*\c},{-2*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at ({\l*\c},{-3*\l*\s}) {};
+	\node[mor, inner sep=2.8pt] at (0,{-2*\l*\s}) {};
+	
+%	\draw[obj1, pattern=north west lines] ({\l*\c},{-\l*\s}) circle (.4*\r);
+	
+	\draw[obj2, wiggly] ({\c*\l + \c*\o}, {\s*\l + .5*\l}) -- ({\c*\l + \c*\o}, {\s*\l - \s*\o})  node[pos=.5, black, anchor=west] {$\sss Z$};
+	\draw[obj2, wiggly] ({\c*\l + \c*\o}, {\s*\l - \s*\o}) -- ({\c*\o},{-\s*\o});
+	\draw[obj2, wiggly] ({\c*\o},{-\s*\o}) -- ({\c*\o},{-\l + \s*\o});
+	\draw[obj2, wiggly] ({\c*\o},{-\l + \s*\o}) -- ({\c*\l}, {-\l-\l*\s + \o});
+	\draw[obj2, wiggly] ({\c*\l}, {-\l-\l*\s + \o}) -- ({2*\c*\l}, {-\l + \o});
+	\draw[obj2, wiggly] ({2*\c*\l}, {-\l + \o}) -- ({2.5*\c*\l}, {-\l -.5*\s*\l + \o});
+	
+
+\end{tikzpicture}

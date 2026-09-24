@@ -1,0 +1,144 @@
+% ===========================================================================
+%  Cover of the PhD thesis -- full wrap on one page:  BACK | SPINE | FRONT
+%
+%  All coordinates are in MILLIMETRES; the origin (0,0) is the bottom-left
+%  corner of the BLEED box, so the page is exactly what the printer asks for:
+%     width  = bleed + back + spine + front + bleed
+%     height = bleed + book height + bleed
+%  Only the two blocks marked "1." and "2." below are meant to be edited.
+% ===========================================================================
+\documentclass[tikz]{standalone}
+\usepackage[T1]{fontenc}
+%\usepackage[scaled]{helvet}
+%\renewcommand{\familydefault}{\sfdefault}	
+\usepackage{graphicx}
+% \setkeys{Gin}{draft} % uncomment for draft images
+
+\DeclareGraphicsRule{.ai}{pdf}{.ai}{}
+
+\definecolor{UGentBlue}{RGB}{30,100,200}
+\definecolor{UGentYellow}{RGB}{255,210,0}
+
+% ---------------------------------------------------------- 1. geometry ----
+\def\bookw{170}    % trim width of one panel (mm)
+\def\bookh{240}    % trim height (mm)
+\def\npages{236}   % page count; the spine follows from it
+\def\bleed{3}      % bleed on the four outer sides (mm)
+\def\safe{12}      % keep text and logos at least this far inside a trim edge
+
+\newif\ifguides \guidestrue % \guidesfalse for the file you send to the printer
+
+\def\bannerh{55}   % banner height, measured from the bottom trim edge (mm)
+\def\pitch{23}     % distance between two tensors (mm)
+\def\leg{6.5}      % leg length (mm)
+\def\dotr{2.7}       % tensor radius (mm)
+
+% --- derived; nothing to touch here ---
+\pgfmathtruncatemacro{\spinew}{ceil(\npages/2*0.12)} % TODO pages/2 x 0.12, rounded up
+\pgfmathsetmacro{\totalw}{2*\bleed+2*\bookw+\spinew}
+\pgfmathsetmacro{\totalh}{2*\bleed+\bookh}		% OK
+\pgfmathsetmacro{\spinel}{\bleed+\bookw}        % left fold OK
+\pgfmathsetmacro{\spiner}{\spinel+\spinew}      % right fold OK
+\pgfmathsetmacro{\backc}{\bleed+\bookw/2}       % centre of the back panel
+\pgfmathsetmacro{\spinec}{\spinel+\spinew/2}    % centre of the spine OK
+\pgfmathsetmacro{\frontc}{\spiner+\bookw/2}     % centre of the front panel OK
+\pgfmathsetmacro{\bannery}{\bleed+\bannerh}     % height of the MPO line
+\pgfmathsetmacro{\toptrim}{\totalh-\bleed}      % top trim edge
+\pgfmathsetmacro{\colw}{\bookw-2*\safe}         % usable text width in a panel
+
+% ----------------------------------------------------------- 2. content ----
+\newcommand{\name}{\bf Bram Vancraeynest-De Cuiper}
+\newcommand{\thesistitle}{\bf An entanglement perspective on\\  generalized	symmetries, dualities \\ and anomalies}
+\newcommand{\shorttitle}{\bf Generalized symmetries, dualities and anomalies}
+\newcommand{\faculty}{Faculty of Sciences --- Department of Physics
+	and Astronomy}
+
+% ===========================================================================
+%  helpers
+% ===========================================================================
+
+% logo, or a dashed placeholder if the file is missing
+% (#1: colour of the placeholder, #2: position, #3: height, #4: file name)
+\newcommand{\logo}[4][black]{%
+	\IfFileExists{#4}
+	{\node at #2 {\includegraphics[height=#3]{#4}};}
+	{\node[draw=#1, text=#1, dashed, minimum height=#3, minimum width=45mm]
+		at #2 {\detokenize{#4}};}
+}
+
+% the MPO of the invitation, now on the top edge of the banner and running
+% across the full wrap, centred on the spine (so one tensor sits on the fold)
+% TODO replace by final version on the invitation
+\newcommand{\mpo}{%
+	\draw[UGentYellow, ultra thick] (0,\bannery) -- (\totalw,\bannery);
+	\pgfmathtruncatemacro{\nhalf}{ceil(\totalw/(2*\pitch))}
+	\pgfmathtruncatemacro{\ntensors}{2*\nhalf}
+	\foreach \i in {0,...,\ntensors} {
+		\pgfmathsetmacro{\x}{\spinec+(\i-\nhalf)*\pitch}
+		\ifodd\i \draw[white, ultra thick, line cap=round] (\x,\bannery) -- ++(0,-\leg);
+		\else    \draw[UGentBlue, ultra thick, line cap=round] (\x,\bannery) -- ++(0,\leg); \fi
+		\draw[UGentBlue, ultra thick, fill=white] (\x,\bannery) circle (\dotr);
+	}
+}
+
+% trim edges, folds and safe area -- switched off by \guidesfalse
+\newcommand{\guides}{%
+	\ifguides
+	\draw[black!45, thin] (\bleed,\bleed) rectangle (\totalw-\bleed,\toptrim);
+	\draw[black!45, thin] (\spinel,\bleed) -- (\spinel,\toptrim)
+	(\spiner,\bleed) -- (\spiner,\toptrim);
+	\draw[black!30, dashed, thin]
+	(\bleed+\safe,\bleed+\safe) rectangle (\spinel-\safe,\toptrim-\safe)
+	(\spiner+\safe,\bleed+\safe) rectangle (\totalw-\bleed-\safe,\toptrim-\safe);
+	\fi
+}
+
+\begin{document}
+	\begin{tikzpicture}[x=1mm, y=1mm]
+		\useasboundingbox (0,0) rectangle (\totalw,\totalh);
+		
+		% ---------------------------------------------------------- the banner --
+		\fill[UGentBlue] (0,0) rectangle (\totalw,\bannery);
+		\mpo
+		
+		% ------------------------------------------------------------- front ----
+		\node[UGentBlue, font=\fontsize{26}{32}\selectfont, text width=\colw mm, align=left, anchor=north west]
+		at (\spiner+\safe,\toptrim-45) {\bf\thesistitle};
+		\node[font=\Large, anchor=north west]
+		at (\spiner+\safe,\toptrim-120) {\bf\name};
+		\node[black!60, text width=\colw mm, align=left, anchor=north west]
+		at (\spiner+\safe,\toptrim-132)
+		{Dissertation submitted in fulfilment of the requirements for the degree of\\
+			Doctor of Science: Physics\\[2mm]
+			Supervisors: Prof.\ Frank Verstraete and Prof.\ Jutho Haegeman\\[2mm]
+			2021--2026};
+		
+		% front, inside the banner (white artwork on blue)
+		\logo[white]{(\spiner+\safe+13,\bleed+34)}{30mm}{../UGent_logo_white.eps}
+		\node[white, anchor=west] at (\spiner+\safe,\bleed+16) {\faculty};
+		
+		% ------------------------------------------------------------- spine ----
+		% rotate=-90 reads top-to-bottom (continental); use rotate=90 to flip it
+		\node[UGentBlue, rotate=-90, anchor=west, font=\normalsize]
+		at (\spinec,\toptrim-\safe) {\name};
+		\node[UGentBlue, rotate=-90, anchor=east, font=\normalsize]
+		at (\spinec,\bannery+\safe) {\shorttitle};
+		
+		% -------------------------------------------------------------- back ----
+		\node[text width=\colw mm, align=left, anchor=north west, font=\fontsize{10}{14}\selectfont]
+		at (\bleed+\safe,\toptrim-45)
+		{
+			\emph{Symmetry} and \emph{symmetry breaking} are the organising principles for phases of matter. Recently, the discovery of new \emph{quantum phases of matter} has challenged this paradigm. These phases are characterised by the \emph{hidden} symmetry structures emerging in the \emph{entanglement patterns} of the ground state wave function. Consequently, studying them requires an efficient description of the wave function that lays bare these entanglement structures. In turn, the study of these hidden symmetries naturally leads to \emph{generalised} notions of symmetry no longer described by groups and their representations, but rather by \emph{(higher-)fusion categories}.\par\bigskip			
+			
+			In this dissertation, generalised symmetries present in strongly correlated quantum many-body systems are studied using \emph{tensor networks}. Within this framework, both the local and non-local features of quantum many-body systems are described in terms of local tensors. The tensors directly capture the entanglement among the constituent quantum particles rather than the full wave function. The distinct ways in which these tensors are left invariant under a generalised symmetry are in one-to-one correspondence with distinct phases of matter protected by that symmetry.\par\bigskip
+			
+			The generalised symmetry operators themselves are also naturally represented as tensor networks that can be freely \emph{pulled through} the ground state tensors. By exploiting these representations, the \emph{gauging} of these symmetries and their associated \emph{anomalies} are addressed in this thesis. In this context, gauging is a procedure relating theories that describe the same physics but have very different microscopic realisations and generally different symmetry structures. Such \emph{dualities} are also represented as intertwining tensor networks that map between local ground state tensors. Anomalies are obstructions to this procedure. They strongly constrain the allowed phase diagrams, since they rule out trivial symmetric phases.
+		};
+		
+		% back, inside the banner
+		\logo[white]{(\spinel-\safe-10,\bleed+34)}{100mm}{../fwo_wit.ai}
+		
+		% ------------------------------------------------------------ guides ----
+		\guides
+	\end{tikzpicture}
+\end{document}

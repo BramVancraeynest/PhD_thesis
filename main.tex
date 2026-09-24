@@ -1,0 +1,70 @@
+\documentclass[print]{dissertation}
+
+\input{preamb/preamb}
+\input{preamb/TikzSetup}
+
+%\usepackage{lineno} % TODO delete this line in final version
+%\usepackage{linenoamsmath} % TODO delete this line in final version
+%\linenumbers % TODO delete this line in final version
+
+\usetikzlibrary{external}
+%\tikzexternalize[prefix=cache/]
+%\tikzexternalize
+
+\author{Bram Vancraeynest-De Cuiper}
+\title{An entanglement perspective on generalized symmetries, dualities and anomalies}
+\date{2021-2026}
+
+\begin{document}
+
+\include{frontmatter/titlepage}
+
+\frontmatter
+
+\include{frontmatter/committee}
+\newpage\thispagestyle{empty}\ \newpage
+\include{frontmatter/acknowledgments}
+\include{frontmatter/summary}
+\include{frontmatter/samenvatting}
+
+\cleardoublepage
+\thispagestyle{plain}
+{\null\vfill\scriptsize The author discloses the use of generative artificial intelligence in the preparation of the introductory chapters 1–4 of this dissertation. Its use was restricted to polishing the language and refining figures. The author verified all output and takes full responsibility for the content. The remaining chapters reproduce previously published work, in the preparation of which no such tools were used.}
+
+\setcounter{tocdepth}{2} % TODO revisit line
+\tableofcontents
+
+\cleardoublepage
+\thispagestyle{plain}
+\epigraph{Sprach Govinda: ``Viel haben wir gelernt, Siddhartha, viel bleibt noch zu lernen. Wir gehen nicht im Kreise, wir gehen nach oben, der Kreis ist eine Spirale, manche Stufe sind wir schon gestiegen.''}{Hermann Hesse, \emph{Siddhartha}}
+
+
+
+\mainmatter
+
+\thumbtrue
+
+\include{chapters/foundations/1-Introduction/1-Introduction}
+
+\thumbfalse
+\part{Foundations}\label{part:Foundations}
+\thumbtrue
+
+\include{chapters/foundations/2-Tensor_networks/2-Tensor_networks}
+\include{chapters/foundations/3-Topo_order/3-Topo_order}
+\include{chapters/foundations/4-Dualities/4-Dualities}
+
+\part{Applications}\label{part:Applications}
+
+\include{chapters/applications/Les_Houches}
+\include{chapters/applications/frieze}
+\include{chapters/applications/string-net}
+\include{chapters/applications/gauging}
+\include{chapters/applications/codes}
+\include{chapters/applications/twisted_gauging}
+
+\include{chapters/conclusion/conclusion}
+
+\bibliographystyle{BramBibStyle}
+\bibliography{refs}
+\end{document}

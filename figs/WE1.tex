@@ -1,0 +1,15 @@
+\begin{tikzpicture}[baseline={([yshift=-.7ex]current bounding box.center)}]
+	\def\l{.4};
+	\def\h{.65};
+	
+	\draw[obj1] (0,0) -- (0,-2*\h);
+	\draw[obj1] (2*\l,0) -- (2*\l,-2*\h);
+	\draw[obj1, fill=black!10, rounded corners=3pt] (-.2*\l,-2/3*\h) rectangle (2.2*\l,-4/3*\h);
+	
+	\node[anchor=south] at (0,0) {$\sss \alpha(g)$};
+	\node[anchor=south] at (2*\l,0) {$\sss \alpha(g)$};
+	\node[anchor=north] at (0,-2*\h) {$\sss \alpha(g)^\dagger$};
+	\node[anchor=north] at (2*\l,-2*\h) {$\sss \alpha(g)^\dagger$};
+	
+	\node at (\l,-\h) {$\sss h$};
+\end{tikzpicture}

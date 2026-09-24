@@ -1,0 +1,47 @@
+\begin{tikzpicture}[scale=.8,baseline={([yshift=-.5ex]current bounding box.center)},z={(0,1)},y={(-0.3,0.3)}]
+	\def\l{3.7}
+	\def\h{.7}
+	\coordinate (a) at (0,0,0);
+	\coordinate (b) at (\l,0,0);
+	\coordinate (c) at ({\l+cos(60)*\l},{sin(60)*\l},0);
+	\coordinate (d) at (\l,{2*sin(60)*\l},0);
+	\coordinate (e) at (0,{2*sin(60)*\l},0);
+	\coordinate (f) at ({-cos(60)*\l},{sin(60)*\l},0);
+	\coordinate (p) at (\l/2,{\l*sin(60)},0);
+	
+	\def\sp{0};
+	
+	% Midpoints and vertical strands
+	\foreach \x/\y in {a/b,b/c,c/d,d/e,e/f,f/a}{
+		\middleCoo{\x}{\y}{\x\y}{}{}{0};
+		\draw[obj1] (\x\y) -- node[mpoint, pos=.75](mp\x\y){} node[mpoint, pos=.9](mpp\x\y){} ($(\x\y)+(0,0,\h)$);
+	}
+
+	\draw[obj1] ($(p)-(0,0,\h)$) -- (p);
+	
+	\clipAroundTwoNodes{mppbc}{mppef}{    
+		\draw[dot] (b) -- (a);
+		\draw[dot] (d) -- (e);
+		\draw[dot] (a) -- (f);
+		\draw[dot] (c) -- (d);
+		\draw[dot] (f) -- (e);
+		\draw[dot] (b) -- (c);
+		\draw[dot] (a) -- ($(a)+({-\l/3*cos(60)},{-\l/3*sin(60)},0)$);
+		\draw[dot] (b) -- ($(b)+({\l/3*cos(60)},{-\l/3*sin(60)},0)$);
+		\draw[dot] (c) -- ($(c)+({\l/4},0,0)$);
+		\draw[dot] (d) -- ($(d)+({\l/3*cos(60)},{\l/3*sin(60)},0)$);
+		\draw[dot] (e) -- ($(e)+({-\l/3*cos(60)},{\l/3*sin(60)},0)$);
+		\draw[dot] (f) -- ($(f)+(-\l/4,0,0)$);
+	}
+	\draw[obj1, shorten <=-13pt] (ab) -- (p);
+	\draw[obj1, shorten >=-13pt] (p) --node[pos=.7, inner sep=0pt](sp3){} (de);
+	\draw[obj1, shorten <=-26pt] (bc) -- (p);
+	\draw[obj1, shorten <=-21pt] (cd) -- (p);
+	\draw[obj1, shorten >=-26pt] (p) --node[pos=.5, inner sep=0pt](sp2){} (ef);
+	\draw[obj1, shorten >=-21pt] (p) --node[pos=.72, inner sep=0pt](sp1){} (fa);
+	\node[fusiontensor, inner sep=2.55pt] at (p) {};
+	\foreach \x in {ab,bc,cd,de,ef,fa}{
+		\node[fusiontensor, inner sep=2.55pt] at (\x) {};
+		\node at (\x) {$+$};
+	}
+\end{tikzpicture}

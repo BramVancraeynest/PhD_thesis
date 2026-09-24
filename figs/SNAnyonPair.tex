@@ -1,0 +1,74 @@
+\begin{tikzpicture}[
+	x={(1,0)}, z={(.47,.65)},
+	baseline={(current bounding box.center)},
+	scale=.62
+	]
+	
+	\def\l{1.3}
+	\def\h{.6}
+	\def\Nx{5}
+	\def\Ny{2}
+	\def\s{sin(30)}
+	\def\c{cos(30)}
+	
+	\clip ({.5*\c*\l},{-2*\s*\l-\l}) rectangle ({(2*\Nx-.5)*\c*\l},{(2*\Ny-1)*(\l+\s*\l) + \l});
+%	\clip (0,{-(\s+1.5)*\l}) rectangle+ ({2*\Nx*\l*\c},{2*(\Ny+.5)*\l*(1+\s)});
+	
+	% Honeycomb lattice with virtual (z) legs
+	\newcommand{\siteA}[2]{
+		\begin{scope}[obj1, shift={({2*\c*\l*#1},{2*(1+\s)*\l*#2})}]
+			\draw (0,0) -- (30:\l);
+			\draw (0,0) -- (150:\l);
+			\draw (0,0) -- (0,-\l);
+			\node[mpstensor] at (0,0) {};
+			\draw (0,0,0) --+ (0,0,\h);
+		\end{scope}
+	}
+	
+	\newcommand{\siteB}[2]{
+		\begin{scope}[obj1, shift={({(2*#1-1)*\c*\l},{2*(1+\s)*\l*#2-\l*(1+\s)})}]
+			\draw (0,0) -- (30:\l);
+			\draw (0,0) -- (150:\l);
+			\draw (0,0) -- (0,-\l);			
+			\node[mpstensor] at (0,0) {};
+			\node[mpstensor] at ({-\l*\c},{\l*\s}) {};
+			\node[mpstensor] at (0,-\l) {};
+			\draw ({-\l*\c},{\l*\s},0) --+ (0,0,\h);
+			\draw (0,0,0) --+ (0,0,\h);
+			\draw (0,-\l,0) --+ (0,0,\h);
+		\end{scope}
+	}
+	
+	\foreach \y in {0,...,\Ny}
+	\foreach \x in {0,...,\Nx} {
+		\siteA{\x}{\y}
+		\siteB{\x}{\y}
+	}
+	
+	% MPO string
+	\draw[obj2, wiggly, rounded corners=0pt]
+	({2*\c*\l},{0*\l}) --
+	({3*\c*\l},{-.5*\l}) --
+	({4*\c*\l},{\s*\l+.5*\l}) --
+	({6*\c*\l},{\s*\l+.5*\l}) --
+	({5*\c*\l},{2*\s*\l+1.5*\l}) --
+	({4*\c*\l},{3*\s*\l+2.5*\l}) --
+	({6*\c*\l},{3*\s*\l+2.5*\l}) --
+	({6*\c*\l},{2*\s*\l+2*\l});
+	
+	% MPO tensors along the string
+	\node[mpotensor] at ({3.5*\c*\l},{.5*\s*\l}) {};
+	\node[mpotensor] at ({5*\c*\l},{\s*\l+.5*\l}) {};
+	\node[mpotensor] at ({5.5*\c*\l},{1.5*\s*\l+\l}) {};
+	\node[mpotensor] at ({4.5*\c*\l},{2.5*\s*\l+2*\l}) {};
+	\node[mpotensor] at ({5*\c*\l},{3*\s*\l+2.5*\l}) {};
+	
+	% Two anyon tensors
+	\node[anyontensor] at ({2*\c*\l}, 0) {};
+	\node[anchor=north east] at ({2*\c*\l}, 0) {$\sss Z$};
+	\draw[obj1] ({2*\c*\l}, 0, 0)  --+ (0,0,\h);
+	\node[anyontensor] at ({6*\c*\l}, {2*(1+\s)*\l}) {};
+	\node[anchor=north west] at ({6*\c*\l}, {2*(1+\s)*\l}) {$\sss Z^*$};
+	\draw[obj1] ({6*\c*\l}, {2*(1+\s)*\l}, 0)  --+ (0,0,\h);
+	
+\end{tikzpicture}

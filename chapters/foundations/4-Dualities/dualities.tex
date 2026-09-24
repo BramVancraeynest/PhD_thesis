@@ -1,0 +1,205 @@
+In this final introductory chapter, we study the \emph{edge Hamiltonians} of two-dimensional string-net models and three-dimensional \emph{(twisted) Dijkgraaf–Witten theories}~\cite{Dijkgraaf1989,Wakui1992}. As discussed in the previous chapter, the \emph{virtual} symmetries of topological models can exhibit a non-invertible fusion structure. Consequently, these lower-dimensional edge theories inherit the corresponding symmetry structures as genuine \emph{internal symmetries}.
+
+In recent years, this holographic perspective on generalised symmetries has appeared in the literature under various names, including \emph{SymTFT}~\cite{Apruzzi2021,Kaidi2022,Kaidi2023}, \emph{topological holography}~\cite{Chatterjee2022b,Ji2019,Ji2021}, the \emph{strange correlator} construction~\cite{You2013,Vanhove2018,Delcamp2024}, or simply \emph{symmetric tensor networks}~\cite{Singh2009,Devos2025}. The principal advantage of this approach is that it separates the \emph{dynamical} and \emph{topological aspects} of the boundary theory while making manifest the modern viewpoint that a global symmetry is defined by the existence of a collection of topological defects~\cite{Fendley2020,Gaiotto2014,Freed2022}. In particular, this framework enables us to employ the toolbox of \emph{topological quantum field theory} to analyse these one-lower-dimensional edge theories. As argued in the previous chapter, tensor networks provide an especially powerful framework for realising such generalised symmetry structures, as the correlated action of these operators on neighbouring sites can be encoded \emph{locally} within the tensor. Moreover, this formulation allows these symmetries to be defined directly in the thermodynamic limit and for arbitrary boundary conditions.
+
+We begin by reviewing the representation theory of injective (non-invertible) MPO symmetries in terms of module categories, and the construction of generic Hamiltonians that commute with them. We then turn to the study of \emph{dualities} in these systems, and formulate a \emph{generalised Landau paradigm} for gapped phases protected by categorical symmetries~\cite{Thorngren2019,GarreRubio2022,Bhardwaj2023,Lootens2024,Chen2025}. As advocated in \cref{app:gauging}, such dualities can always be interpreted as \emph{gauging} an appropriate collection of MPO symmetries, followed by local \emph{disentangling} unitary transformations. We subsequently incorporate \emph{symmetry-twisted boundary conditions} into the framework in order to construct \emph{isometric} duality maps between dual models.
+
+Finally, we illustrate the two-dimensional Kramers–Wannier duality and argue that its dual symmetry is described by a genuine \emph{fusion 2-category}, namely $\TRep(\mbb Z_2)$. In the concluding section, we explore in more detail the general symmetry structures encoded in fusion 2-categories, with a particular emphasis on $\TVect_G$ and $\TRep(G)$, as well as their duality transformations.
+\section{MPO representations of categorical symmetries}
+Reversing the logic of the previous chapter, we are now in a position to construct distinct injective MPO representations of a unitary fusion category $\mc C$ via a choice of (left) $\mc C$-module category $\mc R$. Indeed, for any module category $\mc R$ over $\mc C$, there exists a unique Morita dual $\mc D$ such that $\mc R$ is endowed with the structure of an invertible $(\mc C,\mc D)$-bimodule category, as discussed in the previous chapter. From the bimodule associators $\bF$ we can construct four-valent MPO tensors such that on periodic boundary conditions and independent of system size we have the graphical identities
+\begin{equation}
+	\label{eq:FusionRules}
+	\inputtikz{MPOsStacked}
+	= \sum_{X_3} N_{X_1X_2}^{X_3} 
+	\inputtikz{MPO3}\,\, ,
+\end{equation}
+for structure constants $N$ coinciding with the fusion rules of $\mc C$. In virtue of the fundamental theorem \cref{eq:FundTh}, there exists $N_{X_1X_2}^{X_3}$ linearly independent \emph{fusion tensors} that locally implement these fusion rules via
+\begin{equation}
+	\inputtikz{MPOIntertwiner1} \,= \,\,
+	\raisebox{4.5pt}{\inputtikz{MPOIntertwiner2}}\,\,.
+\end{equation}
+These fusion tensors are constructed from the $\lF$-symbols, and are themselves recoupled via the $F$-symbols of $\mc C$.
+
+Note that in sharp contrast to the group case, generic categorical MPO symmetries are defined on \emph{constrained} Hilbert spaces. These constraints are implemented via the module action $\cat:\mc R \times \mc D \rightarrow \mc R$, as detailed in \cref{app:gauging}. In what follows we therefore sometimes refer to $\mc R$ as describing the \emph{kinematical degrees of freedom} of the model. In fact, the $\mc C$-symmetric models that we consider below can be thought of as a tensor network representation and a generalisation of the \emph{anyonic spin chain construction} first considered in ref.~\cite{Feiguin2006}.
+
+\paragraph{Example: on-site group symmetries}\label{par:VecGRepG}
+Recall that $\Vect$ can be regarded as an invertible $(\Vect_G,\Rep(G))$-bimodule category. The corresponding MPOs \cref{eq:FusionRules} in this case reduce to an on-site (bond dimension 1) representation of $G$:
+\begin{equation}\label{eq:MPOonsite}
+	\inputtikz{MPOGroup} \,\,= \bigotimes_\msf i u_\msf i(g).
+\end{equation}
+\section{Symmetric boundary Hamiltonians and dualities}\label{sec:dualities}
+Having these MPO representations of categorical symmetries at our disposal, we now proceed to constructing local $(1+1)d$ Hamiltonians that commute with these symmetries.
+
+%Let us note at this point that also \emph{classical} edge theories of string-net models can be constructed via the \emph{strange correlator} construction. This construction was introduced first as a diagnostic of SPT phases in ref.~\cite{You2013}, and later extended to topological string-net wave functions in ref.~\cite{Vanhove2018}. In the latter, a classical two-dimensional partition function is constructed as the overlap of a PEPS string-net ground state with a non-topological PEPS, often chosen as a product state. These classical models manifestly inherit all topological symmetries of the string-net model. In the case of critical models, these symmetries are lattice remnants of the topological symmetry lines of the conformal field theory describing their scaling limit~\cite{Verlinde1988,Petkova2000,Aasen2016,Vanhove2018,Vanhove2021a,Vanhove2021b,Delcamp2024}. In essence, this construction is a lattice incarnation of the celebrated TFT/CFT correspondence due to Fr\"ohlich, Fuchs, Runkel and Schweigert \cite{Fuchs2002,Fuchs2003,Fuchs2004,Frohlich2004,Frohlich2006}.
+
+\bigskip\noindent Before proceeding to the construction of Hamiltonians with a genuine categorical symmetry $\mc C$, let us first specialise to the group case to attain some intuition and put things in a perhaps more familiar context. Considering an \emph{irreducible} unitary representation $(V,\alpha)$ of a group $G$, and a rank four tensor --- representing for example a local nearest-neighbour Hamiltonian term --- whose domain and codomain are the tensor product space $V\otimes V$. Invariance under the action of $G$ translates graphically to
+\begin{equation}\label{eq:WE}
+	\inputtikz{WE1} = \,\, \inputtikz{WE2}\,\, , \qquad \forall g\in G.
+\end{equation}
+The \emph{Wigner-Eckart} theorem then stipulates that the tensor $h$ can be written as the contraction of two Clebsch-Gordan coefficients implementing the unitary basis transformation 
+\begin{equation}
+	\CC{\alpha}{\alpha}{\beta,\, k}{-}{-}{\,\, -} : V \otimes V \rightarrow W, \qquad k =1,2,\dots, N_{\alpha\alpha}^\beta,
+\end{equation}
+for all irreps $(W,\beta)$ appearing in the decomposition $\alpha\otimes\alpha\simeq\bigoplus_\beta N_{\alpha\alpha}^\beta \, \beta$, and \emph{reduced matrix elements} depending only on the irrep labels~\cite{Eckart1930,Wigner1960}. Concretely putting things together, we find that $h$ can be expressed in its components as:
+\begin{equation}
+	\inputtikz{WE3} = \sum_{\beta,k} h(\beta,k) \bigg( \sum_l \CC{\alpha}{\alpha}{\beta,\, k}{i}{i'}{\,\,\, l} \CC{\alpha}{\alpha}{\beta,\, k}{j}{j'}{\,\,\, l}^* \bigg) \, | i,i' \ra \la j,j' |,
+\end{equation}
+for complex coefficients $h(\beta,k)$ and $i,i',j,j'=1,2,\dots,\dim_\mbb C\alpha$. The explicit form of the tensor $h$ in terms of Clebsch-Gordan coefficients invites us to equivalently express it in terms of the fusion tensors \cref{eq:PEPSDTriple} specialised to the case $\mc C=\Vect_G$, $\mc R=\Vect$, $\mc D = (\Vect_G)^\star_\Vect = \Rep(G)$:
+\begin{equation}
+	\inputtikz{WE2} = \sum_{\beta,k} h(\beta,k) \inputtikz{WE4},
+\end{equation}
+where we have left the module labels implicit.\footnote{Note that compared to \cref{eq:PEPSDTriple} we also dropped factors of quantum dimension for ease of notation.} Notably, in this more abstract formulation the origin of the invariance of $h$ under the $G$-action can be traced back to the pulling-through property \cref{eq:TensorPT}. Indeed, remember from \cref{par:VecGRepG} that for the case at hand the symmetry MPOs exactly implement the on-site group symmetry, so that \cref{eq:WE} boils down to two applications of the pulling-through equation. We refer the reader to refs.~\cite{Lootens2021b,Lootens2022,Lootens2024,Vancraeynest2025c} for a number of concrete examples.
+
+\bigskip\noindent Continuing along these lines, we ought to consider the triple line tensors \cref{eq:PEPSDTriple} evaluating to $\rF$ as the elementary $\mc C$-symmetric tensors, or \emph{generalised} Clebsch-Gordan coefficients~\cite{Bridgeman2022}. For these, the symmetry is implemented via the pulling-through equation \cref{eq:TensorPT} and, using them, local symmetric Hamiltonians can be constructed. Viewed from this perspective, the topological invariance of the MPO symmetries guaranteed by the pulling-through equation can be seen as the \emph{defining} property of a \emph{generalised, categorical symmetry}. This construction of symmetric Hamiltonians in terms of tensor networks thereby provides an explicit one-dimensional lattice realisation of the viewpoint advocated first in ref.~\cite{Gaiotto2014} to identify the existence of a collection of topological operators as the definition of a \emph{global} symmetry.
+
+For a generic choice of module category $\mc R$ over $\mc C$, the most general symmetric four-valent tensor is thus of the form
+\begin{equation}\label{eq:LocalOp}
+	h_{\msf i,\msf i+1}^\mc R = \sum_{\{Y\}} \sum_{i,i'} h(\{Y\},i,i')\inputtikz{LocalOp}.
+\end{equation}
+A local symmetric Hamiltonian on periodic boundary conditions is then constructed as $H^\mc R=\sum_{\msf i=1}^L h_{\msf i,\msf i+1}^\mc R$, $L+1\sim 1$. Note that the \emph{generalised} reduced matrix elements $h$ may depend on a number of arguments that include all $\mc D$-valued labels and their multiplicities, but no module labels or associated Hom spaces. Also note that we could have adopted a basis of symmetric tensors where the three-valent tensors are contracted along the `horizontal' direction. In fact, this alternative basis is well-suited for the inclusion of \emph{symmetry-twisted} boundary conditions, the topic of \cref{sec:SymTwist}. These bases are related via a single $F$-move.
+
+\bigskip\noindent Loosely speaking, the local symmetric operators \cref{eq:LocalOp} constitute the (von Neumann) \emph{bond algebra} of symmetric operators~\cite{Cobanera2009,Cobanera2011,Lootens2021b,Moradi2022,Moradi2023,Jones2024}. By this it is meant that all local symmetric operators --- collectively denoted by $\mc A$ --- can be expressed as a superposition of basis elements $\mc B = \{\mbb 1, h_{\msf i,\msf i+1}^\mc R, h_{\msf i,\msf i+1}^\mc R \tilde h_{\msf i+1,\msf i+2}^\mc R,\dots\}$, i.e. $\mc A={\rm Span}_\mbb C\{\mc B\}$ as a vector space. Being an algebra, $\mc A$ is moreover endowed with a product that linearly extends the product on the basis vectors. An explicit choice of such a basis is not needed for our discussion, but crucially this product can be fully expressed in terms of structure constants depending only on the $\mc D$ $F$-symbol, viz.:
+\begin{equation}\label{eq:BondAlg}
+	b_A \cdot b_B = \sum_{l} f_{AB}^C(\{F\}) \,\, b_C, \qquad \forall b_{A,B,C} \in \mc B.
+\end{equation}
+In other words, $\mc D$ provides a complete description of the algebra of local symmetric operators.
+
+\bigskip\noindent Let us now once more shift our perspective and take the viewpoint where the choice of bond algebra $\mc D$ and a choice of $\mc R$ are provided, rather than the symmetry $\mc C$. From \cref{eq:BondAlg} we can deduce that the spectrum of a generic Hamiltonian $H^\mc R$ is independent of the choice of module category $\mc R$. This suggests that upon changing the module category $\mc R\mapsto\mc R'$, we perform a \emph{duality} transformation that maps the initial model with the symmetry $\mc D_\mc R^\star$ to one with a \emph{dual} symmetry $\mc D_{\mc R'}^\star$. This dual model may look vastly different from the original one, but is guaranteed to have the same spectral properties, even though the ground state entanglement may differ significantly. On the level of the local symmetric operators \cref{eq:LocalOp} this boils down to changing the module associators to which the symmetric tensors evaluate, while preserving the reduced matrix elements $h$. Crucially, the dual symmetry can be a genuine categorical symmetry even when the initial symmetry structure is a group, as exemplified by $\big(\Vect_G\big) _\Vect^\star=\Rep(G)$ for any non-abelian group $G$. Notwithstanding the abstract nature of the formalism, most well-known duality transformations in the condensed matter and high-energy physics literature ---  in particular Kramers–Wannier and Kennedy–Tasaki
+duality --- can be rephrased in this language given an appropriate choice of symmetry of the model under scrutiny~\cite{Kramers1941,Kennedy1992,Lootens2021b,Lootens2022,Seifnashri2024,Pace2024,Chatterjee2024}. Moreover, the extension of this duality framework to the two-dimensional setting follows a completely analogous logic as presented below.
+\paragraph{Example: Kramers-Wannier duality -- Part I} Let us consider the transverse field Ising model encountered above in~\cref{eq:TFIM}. As already mentioned, the model enjoys a $\mbb Z_2$ spin-flip symmetry acting on-site and generated by $\prod_\msf i X_\msf i$. Abstractly, the symmetry is encoded in the fusion category $\mc C=\Vect_{\mbb Z_2}$. It is then straightforward to verify that the Hamiltonian terms can be represented on the Hilbert space $\mbb C[\mbb Z_2]^{\otimes L}$, $\mbb C[\mbb Z_2] = {\rm Span}_\mbb C\{ | 0 \ra, | 1 \ra\}$, naturally associated to the choice $\mc R=\Vect_{\mbb Z_2}$, and explicitly read:
+\begin{equation}
+	Z_\msf i Z_{\msf i+1} =  \sum_{g_\msf i, g_{\msf i+1}} (-1)^{g_{\msf i+1}} \inputtikz{TFIM1}, \qquad X_\msf i = \sum_{g_\msf i, g_{\msf i+1}} \inputtikz{TFIM2}.
+\end{equation}
+Recall that $\Vect_{\mbb Z_2}$ only admits $\Vect$ as non-trivial module category. Hence, the only non-trivial duality transformation amounts to changing $\Vect_{\mbb Z_2}\mapsto\Vect$. It is straightforward to derive that upon this change, the Hamiltonian terms transmute according to the prescription
+\begin{equation}\label{eq:KWMap}
+	Z_\msf i Z_{\msf i+1} \mapsto Z_{\msf i + \frac{1}{2}}, \qquad X_\msf i \mapsto X_{\msf i - \frac{1}{2}} X_{\msf i + \frac{1}{2}}.
+\end{equation}
+Notably, the dual symmetry is generated by $\prod_\msf i Z_{\msf i+1/2}$, described by the symmetry category $\Rep(\mbb Z_2)=(\Vect_{\mbb Z_2})_\Vect^\star$, in accordance with the prediction of the framework. Also, the order and disorder operators are mapped onto each other
+\begin{equation}
+	Z_\msf i Z_\msf j \mapsto \prod_{\msf k=\msf i}^{\msf j-1}Z_{\msf k+\frac{1}{2}},\quad  \prod_{\msf k=\msf i}^{\msf j} X_\msf k \mapsto X_{\msf i-\frac{1}{2}} X_{\msf j+\frac{1}{2}},
+\end{equation}
+as prescribed by the Landau paradigm.
+
+Note that under the mapping \cref{eq:KWMap}, the symmetric phase ($J<\lambda$) of the original Ising model is mapped to the symmetry-broken phase ($J>\lambda$) of the dual Ising model, and vice versa. As argued below, a similar observation holds more generally. Every gapped phase protected by a (categorical) symmetry can be mapped to a symmetry-broken phase (of a dual symmetry), by means of an appropriate duality map.
+
+\bigskip\noindent Until now we have not been very explicit about the exact meaning of the map $\mc R\mapsto\mc R'$ or expressions like \cref{eq:KWMap}. Let us note first that \cref{eq:KWMap} cannot be implemented by a unitary transformation. Rather, associated to the Kramers-Wannier duality, and more generally for every duality transformation, there is an explicit non-invertible \emph{intertwiner} $D$ that implements the duality via
+\begin{equation}\label{eq:DualInter}
+	h_{\msf i,\msf i+1}^{\mc R'}\circ D = D\circ h_{\msf i,\msf i+1}^\mc R,
+\end{equation}
+for all local symmetric terms. Notably, the Kramers-Wannier duality intertwiner has a non-trivial kernel consisting of all states with a non-trivial charge under the $\mbb Z_2$ spin-flip symmetry. Within the framework, such an intertwiner admits an explicit MPO representation. Concretely, these MPO intertwiners are constructed from the data of a $\mc D$-\emph{module functor} between the module categories $\mc R$ and $\mc R'$.
+
+A $\mc D$-module functor between (right) $\mc D$-module categories $\mc R$ and $\mc R'$ is a functor $\fr F:\mc R\rightarrow\mc R'$ compatible with the respective module structures, meaning that it is equipped with a natural isomorphism $\omega$ whose components take the form $\omega^{RY}:\fr F(R\cat Y) \overset{\sim}{\rightarrow} \fr F(R) \catb Y$ for objects $R \in \mc I_{\mc R}$ and $Y \in \mc I_{\mc D}$, with $\cat$ and $\catb$ the action functors of $\mc R$ and $\mc R'$ respectively. This isomorphism adheres to a pentagon axiom involving the module associators of both $\mc R$ and $\mc R'$. For each simple module functor $X\equiv (\fr F,\omega)$, we write $\prescript{X}{}{\omega}$ for its associated isomorphism, whose components are captured diagrammatically by
+\begin{equation}\label{eq:ModFunctor}
+	\inputtikz{ModFunctor1} = \sum_{R_2,k,l} \big( {}^X\omega^{R_1Y}_{R'_2} \big)^{R_2,kl}_{R'_1,ij} \inputtikz{ModFunctor2}.
+\end{equation}
+One can then define the notion of \emph{module natural transformations}, and these form the morphisms in the (semisimple) category $\Fun_\mc D(\mc R,\mc R')$ of $\mc D$-module functors between the $\mc D$-module categories $\mc R$ and $\mc R'$~\cite{Etingof2015}. As anticipated above in \cref{sec:DomainWalls}, the Morita dual fusion category $\mc D^\star_\mc R$ corresponds to the category of $\mc D$-module \emph{endofunctors of $\mc R$}, $\Fun_\mc D(\mc R,\mc R)$, whose fusion structure is defined by the composition of module functors. Similarly, the category $\Fun_\mc D(\mc R,\mc R')$ is naturally endowed with the structure of an invertible $(\mc D^\star_{\mc R'},\mc D^\star_{\mc R})$-bimodule category.
+
+Provided a (simple) object $X$ in $\mc I_{\Fun_\mc D(\mc R,\mc R')}$, we construct the MPO tensor of the duality intertwiner as
+\begin{equation}\label{eq:MPOInter}
+\begin{gathered}
+	\inputtikz{MPOInterTriple} \,\, \equiv \inputtikz{MPOInterSingle} \\
+	= \big( {}^X\omega^{R_1Y}_{R'_2} \big)^{R_2,kl}_{R'_1,ij}.
+\end{gathered}
+\end{equation}
+Note that we have indicated the change in module category by coupons in the second depiction of the tensor.
+
+Finally, the duality transformation \cref{eq:DualInter} then follows from the intertwining property
+\begin{equation}
+	\inputtikz{PullingThrough3} \,\,\, = \, \inputtikz{PullingThrough4} \,\, ,
+\end{equation}
+which is a graphical representation of the aforementioned coherence axiom satisfied by $\omega$.
+
+This concludes our discussion on the transformation of local symmetric operators under duality. It remains to understand the fate of \emph{charged} local operators. As is already apparent in the example of Kramers-Wannier duality, local charged operators are not typically mapped to \emph{local} operators but rather to \emph{string} operators. In fact, given a local order parameter in a given phase, a duality transformation can be used to obtain the disorder parameter in the dual phase~\cite{Kadanoff1970,Chen2025}. We will not pursue this direction further here, but we refer to \cref{app:TwistedGauging} for more concrete examples when the duality amounts to a \emph{twisted gauging} procedure, and to ref.~\cite{Chavda2026} for recent developments on order parameters in one-dimensional lattice models with categorical symmetries.
+
+Collecting all these structures in a table:
+\begin{table}[h]
+	\centering
+	\rowcolors{1}{}{gray!12}
+	\begin{tabular}{ccc}
+		Physical notion & Categorical notion & Notation \\
+		\hline
+		Algebra local symmetric operators & Fusion category & $\mc D$ \\
+		Kinematical degrees of freedom & $\mc D$-module category & $\mc R$ \\
+		Global symmetry original model &  Dual fusion category & $\mc C=\mc D_\mc R^\star$ \\
+		Duality operators & $(\mc C',\mc C)$-bimodule category & $\Fun_\mc D(\mc R,\mc R')$ \\
+		Dual kinematical degrees of freedom & $\mc D$-module category & $\mc R'$ \\
+		Dual global symmetry &  Dual fusion category & $\mc C'=\mc D_{\mc R'}^\star$ \\
+	\end{tabular}.
+	\caption{Dictionary of the key physical concepts, corresponding category-theoretical structures, and their notation used throughout the thesis.}
+\end{table}
+%TODO check if newpage is appropriate here
+\newpage
+\paragraph{Example: Kramers-Wannier duality -- Part II} This leaves us to explain how the mapping of $\mbb Z_2$-symmetric terms under the Kramers-Wannier duality \cref{eq:KWMap} fits into this framework. It follows from $\Fun_{\Vect_{\mbb Z_2}}(\Vect_{\mbb Z_2},\Vect) \simeq \Vect$ that there exists a unique injective MPO intertwiner implementing the duality $\Vect_{\mbb Z_2}\rightarrow\Vect$.\footnote{It holds more generally that $\Fun_\mc D(\mc D,\mc R)\simeq\mc R$. Concretely, the simple module functors in $\Fun_\mc D(\mc D,\mc R)\simeq\mc R$ are in one-to-one correspondence with simple objects $R$ in $\mc I_\mc R$ such that ${}^R\omega=\rF^{R\, -\, -}$.} Removing the trivial lines and Hom spaces from the module structure \cref{eq:MPOInter} for the case at hand and rewriting the MPO in more conventional tensor network notation, we obtain:
+\begin{equation}\label{eq:KWMPO}
+	D_{\rm KW} = \inputtikz{KWMPO} \,\, ,
+\end{equation}
+where the constituent tensors are GHZ tensors in the Pauli-$Z$ and -$X$ basis, as defined in \cref{eq:TCTensors} earlier:
+\begin{equation}\label{eq:KWTensors}
+	\raisebox{5pt}{\inputtikz{KWMPO_1_a}} = | 000 \ra + | 111 \ra,\qquad \raisebox{5pt}{\inputtikz{KWMPO_2}} = |+\!+ + \ra + | - \! - - \ra\,\,.
+\end{equation}
+Note in particular that the physical legs on either side of the intertwiner are shifted with half a lattice site with respect to each other, in accordance with the expected mapping of operators \cref{eq:KWMap}. One subsequently finds that the mapping of symmetric operators \cref{eq:KWMap} follows directly from the local symmetry properties \cref{eq:TCTensorsSyms}.
+%\begin{equation}\label{eq:KWMPOSyms}
+%	\begin{gathered}
+%		\raisebox{5pt}{\inputtikz{KWMPO_1_a}} \,\,= \raisebox{7pt}{\inputtikz{KWMPO_1_c}} =\\  \inputtikz{KWMPO_1_e} = \inputtikz{KWMPO_1_d} = \inputtikz{KWMPO_1_b}
+%	\end{gathered}\,\,,
+%\end{equation}
+%as well as analogous symmetry properties for the second tensor in \cref{eq:KWTensors} with $X\leftrightarrow Z$ interchanged.
+%TODO check if newpage is appropriate here
+\newpage
+\section{The Landau paradigm for categorical symmetries}\label{sec:GenLandau}
+We are thus finally led to the problem of classifying gapped phases of matter protected by a categorical symmetry in one-dimensional lattice models. Returning to the example of the Ising model of the previous section, we observe that under Kramers-Wannier duality the symmetric and the symmetry-broken phase are interchanged. More generally, examples such as the Kennedy-Tasaki duality discussed at length in \cref{app:TwistedGauging} illustrate that for any gapped phase there exists a \emph{unique} duality transformation that can map it to a dual model whose \emph{dual symmetry} is \emph{spontaneously broken}. This suggests a one-to-one correspondence between \emph{module categories}, labelling duality transformations, and gapped phases of matter.
+
+This observation is formalised by the \emph{generalised Landau paradigm} for one-dimensional gapped phases protected by a symmetry encoded in a UFC $\mc C$~\cite{Thorngren2019,GarreRubio2022,Bhardwaj2023,Lootens2024,Chen2025}. The paradigm asserts that gapped phases are in one-to-one correspondence with module categories $\mc P$ over the symmetry category $\mc C$. The simple objects of the module category $\mc P$ label the ground states on periodic boundary conditions, while the module action encodes the action of the symmetry on these ground states. Crucially, for genuinely non-invertible symmetries, the action of a symmetry operator on a given ground state does not in general produce another unique ground state. Instead, it yields a \emph{superposition} of ground states, in sharp contrast with the ordinary invertible case.
+
+The generalised Landau paradigm has been established rigorously in the context of matrix product states in ref.~\cite{GarreRubio2022}. Their arguments make use of tensor network techniques similar to those employed in \cref{sec:1Dphases} for the classification of gapped phases protected by a group symmetry. Notably, in the case of the symmetry category $\mc C=\Vect_G$, the classification in terms of module categories exactly reproduces the conventional Landau classification in terms of subgroups $H\subseteq G$ and 2-cocycles $[\psi]\in H^2(H,\rU(1))$ as already anticipated in \cref{sec:1Dphases}.
+
+Within this framework, a symmetry $\mc C$ is sometimes said to admit an \emph{SPT phase} if there exists a module category over it that is equivalent to $\Vect$~\cite{Thorngren2019,Fechisin2023,Inamura2024,Meng2024,Seifnashri2025}. Indeed, such a module category would describe a phase characterised by a unique ground state on periodic boundary conditions; a direct analogue of the hallmark of an SPT phase protected by an ordinary group symmetry. The category $\mc C$ is then necessarily the representation category $\Rep(\mc A)$ of a finite-dimensional semisimple \emph{Hopf algebra} $\mc A$~\cite{Etingof2015}.\footnote{Notably, every fusion category can be realised as the representation category of a \emph{weak} Hopf algebra.} Consequently, simple objects of such a fusion category have \emph{integer} quantum dimensions. The converse, however, is not true: the fusion category $\Vect_G^\omega$ has integer quantum dimensions, yet it does not admit $\Vect$ as module category when the class $[\omega]$ is non-trivial. An equivalent characterisation of such a symmetry category is then to say that it is \emph{('t Hooft) anomaly-free}. By this we mean that the symmetry can be fully \emph{gauged} in the sense of ref.~\cite{Bhardwaj2017} and \cref{app:gauging}. As demonstrated in the latter, this implies the existence of an injective MPS, symmetric under the full symmetry category $\mc C$.
+
+\bigskip\noindent Two of the most important applications of the generalised Landau paradigm are as follows. First, it implies that there always exists a dual description of a given phase in which the entanglement is minimised. Indeed, in the spontaneously broken dual model, symmetry-protected degeneracies in the Schmidt spectrum are lifted, thereby maximally reducing the redundancy in the matrix product state description of both the ground states and the low-lying excitations. This has been demonstrated in ref.~\cite{Lootens2024}.
+
+Second, in the case of a continuous $SU(2)$ symmetry, where the \emph{Mermin-Wagner theorem} forbids spontaneous symmetry breaking, a duality transformation can map the system to a dual model with a $\Rep(SU(2))$ symmetry. Since this dual symmetry is discrete rather than continuous, the assumptions underlying the Mermin–Wagner theorem no longer apply, allowing for symmetry-broken phases in the dual description. In fact, this exactly underlies standard numerical tensor network methods that exploit continuous symmetries~\cite{Singh2009,Devos2025,Lootens2024}.
+\section{Symmetry-twisted boundary conditions}\label{sec:SymTwist}
+Up until this point, we have considered only periodic boundary conditions. Notably, duality MPOs typically have a non-trivial kernel when defined on periodic boundary conditions and are therefore \emph{non-invertible} linear operators. This was already observed in the example of the Kramers-Wannier duality of the Ising model. In that case, the duality projects out states with non-trivial charge under the spin-flip symmetry.
+
+To access and relate the full spectrum of dual theories, it is necessary to consider \emph{symmetry-twisted boundary conditions}~\cite{BenTov2014,Radicevic2018,Lootens2022,Lootens2023,Seiberg2024}. A symmetry twist can heuristically be understood as a spatially localised defect that extends along the time direction. Within our framework, symmetry twists are incorporated as additional degrees of freedom of the Hilbert space~\cite{Lootens2022,Lootens2023}. They are conventionally inserted between sites $L$ and $L+1\sim 1$, and are labelled by objects in the symmetry fusion category $\mc C$. In their presence, the symmetric Hamiltonian term across the defect is modified by inserting a rotated symmetry MPO tensor:
+\begin{equation}
+	h_{L,1}^{\mc R, X} = \sum_{\{Y\}} \sum_{i,i'} h(\{Y\},i,i')\inputtikz{LocalOpTwist}\,\, ,
+\end{equation}
+with $X\in\mc I_{\mc C}$. The full Hamiltonian can hence be written as $H^{\mc R,X}=\sum_{\msf i\neq L} h_{\msf i,\msf i+1}^\mc R + h_{L,1}^{\mc R, X}$. Notably, these symmetry twists are \emph{topological} in the sense that their position can be shifted by one lattice site via a local unitary transformation. A duality still corresponds to a change of module category $\mc R\mapsto\mc R'$, and the corresponding intertwining MPOs are now promoted to \emph{bimodule tubes} that can act on the symmetry twist~\cite{Neshveyev2018,Lootens2021a}. Focusing for concreteness on the case where one side of the duality corresponds to the regular module category, and using the equivalence $\Fun_\mc D(\mc D,\mc R)\simeq\mc R$, these tubes reduce to
+\begin{equation}\label{eq:DualityTube}
+	\fr T^{Y,X,R,R',i,j}_{\mc D|\mc R} := \inputtikz{DualityTube_1}\,\, ,
+\end{equation}
+with $R,R'\in\mc I_\mc R$, $Y\in\mc I_\mc D$ and $X\in\mc I_{\mc C}$. Herein, the MPO tensors and the rightmost trivalent tensor evaluate to the module associator $\rF$ of $\mc R$ as right $\mc D$-module category. The left trivalent tensor evaluates to the $\bF$-symbols of $\mc R$. Eq.~\eqref{eq:DualityTube} thus generalises the tubes introduced in \cref{eq:MPOTube}, and we similarly define tubes of the form $\fr T_{\mc R|\mc D}$. When the duality is between generic $\mc D$-module categories $\mc R$ and $\mc R'$, the relevant trivalent tensors encode the associativity of the \emph{composition of module functors}. This case is discussed in detail in ref.~\cite{Lootens2022} and reviewed in \cref{app:gauging}.
+
+\bigskip\noindent The collection of all tubes $\{\fr T_{\mc R|\mc R},\fr T_{\mc R|\mc R'},\fr T_{\mc R'|\mc R},\fr T_{\mc R'|\mc R'}\}$ constitutes an enlarged tube algebra which can be shown to also form a finite-dimensional $C^*$-algebra. Consequently, it admits an Artin-Wedderburn decomposition. In particular, the collections of $\{\fr T_{\mc R|\mc R}\}$ and $\{\fr T_{\mc R'|\mc R'}\}$ tubes furnish subalgebras that encode the symmetry of either model in the presence of twists. Their corresponding matrix units coincide with those discussed in \cref{sec:TubeAlgebra}. The associated central idempotents are said to label the \emph{topological sectors} of either model, and by virtue of the Morita equivalence between $\mc D^\star_\mc R$ and $\mc D^\star_{\mc R'}$, characterised by $\mc Z(\mc D_\mc R^\star)\simeq\mc Z(\mc D^\star_{\mc R'})$, these sectors are in bijection with one another. 
+
+The twisted Hamiltonian $H^{\mc R,X}$ typically only commutes with a proper subset of symmetry lines in $\mc C$. Physically, topological sectors therefore label a (typically non-simple) boundary condition, as well as a charge of the sub-symmetry that preserves that boundary condition. For any $Z$ in $\mc Z(\mc D_\mc R^\star)$ that contains a given $X\in\mc I_{\mc D_\mc R^\star}$ in its decomposition as object of $\mc D_\mc R^\star$, the Hamiltonian in the topological sector $Z$ with multiplicity $i$ is defined via the simple idempotents as
+\begin{equation}
+	H^{\mc R,X}_{Z,i} := \big( e^{Z,X_i,X_i}_{\mc R|\mc R} \big)^\dagger H^{\mc R,X} e^{Z,X_i,X_i}_{\mc R|\mc R}.
+\end{equation}
+Note that all other twisted Hamiltonians in the same sector, i.e. $H^{\mc R, X'}_{Z,j}$, have the same spectrum as $H^{\mc R,X}_{Z,i}$, since they are related by the nilpotent $e^{Z,X'_j,X_i}_{\mc R|\mc R}$ in the same block $Z$.
+
+Additionally, the enlarged tube algebra admits matrix units of the type $\fr T^{Z,X_i,Z',X'_j}_{\mc R|\mc R'}$ and $\fr T^{Z',X'_i,Z,X_j}_{\mc R'|\mc R}$, where $Z'\in\mc I_{\mc Z(\mc D_{\mc R'}^\star)}$ denotes the image of $Z\in\mc I_{\mc Z(\mc D_\mc R^\star)}$ under the equivalence $\mc Z(\mc D_\mc R^\star)\simeq\mc Z(\mc D_{\mc R'}^\star)$. Using them, isometries between the dual models are constructed via
+\begin{equation}
+	H^{\mc R',X'}_{Z',j} = \big( e^{Z,X_i,Z',X_j'}_{\mc R|\mc R'} \big)^\dagger H^{\mc R,X}_{Z,i} e^{Z,X_i,Z',X_j'}_{\mc R|\mc R'}.
+\end{equation}
+
+\bigskip\noindent By identifying the anyonic sectors of the string-net models with the topological sectors of their edge Hamiltonians, we have completed the holographic dictionary relating the bulk and edge. We conclude by exemplifying this correspondence in the case of the Kramers–Wannier duality.
+\paragraph{Example: Kramers-Wannier duality -- Part III} The Ising model admits periodic or antiperiodic boundary conditions, and for each boundary condition decomposes into even and odd charge sectors, resulting in a total of four topological sectors. At the Hamiltonian level, working with antiperiodic boundary conditions amounts to changing the sign of one of the ferromagnetic interactions.\footnote{Because the symmetry twists are topological, the Ising Hamiltonian with any odd number of twists is unitarily equivalent to one with a single twist.} The intertwining tubes \cref{eq:DualityTube} can then be written as
+\begin{equation}
+	\inputtikz{KWMPO_3}\,\, ,
+\end{equation}
+where the boundary matrix $\alpha$ in each sector is given by one of the Pauli matrices, as per the dictionary in \cref{tab:KW}. Notably, it is easy to verify by making use of the symmetry properties \cref{eq:TCTensorsSyms} that the $(P,+1)$ and $(AP,-1)$ sectors are mapped identically under the Kramers-Wannier duality, while the other two are transposed. It is precisely in this sense that one should interpret the aphorism that Kramers–Wannier duality \emph{exchanges boundary conditions and charge sectors}.
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{cc||cc||c}
+		\shortstack{Boundary\\condition} & \shortstack{Charge\\sector} & \shortstack{Dual boundary\\condition} & \shortstack{Dual charge\\sector} & \shortstack{Boundary\\matrix $\alpha$} \\
+		\hline
+		P & $+1$ & P & $+1$ & $\mbb 1$\\
+		P & $-1$& AP & $+1$ & $Z$\\
+		AP & $+1$ & P & $-1$ & $X$\\
+		AP & $-1$ & AP & $-1$ & $Y$
+	\end{tabular}\,\,.
+	\caption{Mapping of topological sectors under the Kramers-Wannier duality. Here, \emph{(A)P} stands for \emph{(anti)periodic}.}
+	\label{tab:KW}
+\end{table}

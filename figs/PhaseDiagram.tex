@@ -1,0 +1,24 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{4.};
+	\def\h{4.};
+	
+	\fill[BlueViolet!10] (\l/3,\h/3) -- (\l,\h) -- (0,\h) -- (0,\h/3) -- cycle;
+	\fill[BrickRed!10] (\l/3,\h/3) -- (\l,\h) -- (\l,0) -- (\l/3,0) -- cycle;
+	\fill[black!10, rounded corners=20pt] (\l/2,0) -- (\l/2,\h/2) [sharp corners] -- (0,\h/2) -- (0,0) -- cycle;
+	
+	\draw[obj1, rounded corners=20pt] (\l/2,0) -- (\l/2,\h/2) -- (0,\h/2);
+	\draw[obj1, shorten <= -8pt] (\l/2,\h/2) -- (\l,\h);
+	
+	\draw[obj1, -Triangle, shorten >= -10pt] (0,0) -- node[pos=.5,anchor=north] {$h_1$} (\l,0);
+	\draw[obj1, -Triangle, shorten >= -10pt] (0,0) -- node[pos=.5, anchor=east] {$h_2$} (0,\h);
+	
+	\draw[obj1, dotted, rounded corners=20pt] (5/12*\l,3/4*\h) -- (3/4*\l,5/12*\h);
+	
+	\node[circle, fill=black, inner sep=1.2pt] at (5/12*\l,3/4*\h) {};
+	\node[circle, fill=black, inner sep=1.2pt] at (3/4*\l,5/12*\h) {};
+	
+	\node[circle, fill=red, inner sep=1.8pt, rotate=36] at (7/12*\l,7/12*\h) {};
+	\node at (\l/4,\h/4) {\Romannum{1}};
+	\node at (3*\l/4,\h/4) {\Romannum{3}};
+	\node at (\l/4,3*\h/4) {\Romannum{2}};
+\end{tikzpicture}

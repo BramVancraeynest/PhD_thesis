@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{.9};
+	\def\h{.65};
+	
+	\draw[obj3, rounded corners = 3pt] (.5*\l,-.75*\h) -- (0,0) -- (.5*\l,.75*\h);
+	\draw[obj1, rounded corners = 3pt] (.5*\l,-.75*\h) -- (\l,0) -- (.5*\l,.75*\h);
+	
+	\draw[obj1] (.5*\l,-1.5*\h) -- (.5*\l,-.75*\h);
+	
+	\draw[obj1] (.5*\l,.75*\h) -- (.5*\l,1.5*\h);
+	
+	\node[mor, circle, inner sep=3.3pt] at (.5*\l,-.75*\h) {};
+	\node at (.5*\l,-.75*\h) {$\sss j$};
+	\node[mor, circle, inner sep=3.3pt] at (.5*\l,.75*\h) {};
+	\node at (.5*\l,.75*\h) {$\sss i$};
+	
+	\node[left, yshift = -2pt] at (.5*\l,-1.125*\h) {$\sss R_2'$};
+	\node[left] at (0,0) {$\sss R_1$};
+	\node[right] at (\l,0) {$\sss Y$};
+	\node[left] at (.5*\l,1.125*\h) {$\sss R_2$};
+\end{tikzpicture}

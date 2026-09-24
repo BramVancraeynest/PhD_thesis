@@ -1,0 +1,23 @@
+\begin{tikzpicture}[baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{.9};
+	\def\h{.65};
+	
+	\node(x) at (.5*\l,.35*\h) {};
+	\clipAroundNode{x}{
+		\draw[obj1] (.5*\l,0) -- (.5*\l,\h);
+	}
+
+	\draw[obj1] (.5*\l,\h) -- (0,2*\h);
+	\draw[obj1] (.5*\l,\h) -- (\l,2*\h);
+	
+	\node[mor, circle, inner sep=3.3pt] at (.5*\l,\h) {};
+	\node at (.5*\l,\h) {$\sss i$};
+	
+	\node[above] at (0,2*\h) {$\sss Y_1$};
+	\node[above] at (\l,2*\h) {$\sss Y_2$};
+	
+	\node[below] at (\l/2,0) {$\sss Y_3$};
+	
+	\draw[obj2, wiggly] (-.25*\l,.35*\h) -- (1.23*\l,.35*\h);
+	\node[anchor=west] at (1.25*\l,.35*\h) {$\sss Z$};
+\end{tikzpicture}

@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=.8,baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\l{.8};
+	\coordinate (a) at (0,0);
+	\draw[obj1] (0,0) -- ({\l*cos(30)},{\l*sin(30)});
+	\draw[obj1] (0,0) -- ({\l*cos(120)},{\l*sin(120)}) node[pos=1.3] {$\sss Z$};
+	\draw[obj1] (0,0) -- ({\l*cos(150)},{\l*sin(150)});
+	\centerarc[dash pattern= on 0pt off 4.5pt, obj1, line width=1pt](a)(55:100:1.3*\l/2);                   
+	\draw[obj1] (0,0) -- ({\l*cos(30)},{-\l*sin(30)});
+	\draw[obj1] (0,0) -- ({\l*cos(120)},{-\l*sin(120)});
+	\draw[obj1] (0,0) -- ({\l*cos(150)},{-\l*sin(150)}) node[pos=1.3] {$\sss Z$};
+	\centerarc[dash pattern= on 0pt off 4.5pt, obj1, line width=1pt](a)(-55:-100:1.3*\l/2); 
+	
+	\node[fusiontensor, inner sep=2.55pt] at (0,0) {};
+\end{tikzpicture}

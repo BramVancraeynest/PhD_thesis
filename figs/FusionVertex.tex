@@ -1,0 +1,17 @@
+\begin{tikzpicture}[baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{.9};
+	\def\h{.65};
+	
+	\draw[obj1] (.5*\l,0) -- (.5*\l,\h);
+	
+	\draw[obj1] (.5*\l,\h) -- (0,2*\h);
+	\draw[obj1] (.5*\l,\h) -- (\l,2*\h);
+	
+	\node[mor, circle, inner sep=3.3pt] at (.5*\l,\h) {};
+	\node at (.5*\l,\h) {$\sss i$};
+	
+	\node[above] at (0,2*\h) {$\sss X_1$};
+	\node[above] at (\l,2*\h) {$\sss X_2$};
+	
+	\node[below] at (\l/2,0) {$\sss X_3$};
+\end{tikzpicture}

@@ -1,0 +1,60 @@
+\begin{tikzpicture}[scale=1.15,baseline={([yshift=-.5ex]current bounding box.center)}]
+	\def\r{4pt};
+	\def\l{3.5};
+	\def\sp{0.16};
+	\coordinate (a1) at (0,0);
+	\coordinate (a2) at (\l/2,0);
+	\coordinate (a3) at (0,\l/2);
+	\coordinate (a4) at (\l/2,\l/2);
+	
+	\middleCoo{a1}{a2}{m12}{m12-1}{m12-2}{\sp};
+	\middleCoo{a1}{a3}{m13}{m13-1}{m13-3}{\sp};
+	\middleCoo{a2}{a4}{m24}{m24-2}{m24-4}{\sp};
+	\middleCoo{a3}{a4}{m34}{m34-3}{m34-4}{\sp};
+	\barycentreSq{a1}{a2}{a3}{a4}{b1234}{b1234-1}{b1234-2}{b1234-3}{b1234-4};
+	
+%	\ifthenelse{#7=3 \OR #7=5}{
+		\draw[obj2,->2-=0.7, shorten <= 1pt, shorten >= 1pt] (m24) --node[pos=0.35,fill=white,rectangle,inner sep=0pt,text=black] {${\sss X}$} node[mask point, pos=0.5](mk1){}  (m13);
+%	}{}
+%	\ifthenelse{#7 = 4}{
+%		\draw[mod,->-=0.7,shorten <= 1pt, shorten >= 1pt] (m13) --node[pos=0.35,fill=white,rectangle,inner sep=0pt,text=black] {${\sss #6}$} node[mask point, pos=0.5](mk1){}  (m24);
+%	}{}
+%	\ifthenelse{#7 = 6}{
+%		\draw[obj2,->-=0.7,shorten <= 1pt, shorten >= 1pt] (m13) --node[pos=0.35,fill=white,rectangle,inner sep=0pt,text=black] {${\sss #6}$} node[mask point, pos=0.5](mk1){}  (m24);
+%	}{}
+%	\ifthenelse{#7 = 0}{
+%		\draw[mod,->-=0.7,shorten <= 1pt, shorten >= 1pt] (m24) --node[pos=0.35,fill=white,rectangle,inner sep=0pt,text=black] {${\sss #6}$} node[mask point, pos=0.5](mk1){}  (m13);
+%	}{}
+%	\ifthenelse{#7 = 1}{
+%		\draw[obj2,->-=0.7] (m24) --node[pos=0.35,fill=white,rectangle,inner sep=0pt,text=black] {${\sss #6}$} node[mask point, pos=0.5](mk1){}  (m13);
+%	}{}
+%	\ifthenelse{#7 = 2}{
+%		\draw[obj1, dot] (m24) -- node[mask point, pos=0.5](mk1){}  (m13);
+%	}{}
+	
+	\clipAroundNode{mk1}{
+		\draw[obj1,->2-=0.75, shorten <= 1pt, shorten >= 1pt] (m12) --node[pos=0.3,fill=white,rectangle,inner sep=1pt,text=black] {${\sss Y}$} (m34);
+	}
+	
+	\draw[mor] 
+	(m12-1) to[out=90, in=90, looseness=1.5] (m12-2)
+	(m13-1) to[out=0, in=0, looseness=1.5] (m13-3)
+	(m24-2) to[out=-180, in=-180, looseness=1.5] (m24-4)
+	(m34-3) to[out=-90, in=-90, looseness=1.5] (m34-4);
+	
+	\draw[obj1, rounded corners=\r, obj3] 
+	(m12-1) -- (b1234-1) -- (m13-1)
+	(m12-2) -- (b1234-2) -- (m24-2);
+	\draw[obj1, rounded corners=\r, obj3] 
+	(m13-3) -- (b1234-3) -- (m34-3)
+	(m34-4) -- (b1234-4) -- (m24-4);
+	
+	\node[yshift=3pt] at (m12) {${\sss k}$};
+	\node[yshift=-3.5pt] at (m34) {${\sss j}$};
+	\node[xshift=3pt] at (m13) {${\sss i}$};   
+	\node[xshift=-3pt] at (m24) {${\sss l}$};   
+	\node[xshift=-8pt,yshift=8pt] at (b1234-3) {${\sss R_3}$};
+	\node[xshift=8pt,yshift=8pt] at (b1234-4) {${\sss R_2}$};
+	\node[xshift=-8pt,yshift=-8pt] at (b1234-1) {${\sss R_1}$};
+	\node[xshift=8pt,yshift=-8pt] at (b1234-2) {${\sss R_4}$}; 
+\end{tikzpicture}

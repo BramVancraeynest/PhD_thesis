@@ -1,0 +1,35 @@
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+	\def\l{1.4};
+	\def\r{.8}
+	\def\c{cos(30)};
+	\def\s{sin(30)};
+	\def\o{.3};
+	
+	\draw[obj2, dotted] (0,0) -- (30:\l);
+	\draw[obj2, dotted] (0,0) -- (150:.5*\l);
+	\draw[obj2, dotted] (0,-\l) -- (0,0);
+	\draw[obj2, dotted] ({\c*\l*2},-\l) -- ({\c*\l*2},0);
+	\draw[obj2, dotted] ({2*\l*\c},0) -- ++(30:.5*\l);
+	\draw[obj2, dotted] ({2*\l*\c},0) -- ++(150:\l);
+	\draw[obj2, dotted] ({\c*\l}, {-\l-\l*\s}) -- ++(150:\l);
+	\draw[obj2, dotted] ({\c*\l}, {-\l-\l*\s}) -- ++(30:\l);
+	\draw[obj2, dotted] ({2.5*\c*\l}, {-\l-.5*\l*\s}) -- ++(150:.5*\l);
+	\draw[obj2, dotted] ({-\c*.5*\l}, {-\l-.5*\l*\s}) -- ++(30:.5*\l);
+	\draw[obj2, dotted] ({\c*\l}, {\s*\l}) -- ++(0,.5*\l);
+	\draw[obj2, dotted] ({\c*\l}, {-\l-2*\s*\l}) -- ++(0,.5*\l);
+	
+	\draw[dashed, obj3] ({\l*\c},{-\l*\s}) circle (\r);
+	
+	\draw[obj1, pattern=north west lines] ({\l*\c},{-\l*\s}) circle (.4*\r);
+	
+	\centerarc[obj3, dashed](0,{2*\s*\l})(0:-120:\r);
+	\centerarc[obj3, dashed]({2*\c*\l},{2*\s*\l})(-60:-180:\r);
+	
+	\centerarc[obj3, dashed]({-\c*\l},-\l/2)(60:-60:\r);
+	\centerarc[obj3, dashed]({3*\c*\l},-\l/2)(120:240:\r);
+	
+	\centerarc[obj3, dashed](0,{-\l-2*\s*\l})(0:120:\r);
+	\centerarc[obj3, dashed]({2*\c*\l},{-\l-2*\s*\l})(60:180:\r);
+
+	\draw[obj2, rounded corners=4pt] ({\c*\l + \c*\o}, {\s*\l + .5*\l}) -- ({\c*\l + \c*\o}, {\s*\l - \s*\o}) node[fill=white, pos=1, text=black, anchor=west] {$\sss X$} -- ({\c*\o},{-\s*\o}) -- ({\c*\o},{-\l + \s*\o}) -- ({\c*\l}, {-\l-\l*\s + \o}) -- ({2*\c*\l}, {-\l + \o}) -- ({2.5*\c*\l}, {-\l -.5*\s*\l + \o});
+\end{tikzpicture}
